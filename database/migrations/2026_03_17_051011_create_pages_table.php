@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('pages', function (Blueprint $table) {
+            $table->id();
+            $table->jsonb('title');
+            $table->string('slug');
+            $table->jsonb('description')->nullable();
+            $table->boolean('published')->default(false);
+            $table->unsignedTinyInteger('rank')->nullable();
+            //$table->string('for')->default('indicators'); // indicators, reports & map indicators
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('pages');
+    }
+};

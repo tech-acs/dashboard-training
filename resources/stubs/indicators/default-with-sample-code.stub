@@ -1,0 +1,29 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Support\Collection;
+use Uneca\Chimera\Livewire\Chart;
+use Uneca\Chimera\Services\BreakoutQueryBuilder;
+
+class {{ class }} extends Chart
+{
+    // public bool $useDynamicAreaXAxisTitles = true;
+    // public array $aggregateAppendedTraces = []; /* ['trace name' => 'avg'] ... sum, count, min, max, mode, median */
+
+    public function getData(string $filterPath = ''): Collection
+    {
+        try {
+            return collect(
+                new \DatePeriod(
+                new \DateTime('2010-04-01'),
+                new \DateInterval('P1D'),
+                new \DateTime('2010-04-19')
+            ))
+            ->zip(range(1, 18, 1))
+            ->map(fn ($pair) => (object)['eas' => $pair[0]->format('Y-m-d'), 'households' => $pair[1]/10]);
+        } catch (\Exception $exception) {
+            return collect();
+        }
+    }
+}
