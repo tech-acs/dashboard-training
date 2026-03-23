@@ -11,9 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $teams = config('permission.teams');
-        $tableNames = config('permission.table_names');
-        $columnNames = config('permission.column_names');
+        $teams = false;
+        $tableNames = [
+            'roles' => 'roles',
+            'permissions' => 'permissions',
+            'model_has_permissions' => 'model_has_permissions',
+            'model_has_roles' => 'model_has_roles',
+            'role_has_permissions' => 'role_has_permissions',
+        ];
+        $columnNames = [
+            'role_pivot_key' => null, // default 'role_id',
+            'permission_pivot_key' => null, // default 'permission_id',
+            'model_morph_key' => 'model_id',
+            'team_foreign_key' => 'team_id',
+        ];
         $pivotRole = $columnNames['role_pivot_key'] ?? 'role_id';
         $pivotPermission = $columnNames['permission_pivot_key'] ?? 'permission_id';
 

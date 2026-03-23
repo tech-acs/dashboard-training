@@ -1,0 +1,3760 @@
+[Dictionary]
+Version=CSPro 7.6
+Label=Census main form
+Name=CENSUS_MAIN_DICT
+Note=#fieldwork
+RecordTypeStart=1
+RecordTypeLen=2
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=774E443CE9CEBF24911ECB9D41A37B390AAF57EA0065AD907833F68C0BE146D7
+
+[Level]
+Label=Census questionnaire
+Name=CENSUS_QUEST
+
+[IdItems]
+
+[Item]
+Label=County
+Name=COUNTY
+Note=#territory[County]
+Start=3
+Len=2
+ZeroFill=Yes
+
+[ValueSet]
+Label=County
+Name=COUNTY_VS1
+Value=1;Mombasa
+Value=2;Kwale
+Value=3;Kilifi
+Value=4;Tana River
+Value=5;Lamu
+Value=6;Taita-Taveta
+Value=7;Garissa
+Value=8;Wajir
+Value=9;Mandera
+Value=10;Marsabit
+Value=11;Isiolo
+Value=12;Meru
+Value=13;Tharaka-Nithi
+Value=14;Embu
+Value=15;Kitui
+Value=16;Machakos
+Value=17;Makueni
+Value=18;Nyandarua
+Value=19;Nyeri
+Value=20;Kirinyaga
+Value=21;Murang'a
+Value=22;Kiambu
+Value=23;Turkana
+Value=24;West Pokot
+Value=25;Samburu
+Value=26;Trans Nzoia
+Value=27;Uasin Gishu
+Value=28;Elgeyo-Marakwet
+Value=29;Nandi
+Value=30;Baringo
+Value=31;Laikipia
+Value=32;Nakuru
+Value=33;Narok
+Value=34;Kajiado
+Value=35;Kericho
+Value=36;Bomet
+Value=37;Kakamega
+Value=38;Vihiga
+Value=39;Bungoma
+Value=40;Busia
+Value=41;Siaya
+Value=42;Kisumu
+Value=43;Homabay
+Value=44;Migori
+Value=45;Kisii
+Value=46;Nyamira
+Value=47;Nairobi City
+
+[ValueSet]
+Label=Kambas
+Name=KAMBAS
+Value=2;Kwale
+Value=6;Taita-Taveta
+
+[ValueSet]
+Label=Region
+Name=COUNTY_VS3
+Value=1:6;Coast
+Value=7:9;North Eastern
+Value=10:17;Eastern
+Value=18:22;Central
+Value=23:36;Rift Valley
+Value=37:40;Western
+Value=41:46;Nyanza
+Value=47;Nairobi City
+
+[ValueSet]
+Label=Big Cities
+Name=COUNTY_VS4
+Value=1;Mombasa
+Value=32;Nakuru
+Value=42;Kisumu
+Value=47;Nairobi City
+
+[ValueSet]
+Label=Emigrants
+Name=COUNTY_VS5
+Value=16;Machakos
+Value=21;Murang'a
+Value=22;Kiambu
+Value=34;Kajiado
+Value=47;Nairobi City
+
+[ValueSet]
+Label=County
+Name=COUNTY_VS6
+Value=1:6;Coast
+Value=1;Mombasa
+Value=2;Kwale
+Value=3;Kilifi
+Value=4;Tana River
+Value=5;Lamu
+Value=6;Taita-Taveta
+Value=7:9;North Eastern
+Value=7;Garissa
+Value=8;Wajir
+Value=9;Mandera
+Value=10:17;Eastern
+Value=10;Marsabit
+Value=11;Isiolo
+Value=12;Meru
+Value=13;Tharaka-Nithi
+Value=14;Embu
+Value=15;Kitui
+Value=16;Machakos
+Value=17;Makueni
+Value=18:22;Central
+Value=18;Nyandarua
+Value=19;Nyeri
+Value=20;Kirinyaga
+Value=21;Murang'a
+Value=22;Kiambu
+Value=23:36;Rift Valley
+Value=23;Turkana
+Value=24;West Pokot
+Value=25;Samburu
+Value=26;Trans Nzoia
+Value=27;Uasin Gishu
+Value=28;Elgeyo-Marakwet
+Value=29;Nandi
+Value=30;Baringo
+Value=31;Laikipia
+Value=32;Nakuru
+Value=33;Narok
+Value=34;Kajiado
+Value=35;Kericho
+Value=36;Bomet
+Value=37:40;Western
+Value=37;Kakamega
+Value=38;Vihiga
+Value=39;Bungoma
+Value=40;Busia
+Value=41:46;Nyanza
+Value=41;Siaya
+Value=42;Kisumu
+Value=43;Homabay
+Value=44;Migori
+Value=45;Kisii
+Value=46;Nyamira
+Value=47;Nairobi City
+
+[Item]
+Label=Sub County
+Name=SUBCOUNTY
+Note=#territory[Subcounty,COUNTY]
+Start=5
+Len=2
+ZeroFill=Yes
+
+[Item]
+Label=Division
+Name=DIVISION
+Note=#territory[Division,SUBCOUNTY]
+Start=7
+Len=2
+ZeroFill=Yes
+
+[Item]
+Label=Location
+Name=LOCATION
+Note=#territory[Location,DIVISION]
+Start=9
+Len=2
+ZeroFill=Yes
+
+[Item]
+Label=Sub Location
+Name=SUBLOCATION
+Note=#territory[Sublocation,LOCATION]
+Start=11
+Len=2
+ZeroFill=Yes
+
+[Item]
+Label=EA
+Name=EA
+Note=#territory[EA,SUBLOCATION]
+Start=13
+Len=3
+ZeroFill=Yes
+
+[Item]
+Label=Structure Number
+Name=STRNUMBER
+Start=16
+Len=4
+ZeroFill=Yes
+
+[Item]
+Label=Household Number
+Name=HHNUMBER
+Start=20
+Len=3
+ZeroFill=Yes
+
+[Item]
+Label=Enumerator ID
+Name=ENUMERATOR_ID
+Start=23
+Len=36
+DataType=Alpha
+
+[Item]
+Label=EA Type
+Name=EA_TYPE
+Start=59
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=EA Type
+Name=EA_TYPE_VS1
+Value=1;Rural
+Value=2;Urban
+
+[Item]
+Label=EA Status
+Name=EA_STATUS
+Start=60
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=EA Status
+Name=EA_STATUS_VS1
+Value=4;Informal
+Value=9;Formal
+
+[Item]
+Label=Constituency
+Name=CONSTITUENCY
+Start=61
+Len=3
+ZeroFill=Yes
+
+[Item]
+Label=Ward
+Name=WARD
+Start=64
+Len=4
+ZeroFill=Yes
+
+[Item]
+Label=Type of questionnaire
+Name=TYPE_OF_QUESTIONNAIRE
+Start=68
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of questionnaire
+Name=TYPE_OF_QUESTIONNAIRE_VS1
+Value=1;Main form
+Value=3;Hotel/Lodge Residents
+Value=4;Hospital In-Patients
+Value=5;Prison/Police Cells
+Value=6;Schools/Children homes
+Value=7;Travelers and Persons On-Transit
+Value=8;Street Persons/Outdoor Sleepers
+
+[ValueSet]
+Label=Type of questionnaire
+Name=TYPE_OF_QUESTIONNAIRE_VS2
+Value=1;Main questionnaire
+Value=3:8;Short questionnaires
+
+[Record]
+Label=Population record
+Name=POP_REC
+Note=#individual
+RecordTypeValue='70'
+Required=No
+MaxRecords=500
+RecordLen=422
+
+[Item]
+Label=Population Section: Keep Row?
+Name=HH_KEEP_ROW
+Start=69
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=Population Section: Keep Row?
+Name=HH_KEEP_ROW_VS1
+Value=1;Yes, keep population row
+Value=2;No, delete population row
+
+[Item]
+Label=Line Number
+Name=LINE_NUMBER
+Start=70
+Len=3
+ZeroFill=Yes
+
+[Item]
+Label=P00. Name
+Name=P00
+Start=73
+Len=50
+DataType=Alpha
+
+[Item]
+Label=P10. Relationship
+Name=P10
+Note=#relationship
+Start=123
+Len=2
+ZeroFill=Yes
+
+[ValueSet]
+Label=P10. Relationship
+Name=P10_VS3
+Value=1;Head
+Value=2;Spouse
+Value=3;Son/Daughter
+Value=4;Grandchild
+Value=5;Brother/Sister
+Value=6;Father/Mother
+Value=7;Nephew/Niece
+Value=8;In-Law
+Value=9;Grandparent
+Value=10;Other Relative
+Value=11;Non-relative
+Value=99;DK
+
+[ValueSet]
+Label=P10. Relationship
+Name=P10_VS1
+Value=1;Head
+
+[ValueSet]
+Label=P10. Relationship
+Name=P10_VS2
+Value=2;Spouse
+Value=3;Son/Daughter
+Value=4;Grandchild
+Value=5;Brother/Sister
+Value=6;Father/Mother
+Value=7;Nephew/Niece
+Value=8;In-Law
+Value=9;Grandparent
+Value=10;Other Relative
+Value=11;Non-relative
+Value=99;DK
+
+[Item]
+Label=P11. Sex
+Name=P11
+Note=#sex
+Start=125
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=P11. Sex
+Name=P11_VS1
+Value=1;Male
+Note=#male
+Value=2;Female
+Note=#female
+Value=3;Intersex
+Note=#othersex
+
+[ValueSet]
+Label=P11. Females
+Name=P11_VS2
+Value=2;Female
+Note=#female
+
+[ValueSet]
+Label=P11. Sex
+Name=P11_VS3
+Value=1;Male
+Note=#male
+Value=2;Female
+Note=#female
+Value=3;Intersex
+Note=#othersex
+
+[Item]
+Label=P12. Age
+Name=P12
+Note=#age[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95]
+Start=126
+Len=3
+ZeroFill=Yes
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS1
+Value=0:120
+
+[ValueSet]
+Label=P12. Age_Cohots
+Name=P12_VS2
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+Value=999;Not Stated
+
+[ValueSet]
+Label=P12. Single_Grouped Ages
+Name=P12_VS3
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=0:4;0 - 4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=5:9;5 - 9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=10:14;10-14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=15:19;15-19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=20:24;20-24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=25:29;25-29
+Value=30;30
+Value=31;31
+Value=32;32
+Value=33;33
+Value=34;34
+Value=30:34;30-34
+Value=35;35
+Value=36;36
+Value=37;37
+Value=38;38
+Value=39;39
+Value=35:39;35-39
+Value=40;40
+Value=41;41
+Value=42;42
+Value=43;43
+Value=44;44
+Value=40:44;40-44
+Value=45;45
+Value=46;46
+Value=47;47
+Value=48;48
+Value=49;49
+Value=45:49;45-49
+Value=50;50
+Value=51;51
+Value=52;52
+Value=53;53
+Value=54;54
+Value=50:54;50-54
+Value=55;55
+Value=56;56
+Value=57;57
+Value=58;58
+Value=59;59
+Value=55:59;55-59
+Value=60;60
+Value=61;61
+Value=62;62
+Value=63;63
+Value=64;64
+Value=60:64;60-64
+Value=65;65
+Value=66;66
+Value=67;67
+Value=68;68
+Value=69;69
+Value=65:69;65-69
+Value=70;70
+Value=71;71
+Value=72;72
+Value=73;73
+Value=74;74
+Value=70:74;70-74
+Value=75;75
+Value=76;76
+Value=77;77
+Value=78;78
+Value=79;79
+Value=75:79;75-79
+Value=80;80
+Value=81;81
+Value=82;82
+Value=83;83
+Value=84;84
+Value=80:84;80-84
+Value=85;85
+Value=86;86
+Value=87;87
+Value=88;88
+Value=89;89
+Value=85:89;85-89
+Value=90;90
+Value=91;91
+Value=92;92
+Value=93;93
+Value=94;94
+Value=90:94;90-94
+Value=95;95
+Value=96;96
+Value=97;97
+Value=98;98
+Value=99;99
+Value=95:99;95-99
+Value=100:120;100+
+Value='   ';NR
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Age_ICT
+Name=P12_VS4
+Value=3:5;3 - 5
+Value=6:9;6 - 9
+Value=10:14;10 - 14
+Value=15:24;15 - 24
+Value=25:34;25 - 34
+Value=35:44;35 - 44
+Value=45:54;45 - 54
+Value=55:64;55 - 64
+Value=65:74;65 - 74
+Value=75:120;75 - 120
+Value='   ';Notappl
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Age_Labour_1
+Name=P12_VS5
+Value=5:14;5 - 14
+Value=15:64;15 - 64
+Value=65:120;65 +
+
+[ValueSet]
+Label=P12. Age_Labour_2
+Name=P12_VS6
+Value=5:14;5 - 14
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=35:64;35 - 64
+Value=65:120;65 +
+
+[ValueSet]
+Label=P12. Age_Cohorts
+Name=P12_VS7
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+Value='   ';Notappl
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Age
+Name=VOTERS
+Value=0:9;0 - 9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21:120;21 - 120
+
+[ValueSet]
+Label=P12. 56 - 120 years
+Name=P12_VS9
+Value=0:55;0 - 55
+Value=56:150;56 - 150
+Value='   ';NR
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Fertility agegroups
+Name=P12_VS12
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:120;55+
+
+[ValueSet]
+Label=P12. Fertility
+Name=P12_VS10
+Value=0:11;0 - 11
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+Value='   ';Notappl
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Single Ages
+Name=P12_VS11
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+Value=32;32
+Value=33;33
+Value=34;34
+Value=35;35
+Value=36;36
+Value=37;37
+Value=38;38
+Value=39;39
+Value=40;40
+Value=41;41
+Value=42;42
+Value=43;43
+Value=44;44
+Value=45;45
+Value=46;46
+Value=47;47
+Value=48;48
+Value=49;49
+Value=50;50
+Value=51;51
+Value=52;52
+Value=53;53
+Value=54;54
+Value=55;55
+Value=56;56
+Value=57;57
+Value=58;58
+Value=59;59
+Value=60;60
+Value=61;61
+Value=62;62
+Value=63;63
+Value=64;64
+Value=65;65
+Value=66;66
+Value=67;67
+Value=68;68
+Value=69;69
+Value=70;70
+Value=71;71
+Value=72;72
+Value=73;73
+Value=74;74
+Value=75;75
+Value=76;76
+Value=77;77
+Value=78;78
+Value=79;79
+Value=80;80
+Value=81;81
+Value=82;82
+Value=83;83
+Value=84;84
+Value=85;85
+Value=86;86
+Value=87;87
+Value=88;88
+Value=89;89
+Value=90;90
+Value=91;91
+Value=92;92
+Value=93;93
+Value=94;94
+Value=95;95
+Value=96;96
+Value=97;97
+Value=98;98
+Value=99;99
+Value=100:120;100
+Value='   ';NR
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Age_Cohots_Survivorship
+Name=P12_VS13
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:120;75 +
+
+[ValueSet]
+Label=P12. Age_Parity
+Name=P12_VS14
+Value=0:11;0 - 11
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:120;75 +
+
+[ValueSet]
+Label=P12. Age_Migration
+Name=P12_VS15
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:120;95+
+
+[ValueSet]
+Label=P12. Age_Labour_3
+Name=P12_VS16
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 -14
+Value=15:17;15 - 17
+Value=18:19;18 - 19
+Value=20:24;20 - 24
+Value=25:34;25 - 34
+Value=35:49;35 - 49
+Value=50:59;50 - 59
+Value=60:64;60 - 64
+Value=65:120;65 +
+
+[ValueSet]
+Label=Education Age
+Name=P12_VS17
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+
+[ValueSet]
+Label=Age_Fertility2
+Name=P12_VS18
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+Value=32;32
+Value=33;33
+Value=34;34
+Value=35;35
+Value=36;36
+Value=37;37
+Value=38;38
+Value=39;39
+Value=40;40
+Value=41;41
+Value=42;42
+Value=43;43
+Value=44;44
+Value=45;45
+Value=46;46
+Value=47;47
+Value=48;48
+Value=49;49
+Value=50;50
+Value=51;51
+Value=52;52
+Value=53;53
+Value=54;54
+Value=55;55
+Value=56;56
+Value=57;57
+Value=58;58
+Value=59;59
+Value=60;60
+Value=61;61
+Value=62;62
+Value=63;63
+Value=64;64
+
+[ValueSet]
+Label=Age of Child
+Name=P12_VS19
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+Value=32;32
+Value=33;33
+Value=34;34
+Value=35;35
+Value=36;36
+Value=37;37
+Value=38;38
+Value=39;39
+Value=40;40
+Value=41;41
+Value=42;42
+Value=43;43
+Value=44;44
+Value=45;45
+Value=46;46
+Value=47;47
+Value=48;48
+Value=49;49
+
+[ValueSet]
+Label=Elderly
+Name=P12_VS20
+Value=60;60
+Value=61;61
+Value=62;62
+Value=63;63
+Value=64;64
+Value=65;65
+Value=66;66
+Value=67;67
+Value=68;68
+Value=69;69
+Value=70;70
+Value=71;71
+Value=72;72
+Value=73;73
+Value=74;74
+Value=75;75
+Value=76;76
+Value=77;77
+Value=78;78
+Value=79;79
+Value=80;80
+Value=81;81
+Value=82;82
+Value=83;83
+Value=84;84
+Value=85;85
+Value=86;86
+Value=87;87
+Value=88;88
+Value=89;89
+Value=90;90
+Value=91;91
+Value=92;92
+Value=93;93
+Value=94;94
+Value=95;95
+Value=96;96
+Value=97;97
+Value=98;98
+Value=99;99
+Value=100:120;100
+
+[ValueSet]
+Label=Elderly Agegroups
+Name=P12_VS21
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=Orphans
+Name=P12_VS22
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+
+[ValueSet]
+Label=Orphans agegroups
+Name=P12_VS23
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10- 14
+Value=15:17;15 - 17
+
+[ValueSet]
+Label=Children in Labour Force
+Name=P12_VS24
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+
+[ValueSet]
+Label=Child in Labour Agegroups
+Name=P12_VS25
+Value=5:9;5 - 9
+Value=10:14;10- 14
+Value=15:17;15 - 17
+
+[ValueSet]
+Label=ASFR
+Name=P12_VS26
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+
+[ValueSet]
+Label=Adolescent
+Name=P12_VS27
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+
+[ValueSet]
+Label=Family Dynamic
+Name=P12_VS28
+Value=18:120;Adults
+
+[ValueSet]
+Label=Family Dynamic 2
+Name=P12_VS29
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=35:59;35 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=Family Dynamic 2
+Name=P12_VS30
+Value=18:34;18 - 34
+Value=60:120;60+
+
+[ValueSet]
+Label=Family Dynamic 3
+Name=P12_VS31
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=SMAM ages
+Name=P12_VS32
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+
+[ValueSet]
+Label=P12. Fertility agegroups
+Name=P12_VS33
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:120;50+
+
+[ValueSet]
+Label=P12. Age_Marital
+Name=P12_VS34
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75- 79
+Value=80:120;80 +
+
+[ValueSet]
+Label=Marital ages_SMAM
+Name=P12_VS35
+Value=12:15;12 - 15
+Value=12:18;12 - 18
+
+[ValueSet]
+Label=P12. Migori
+Name=P12_VS36
+Value=18;18
+Value=19;19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:64;30 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=Education 2
+Name=P12_VS37
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+
+[ValueSet]
+Label=P12. Fertility
+Name=P12_VS38
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=Age_UN_Educ
+Name=P12_VS39
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+
+[ValueSet]
+Label=P12. Fertility agegroups
+Name=P12_VS40
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:120;50 +
+
+[ValueSet]
+Label=P12. Age_Cohots
+Name=P12_VS41
+Value=15:120;15 +
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=P12. Age_Cohots
+Name=P12_VS42
+Value=0;0
+Value=1:4;1 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+Value='   ';Notappl
+Name=NOTAPPL,Special
+
+[ValueSet]
+Label=P12. Age_Cohots
+Name=P12_VS43
+Value=0:14;0 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=Family Dynamic 4
+Name=P12_VS44
+Value=0:14;0 - 14
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=P12. Age_Cohots_ECA
+Name=P12_VS45
+Value=0:14;0 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:120;75 +
+
+[ValueSet]
+Label=P12 SMAM 55+
+Name=P12_VS46
+Value=55:120;55+
+
+[ValueSet]
+Label=Attending Preprimary
+Name=P12_VS47
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+
+[ValueSet]
+Label=Attending Primary
+Name=P12_VS48
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+
+[ValueSet]
+Label=Attending Secondary
+Name=P12_VS49
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+
+[ValueSet]
+Label=Covid agegroups
+Name=P12_VS50
+Value=65:120;65+
+Value=60:69;60 - 69
+Value=70:79;70 - 79
+Value=80:120;80+
+Value=0:14;<15 years
+Value=15:49;15 - 49
+
+[ValueSet]
+Label=KISE
+Name=P12_VS51
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+
+[ValueSet]
+Label=KISE
+Name=P12_VS52
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+
+[ValueSet]
+Label=P12. Age_Severity
+Name=P12_VS53
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:17;15 - 17
+Value=18:34;18 - 34
+Value=35:59;35 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:120;70+
+
+[ValueSet]
+Label=Orphans agegroups
+Name=P12_VS54
+Value=5;5
+Value=6:13;6 - 13
+Value=14:17;14 - 17
+
+[ValueSet]
+Label=P12. Age_Severity
+Name=P12_VS55
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=35:59;35 - 59
+Value=60:64;60 - 64
+
+[ValueSet]
+Label=P12. Age_Severity
+Name=P12_VS56
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+
+[ValueSet]
+Label=P12. Age_Cohots
+Name=P12_VS57
+Value=5:120;All 5+
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=P12. Zach
+Name=P12_VS58
+Value=0;0
+Value=0:5;0 - 5
+Value=5:14;5 - 14
+Value=15:49;15 - 49
+Value=15:54;15 - 54
+
+[ValueSet]
+Label=Elderly Agegroups
+Name=P12_VS59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:120;85+
+
+[ValueSet]
+Label=Elderly Agegroups
+Name=P12_VS60
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:120;75+
+
+[ValueSet]
+Label=Agric Ages-Youths
+Name=P12_VS61
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+
+[ValueSet]
+Label=Agri Ages- All
+Name=P12_VS62
+Value=0:14;Below 15 Years
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:120;60 Years+
+
+[ValueSet]
+Label=P12. Age_Cohots_Survivorship
+Name=P12_VS63
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:120;70 +
+
+[ValueSet]
+Label=Lab_Mono_Ag1
+Name=P12_VS64
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10- 14
+Value=5:14;5 -14
+Value=5:17;5 -17
+Value=15:17;15 - 17
+Value=15:30;15 - 30
+Value=18:24;18 - 24
+Value=18:64;18 - 64
+Value=18:64;18 - 64
+Value=25:34;25 - 34
+Value=65:120;65+
+
+[ValueSet]
+Label=Lab_mono_Ag2
+Name=P12_VS65
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=5:14;5 -14
+Value=5:17;5 -17
+Value=15:17;15 - 17
+Value=15:30;15 - 30
+Value=15:64;15 - 64
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=65:120;65+
+
+[ValueSet]
+Label=Lab_Mono_Age_Depende
+Name=P12_VS66
+Value=0:14;0 - 14
+Value=15:64;15 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=Lab_mono_Ag4
+Name=P12_VS67
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:120;65+
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+
+[ValueSet]
+Label=Lab_mono_Ag5
+Name=P12_VS68
+Value=15:64;15 - 64
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+
+[ValueSet]
+Label=School going Children
+Name=P12_VS69
+Value=4:5;4 - 5
+Value=6:13;6 - 13
+Value=14:17;14 - 17
+
+[ValueSet]
+Label=Age_ICT_Gender
+Name=P12_VS70
+Value=3:4;3 - 4
+Value=5:9;5 - 9
+Value=10:14;10- 14
+Value=15:24; 15 - 24
+Value=25:34; 25 - 34
+Value=35:44; 35 - 44
+Value=45:54; 45 - 54
+Value=55:64; 55 - 64
+Value=65:74; 65 - 74
+Value=75:120; 75 +
+
+[ValueSet]
+Label=P12. Fertility-Gender
+Name=P12_VS71
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:120;50+
+
+[ValueSet]
+Label=Gender_Age
+Name=P12_VS72
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+
+[ValueSet]
+Label=Gender_Age2
+Name=P12_VS73
+Value=12:14;12 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS75
+Value=0:14;<15
+Value=15:24;15 - 24
+Value=25:34;25 - 34
+Value=35:59;35 - 59
+Value=60:64;60-64
+Value=65:120;65+
+
+[ValueSet]
+Label=P12. Poverty Age
+Name=P12_VS76
+Value=0;<1
+Value=1;1
+Value=2;2
+Value=3:4;3-4
+Value=5:6;5-6
+Value=7:9;7-9
+Value=10:11;10-11
+Value=12:13;12-13
+Value=14:15;14-15
+Value=16:17;16-17
+Value=18:29;18-29
+Value=30:60;30-60
+Value=61:120;>60
+
+[ValueSet]
+Label=Educ Ages-Youths
+Name=P12_VS761
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+
+[ValueSet]
+Label=P12. UN Pop Age
+Name=P12_VS78
+Value=0;0
+Value=1:4;1 - 4
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=P12. Age_Pop Dynamics
+Name=P12_VS781
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:120;80+
+
+[ValueSet]
+Label=short ques
+Name=P12_VS79
+Value=0:120;0 to 120
+Value=121:990;121+
+
+[ValueSet]
+Label=P12. Age_Disability
+Name=P12_VS80
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:17;15 - 17
+Value=18:34;18 - 34
+Value=35:59;35 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:120;70+
+
+[ValueSet]
+Label=Age 70 years plus
+Name=P12_VS81
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:99;95 - 99
+Value=100:120;100+
+
+[ValueSet]
+Label=Recent Migration
+Name=P12_VS82
+Value=0:14;0 - 14
+Value=15:24;15 - 24
+Value=25:59;25 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=Children below 15
+Name=P12_VS83
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+
+[ValueSet]
+Label=Stateless 18 -64
+Name=P12_VS84
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+Value=32;32
+Value=33;33
+Value=34;34
+Value=35;35
+Value=36;36
+Value=37;37
+Value=38;38
+Value=39;39
+Value=40;40
+Value=41;41
+Value=42;42
+Value=43;43
+Value=44;44
+Value=45;45
+Value=46;46
+Value=47;47
+Value=48;48
+Value=49;49
+Value=50;50
+Value=51;51
+Value=52;52
+Value=53;53
+Value=54;54
+Value=55;55
+Value=56;56
+Value=57;57
+Value=58;58
+Value=59;59
+Value=60;60
+Value=61;61
+Value=62;62
+Value=63;63
+Value=64;64
+
+[ValueSet]
+Label=Stateless 65 -100+
+Name=P12_VS85
+Value=65;65
+Value=66;66
+Value=67;67
+Value=68;68
+Value=69;69
+Value=70;70
+Value=71;71
+Value=72;72
+Value=73;73
+Value=74;74
+Value=75;75
+Value=76;76
+Value=77;77
+Value=78;78
+Value=79;79
+Value=80;80
+Value=81;81
+Value=82;82
+Value=83;83
+Value=84;84
+Value=85;85
+Value=86;86
+Value=87;87
+Value=88;88
+Value=89;89
+Value=90;90
+Value=91;91
+Value=92;92
+Value=93;93
+Value=94;94
+Value=95;95
+Value=96;96
+Value=97;97
+Value=98;98
+Value=99;99
+Value=100:120;100
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS87
+Value=18:19;18-19
+Value=20:24;20-24
+Value=25:29;25-29
+Value=30:34;30-34
+Value=35:39;35-39
+Value=40:44;40-44
+Value=45:49;45-49
+Value=50:54;50-54
+Value=55:59;55-59
+Value=60:120;60 years and older
+
+[ValueSet]
+Label=58 years+
+Name=P12_VS871
+Value=56;56
+Value=57;57
+Value=58:59;58-59
+Value=60:64;60 -64
+Value=65:120;65+ years
+
+[ValueSet]
+Label=HPV denominator
+Name=P12_VS88
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=10:14;10-14
+
+[ValueSet]
+Label=Labour_occup
+Name=P12_VS89
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+
+[ValueSet]
+Label=Labour_occup2
+Name=P12_VS90
+Value=15:24;15 - 24
+Value=18:34;18 - 34
+
+[ValueSet]
+Label=Labour occup3
+Name=P12_VS93
+Value=15:64;15 - 64
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=15:17;15 - 17
+Value=15:30;15 - 30
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=15:24;15 - 24
+Value=18:34;18 - 34
+
+[ValueSet]
+Label=P12. Age_95+
+Name=P12_VS92
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:84;80 - 84
+Value=85:89;85 - 89
+Value=90:94;90 - 94
+Value=95:120;95+
+
+[ValueSet]
+Label=Pop 16 to 19
+Name=P12_VS931
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+
+[ValueSet]
+Label=School going Children
+Name=P12_VS94
+Value=3:5;3 - 5
+Value=6:13;6 - 13
+Value=14:17;14 - 17
+Value=18:24;18 - 24
+
+[ValueSet]
+Label=P12. Age_education
+Name=P12_VS95
+Value=3:5;3 - 5
+Value=6:9;6 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=Girls 10 - 14
+Name=P12_VS96
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=10:14;10-14
+
+[ValueSet]
+Label=P12. HHold Projections
+Name=P12_VS97
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=Recent Migration
+Name=P12_VS98
+Value=15:24;15 -  24
+Value=25:34;25 - 34
+Value=35:59;35 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=0 to 59 Months
+Name=P12_VS99
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+
+[ValueSet]
+Label=Foreign born age
+Name=P12_VS100
+Value=0:18;<19
+Value=19:39;19 - 39
+Value=40:59;40 - 59
+Value=60:120;60+
+
+[ValueSet]
+Label=Dependency
+Name=P12_VS101
+Value=0:17;0 -17
+Value=18:34;18 - 34
+Value=35:64;35 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=School going Children
+Name=P12_VS102
+Value=3:5;3 - 5
+Value=4:5;4 - 5
+Value=6:13;6 - 13
+Value=14:17;14 - 17
+Value=18:22;18 - 22
+Value=23:28;23 -28
+Value=29:35;29 - 35
+
+[ValueSet]
+Label=Labour quest
+Name=P12_VS103
+Value=5:14;5 - 14
+Value=15:17;15 - 17
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+Value=35:64;35 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=Labour Ages-Youths
+Name=P12_VS104
+Value=15:17;15 - 17
+Value=15:30;15 - 30
+Value=18:24;18 - 24
+Value=25:34;25 - 34
+
+[ValueSet]
+Label=Important Ages
+Name=P12_VS106
+Value=3:120; 3+ yrs
+Value=5:120; 5+ yrs
+Value=0:17; 0-17 yrs
+Value=5:17; 5-17 yrs
+Value=10:14; 10-14 yrs
+Value=15:19; 15-19 yrs
+Value=10:34; 10-34 yrs
+Value=15:49; 15-49 yrs
+Value=18:34; 18-34 yrs
+Value=20:24; 20-24 yrs
+Value=25:34; 25-34 yrs
+Value=60:120; 60+ yrs
+
+[ValueSet]
+Label=Youths 15 - 34
+Name=P12_VS1061
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+
+[ValueSet]
+Label=Labour Ages-15 and above
+Name=P12_VS107
+Value=15:24;15 - 24
+Value=15:34;15 - 34
+Value=15:64;15 - 64
+
+[ValueSet]
+Label=AgeB40
+Name=P12_VS108
+Value=0:9;0 - 9
+Value=10:19;10 - 19
+Value=20:29;20- 29
+Value=30:39;30 - 39
+Value=40:49;40 - 49
+Value=50:59;50 - 59
+Value=60:69;60 - 69
+Value=70:120;70 and older
+
+[ValueSet]
+Label=Age 15 - 19
+Name=P12_VS109
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=15:19;15-19
+
+[ValueSet]
+Label=Native and Foreign Born
+Name=P12_VS111
+Value=0:14;0-14
+Value=15:34;15-34
+Value=35:54;35-54
+Value=55:64;55-64
+Value=65:120;65+
+
+[ValueSet]
+Label=Disability for young children
+Name=P12_VS1111
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+
+[ValueSet]
+Label=P12. Age_80+ years
+Name=P12_VS113
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:79;75 - 79
+Value=80:120;80+
+
+[ValueSet]
+Label=P12. Age_75+ years
+Name=P12_VS112
+Value=0:4;0 - 4
+Value=5:9;5 - 9
+Value=10:14;10 - 14
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:69;65 - 69
+Value=70:74;70 - 74
+Value=75:120;75+
+
+[ValueSet]
+Label=Age 14- 20
+Name=P12_VS114
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+
+[ValueSet]
+Label=Labour Migration
+Name=P12_VS115
+Value=15:24;15 -  24
+Value=25:54;25 - 54
+Value=55:64;55 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=P12. Age Nutrients
+Name=P12_VS117
+Value=0;<1
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18:29;18-29
+Value=30:59;30-59
+Value=60:120;60+
+
+[ValueSet]
+Label=12 -18
+Name=P12_VS1171
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+
+[ValueSet]
+Label=Marital Status
+Name=P12_VS118
+Value=12:14;12 -14
+Value=12:17;12 - 17
+
+[ValueSet]
+Label=Disability 60+
+Name=P12_VS120
+Value=60:64;60-64
+Value=65:69;65-69
+Value=70:74;70-74
+Value=75:89;75-79
+Value=80:84;80-84
+Value=85:120;85+
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS1201
+Value=0:14;0-14 years
+Value=15:24;15-24 years
+Value=25:34;25-34 years
+Value=35:54;35-54 years
+Value=55:120; 55+ years
+
+[ValueSet]
+Label=Labour Monograph
+Name=P12_VS121
+Value=15:64;15 - 64
+Value=15:19;15 - 19
+Value=20:24;20 - 24
+Value=25:29;25 - 29
+Value=30:34;30 - 34
+Value=35:39;35 - 39
+Value=40:44;40 - 44
+Value=45:49;45 - 49
+Value=50:54;50 - 54
+Value=55:59;55 - 59
+Value=60:64;60 - 64
+Value=65:120;65+
+
+[ValueSet]
+Label=P12. Nationals Abroad
+Name=P12_VS122
+Value=0:4; 0-4
+Value=5:9; 5-9
+Value=10:14; 10-14
+Value=15:19; 15-19
+Value=20:24; 20-24
+Value=25:29; 25-29
+Value=30:34; 30-34
+Value=35:39; 35-39
+Value=40:44; 40-44
+Value=45:49; 45-49
+Value=50:54; 50-54
+Value=55:59; 55-59
+Value=60:64; 60-64
+Value=65:69; 65-69
+Value=70:74; 70-74
+Value=75:79; 75-79
+Value=80:120; 80+
+
+[ValueSet]
+Label=P12. Age- Disabilty
+Name=P12_VS123
+Value=5:14;5- 14
+Value=15:24;15-24
+Value=25:34;25-34
+Value=35:54;35-54
+Value=55:120;55+
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS124
+Value=15:17;15 - 17 years
+Value=18:24;18 - 24 years
+Value=25:34;25 - 34 years
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS125
+Value=15:19;15-19
+Value=20:24;20-24
+Value=25:29;25-29
+Value=30:34;30-34
+
+[ValueSet]
+Label=P12. Age
+Name=P12_VS126
+Value=0:4; 0-4
+Value=5:11; 5-11
+Value=12:17;12-17
+Value=18:59;18-59
+Value=60:120;60+
+
+[Item]
+Label=P13. Year of Birth
+Name=P13_YEAR
+Start=129
+Len=4
+ZeroFill=Yes
+
+[ValueSet]
+Label=P13. Year of Birth
+Name=P13_YEAR_VS1
+Value=1800:2019
+
+[Item]
+Label=P13. Month of Birth
+Name=P13_MONTH_OF_BIRTH
+Start=133
+Len=2
+ZeroFill=Yes
+
+[ValueSet]
+Label=P13. Month of Birth
+Name=P13_MONTH_OF_BIRTH_VS1
+Value=1;January
+Value=2;February
+Value=3;March
+Value=4;April
+Value=5;May
+Value=6;June
+Value=7;July
+Value=8;August
+Value=9;September
+Value=10;October
+Value=11;November
+Value=12;December
+Value=99;Don't know
+
+[Item]
+Label=P10_P12 Emancipated Minor
+Name=P10_P12_EMANCIPATED_MINOR
+Start=135
+Len=1
+ZeroFill=Yes
+
+[Item]
+Label=P10_P12 Reasons for Emancipated Minor
+Name=P10_P12_EMANCIPATED_MINORS
+Start=136
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=P10_P12 Reasons for Emancipated Minor
+Name=P10_P12_EMANCIPATED_MINORS_VS1
+Value=1;Parents not around on census night
+Value=2;The child/children stay(s) alone
+
+[Item]
+Label=P12_p13 Was Age/ Year of Birth Estimated
+Name=P12_P13
+Start=137
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=P12_p13 Was Age/ Year of Birth Estimated
+Name=P12_P13_VS1
+Value=1;Age and date of birth details provided by the respondent
+Value=2;Age/ date of birth details Estimated
+
+[Item]
+Label=Population Section: Roster Confirmation
+Name=HH_MORE_ROWS
+Start=138
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=Population Section: Roster Confirmation
+Name=HH_MORE_ROWS_VS1
+Value=1;Yes, there are additional persons
+Value=2;No, list of persons is complete
+
+[Item]
+Label=P14. Line Number of Mother
+Name=P14
+Start=139
+Len=2
+ZeroFill=Yes
+
+[ValueSet]
+Label=P14. Line Number of Mother
+Name=P14_VS1
+Value=0;Mother not in HH
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=87;Mother Not in Household
+Value=88;Age Difference is less than 12
+
+[Item]
+Label=P14a. Age of Mother:derived from p12
+Name=P14A
+Start=141
+Len=3
+ZeroFill=Yes
+
+[ValueSet]
+Label=P14a. Age of Mother:derived from p12
+Name=P14A_VS1
+Value=0:120
+
+[Item]
+Label=P15. Usual member of household
+Name=P15
+Start=144
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=P15. Usual member of household
+Name=P15_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=P16. Ethnicity/Nationality
+Name=P16_OPTION
+Start=145
+Len=1
+ZeroFill=Yes
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_OPTION_VS1
+Value=1;Kenya
+Value=2;Africa
+Value=3;Asia
+Value=4;Europe
+Value=5;America
+Value=6;Caribbean
+Value=7;Oceania And Pacific
+Value=8;Show All Countries
+Value=9;Stateless (Galjeel, Shona, Wapemba, Pare E.t.c)/Not Stated/Dk
+
+[Item]
+Label=P16. Ethnicity/Nationality
+Name=P16
+Start=146
+Len=3
+ZeroFill=Yes
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS10
+Value=541;Abakhenye
+Value=501;Ajuran
+Value=301;Amu
+Value=401;Arror
+Value=524;Aweer/Watta
+Value=539;Baganda
+Value=302;Bajuni
+Value=101;Bakhayo
+Value=102;Banyala
+Value=103;Banyore
+Value=525;Barawa
+Value=10;Basuba
+Value=104;Batsotso
+Value=105;Batura
+Value=402;Bong'omek
+Value=201;Boni
+Value=502;Borana
+Value=106;Bukusu
+Value=503;Burji
+Value=403;Cherangany
+Value=303;Chitundi
+Value=202;Chonyi
+Value=534;Corner Tribes
+Value=542;Corner Tribes (Shegal, Warabey, Gabaweih, Sharmuge, Shabelle, Leisah, Hawadhi, Asraaf)
+Value=546;Lembus
+Value=203;Dahalo
+Value=504;Dasenach
+Value=505;Degodia
+Value=204;Digo
+Value=404;Dorobo
+Value=205;Duruma
+Value=405;El Molo
+Value=11;Embu
+Value=406;Endo
+Value=420;Endorois
+Value=506;Gabra
+Value=530;Galjeel
+Value=507;Galla
+Value=532;Garre
+Value=206;Giriama
+Value=508;Gosha
+Value=509;Gurreh
+Value=510;Hawiyah
+Value=107;Idakho
+Value=407;Ilchamus
+Value=523;Isaak
+Value=108;Isukha
+Value=207;Jibana
+Value=304;Jomvu
+Value=109;Kabras
+Value=400;Kalenjin
+Value=12;Kamba
+Value=208;Kambe
+Value=209;Kauma
+Value=408;Keiyo
+Value=522;Kenyan
+Value=521;Kenyan Americans
+Value=518;Kenyan Arabs
+Value=519;Kenyan Asians
+Value=520;Kenyan Europeans
+Value=500;Kenyan Somali
+Value=527;Kifundi
+Value=13;Kikuyu
+Value=409;Kipsigis
+Value=110;Kisa
+Value=14;Kisii
+Value=511;Konso
+Value=545;Kony
+Value=15;Kuria
+Value=546;Lembus
+Value=535;Leysan
+Value=100;Luhya
+Value=16;Luo
+Value=320;Makonde
+Value=17;Malakote
+Value=111;Marachi
+Value=112;Maragoli
+Value=410;Marakwet
+Value=113;Marama
+Value=18;Maasai
+Value=19;Mbeere
+Value=512;Merile
+Value=20;Meru
+Value=200;Mijikenda
+Value=538;Mkendwa
+Value=528;Munyoyaya/Muyeyaya
+Value=537;Murile
+Value=533;Murule
+Value=305;Muyeyaya
+Value=306;Mvita
+Value=411;Nandi
+Value=307;Ngare
+Value=536;Ngiteuso
+Value=412;Njemps
+Value=21;Nubi(an\)
+Value=513;Ogaden
+Value=413;Ogiek
+Value=514;Orma
+Value=308;Pate
+Value=210;Pokomo
+Value=22;Pokot
+Value=211;Rabai
+Value=515;Rendile
+Value=212;Ribe
+Value=414;Saboat
+Value=516;Sakuye
+Value=23;Samburu
+Value=114;Samia
+Value=415;Samor
+Value=531;Sanye
+Value=416;Senger
+Value=417;Sengwer
+Value=540;Sidam
+Value=309;Siu
+Value=300;Swahili
+Value=115;Tachoni
+Value=24;Taita
+Value=25;Taveta
+Value=418;Terik
+Value=26;Teso
+Value=27;Tharaka
+Value=116;Tiriki
+Value=526;Tswakans
+Value=419;Tugen
+Value=28;Turkana
+Value=310;Vumba
+Value=517;Waat
+Value=311;Wachangamwe
+Value=312;Wafaza
+Value=29;Wailwana/Malakote
+Value=313;Wakatwa
+Value=314;Wakilifi
+Value=315;Wakilindini
+Value=316;Wamtwapa
+Value=117;Wanga
+Value=30;Wardei
+Value=317;Washaka
+Value=318;Watangana
+Value=319;Watikuu
+Value=529;Watta
+Value=46;Wayyu
+Value=543;Other Kenyan
+Value=544;Refusal/ Kenyan
+Value=600;Algeria
+Value=601;Angola
+Value=602;Benin
+Value=603;Botswana
+Value=604;Burkina Faso
+Value=605;Burundi
+Value=606;Cameroon
+Value=607;Cape Verde
+Value=608;Central African Republic
+Value=609;Chad
+Value=610;Comoros
+Value=611;Congo, Republic Of The...
+Value=612;CÃ”te D'ivoire
+Value=613;Democratic Republic Of The Congo
+Value=614;Djibouti
+Value=615;Egypt
+Value=616;Equatorial Guinea
+Value=617;Eritrea
+Value=618;Ethiopia
+Value=619;Gabon
+Value=620;Gambia
+Value=621;Ghana
+Value=622;Guinea
+Value=623;Guinea-bissau
+Value=624;Lesotho
+Value=625;Liberia
+Value=626;Libyan Arab Jamahiriya
+Value=627;Madagascar
+Value=628;Malawi
+Value=629;Mali
+Value=630;Mauritania
+Value=631;Mauritius
+Value=632;Morocco
+Value=633;Mozambique
+Value=634;Namibia
+Value=635;Niger
+Value=636;Nigeria
+Value=637;Rwanda
+Value=638;Sao Tome And Principe
+Value=639;Senegal
+Value=640;Seychelles
+Value=641;Sierra Leone
+Value=642;Somalia
+Value=643;South Africa
+Value=644;Sudan
+Value=645;South Sudan
+Value=646;Swaziland
+Value=647;Togo
+Value=648;Tunisia
+Value=649;Uganda
+Value=650;United Republic Of Tanzania
+Value=651;Zambia
+Value=652;Zimbabwe
+Value=670;Afghanistan
+Value=671;Bahrain
+Value=672;Bangladesh
+Value=673;Bhutan
+Value=674;Brunei Darussalam
+Value=675;Cambodia
+Value=676;China
+Value=677;Democratic People's Republic Of Korea
+Value=680;India
+Value=681;Indonesia
+Value=682;Iran, Islamic Republic Of...
+Value=683;Iraq
+Value=684;Israel
+Value=685;Japan
+Value=686;Jordan
+Value=687;Kiribati
+Value=688;Kuwait
+Value=689;Lao People's Democratic Republic
+Value=690;Lebanon
+Value=691;Malaysia
+Value=692;Maldives
+Value=693;Micronesia, Federated States Of...
+Value=694;Mongolia
+Value=695;Myanmar
+Value=696;Nauru
+Value=697;Nepal
+Value=698;Oman
+Value=699;Pakistan
+Value=700;Philippines
+Value=701;Qatar
+Value=702;Republic Of Korea
+Value=703;Republic Of Moldova
+Value=704;Saudi Arabia
+Value=705;Singapore
+Value=706;Sri Lanka
+Value=707;Suriname
+Value=708;Syrian Arab Republic
+Value=709;Thailand
+Value=710;Timor-leste
+Value=711;United Arab Emirates
+Value=712;Vietnam
+Value=713;Yemen
+Value=714;Albania
+Value=715;Andorra
+Value=716;Armenia
+Value=717;Austria
+Value=718;Azerbaijan
+Value=719;Belarus
+Value=720;Belgium
+Value=721;Bosnia And Herzegovina
+Value=722;Bulgaria
+Value=723;Croatia
+Value=724;Cyprus
+Value=725;Czech Republic
+Value=726;Denmark
+Value=727;Estonia
+Value=728;Finland
+Value=729;France
+Value=730;Georgia
+Value=731;Germany
+Value=732;Greece
+Value=733;Hungary
+Value=734;Iceland
+Value=735;Ireland
+Value=736;Italy
+Value=737;Kazakhstan
+Value=738;Kyrgyzstan
+Value=739;Latvia
+Value=740;Liechtenstein
+Value=741;Lithuania
+Value=742;Luxembourg
+Value=743;Malta
+Value=744;Marshall Islands
+Value=745;Monaco
+Value=746;Montenegro
+Value=747;Netherlands
+Value=748;Norway
+Value=749;Poland
+Value=750;Portugal
+Value=751;Romania
+Value=752;Russian Federation
+Value=753;Saint Kitts And Nevis
+Value=754;Saint Lucia
+Value=755;Saint Vincent And The Grenadines
+Value=756;San Marino
+Value=757;Serbia
+Value=758;Slovakia
+Value=759;Slovenia
+Value=760;Spain
+Value=761;Sweden
+Value=762;Switzerland
+Value=763;Tajikistan
+Value=764;The Former Yugoslav Republic Of Macedonia
+Value=765;Turkey
+Value=766;Turkmenistan
+Value=767;Ukraine
+Value=768;United Kingdom Of Great Britain And Northern Ireland
+Value=769;Uzbekistan
+Value=770;Argentina
+Value=771;Belize
+Value=772;Bolivia
+Value=773;Brazil
+Value=774;Canada
+Value=775;Chile
+Value=776;Colombia
+Value=777;Costa Rica
+Value=778;Cuba
+Value=779;Dominica
+Value=780;Dominican Republic
+Value=781;Ecuador
+Value=782;El Salvador
+Value=783;Guatemala
+Value=784;Honduras
+Value=785;Mexico
+Value=786;Nicaragua
+Value=787;Panama
+Value=788;Paraguay
+Value=789;Peru
+Value=790;United States Of America
+Value=791;Uruguay
+Value=792;Venezuela (Bolivarian Republic Of)
+Value=793;Antigua And Barbuda
+Value=794;Bahamas
+Value=795;Barbados
+Value=796;Grenada
+Value=797;Guyana
+Value=798;Haiti
+Value=799;Jamaica
+Value=800;Solomon Islands
+Value=801;Trinidad And Tobago
+Value=802;Australia
+Value=803;Fiji
+Value=804;New Zealand
+Value=805;Palau
+Value=806;Papua New Guinea
+Value=807;Samoa
+Value=808;Tonga
+Value=809;Tuvalu
+Value=810;Vanuatu
+Value=811;Other Nationality
+Value=812;Stateless (Galjeel, Shona, Wapemba, Pare E.t.c)
+Value=813;Refugee/Asylum Seeker
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS1
+Value=541;Abakhenye
+Value=501;Ajuran
+Value=301;Amu
+Value=401;Arror
+Value=524;Aweer/Watta
+Value=539;Baganda
+Value=302;Bajuni
+Value=101;Bakhayo
+Value=102;Banyala
+Value=103;Banyore
+Value=525;Barawa
+Value=10;Basuba
+Value=104;Batsotso
+Value=105;Batura
+Value=402;Bong'omek
+Value=201;Boni
+Value=502;Borana
+Value=106;Bukusu
+Value=503;Burji
+Value=403;Cherangany
+Value=303;Chitundi
+Value=202;Chonyi
+Value=534;Corner Tribes
+Value=542;Corner Tribes (Shegal, Warabey, Gabaweih, Sharmuge, Shabelle, Leisah, Hawadhi, Asraaf)
+Value=203;Dahalo
+Value=504;Dasenach
+Value=505;Degodia
+Value=204;Digo
+Value=404;Dorobo
+Value=205;Duruma
+Value=405;El Molo
+Value=11;Embu
+Value=406;Endo
+Value=420;Endorois
+Value=506;Gabra
+Value=530;Galjeel
+Value=507;Galla
+Value=532;Garre
+Value=206;Giriama
+Value=508;Gosha
+Value=509;Gurreh
+Value=510;Hawiyah
+Value=107;Idakho
+Value=407;Ilchamus
+Value=523;Isaak
+Value=108;Isukha
+Value=207;Jibana
+Value=304;Jomvu
+Value=109;Kabras
+Value=400;Kalenjin
+Value=12;Kamba
+Value=208;Kambe
+Value=209;Kauma
+Value=408;Keiyo
+Value=522;Kenyan
+Value=521;Kenyan Americans
+Value=518;Kenyan Arabs
+Value=519;Kenyan Asians
+Value=520;Kenyan Europeans
+Value=500;Kenyan Somali
+Value=527;Kifundi
+Value=13;Kikuyu
+Value=409;Kipsigis
+Value=110;Kisa
+Value=14;Kisii
+Value=511;Konso
+Value=545;Kony
+Value=15;Kuria
+Value=546;Lembus
+Value=535;Leysan
+Value=100;Luhya
+Value=16;Luo
+Value=320;Makonde
+Value=17;Malakote
+Value=111;Marachi
+Value=112;Maragoli
+Value=410;Marakwet
+Value=113;Marama
+Value=18;Maasai
+Value=19;Mbeere
+Value=512;Merile
+Value=20;Meru
+Value=200;Mijikenda
+Value=538;Mkendwa
+Value=528;Munyoyaya/Muyeyaya
+Value=537;Murile
+Value=533;Murule
+Value=305;Muyeyaya
+Value=306;Mvita
+Value=411;Nandi
+Value=307;Ngare
+Value=536;Ngiteuso
+Value=412;Njemps
+Value=21;Nubi(an\)
+Value=513;Ogaden
+Value=413;Ogiek
+Value=514;Orma
+Value=308;Pate
+Value=210;Pokomo
+Value=22;Pokot
+Value=211;Rabai
+Value=515;Rendile
+Value=212;Ribe
+Value=414;Saboat
+Value=516;Sakuye
+Value=23;Samburu
+Value=114;Samia
+Value=415;Samor
+Value=531;Sanye
+Value=416;Senger
+Value=417;Sengwer
+Value=540;Sidam
+Value=309;Siu
+Value=300;Swahili
+Value=115;Tachoni
+Value=24;Taita
+Value=25;Taveta
+Value=418;Terik
+Value=26;Teso
+Value=27;Tharaka
+Value=116;Tiriki
+Value=526;Tswakans
+Value=419;Tugen
+Value=28;Turkana
+Value=310;Vumba
+Value=517;Waat
+Value=311;Wachangamwe
+Value=312;Wafaza
+Value=29;Wailwana/Malakote
+Value=313;Wakatwa
+Value=314;Wakilifi
+Value=315;Wakilindini
+Value=316;Wamtwapa
+Value=117;Wanga
+Value=30;Wardei
+Value=317;Washaka
+Value=318;Watangana
+Value=319;Watikuu
+Value=529;Watta
+Value=46;Wayyu
+Value=543;Other Kenyan
+Value=544;Refusal/ Kenyan
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS2
+Value=600;Algeria
+Value=601;Angola
+Value=602;Benin
+Value=603;Botswana
+Value=604;Burkina Faso
+Value=605;Burundi
+Value=606;Cameroon
+Value=607;Cape Verde
+Value=608;Central African Republic
+Value=609;Chad
+Value=610;Comoros
+Value=611;Congo, Republic Of The...
+Value=612;CÃ”te D'ivoire
+Value=613;Democratic Republic Of The Congo
+Value=614;Djibouti
+Value=615;Egypt
+Value=616;Equatorial Guinea
+Value=617;Eritrea
+Value=618;Ethiopia
+Value=619;Gabon
+Value=620;Gambia
+Value=621;Ghana
+Value=622;Guinea
+Value=623;Guinea-bissau
+Value=624;Lesotho
+Value=625;Liberia
+Value=626;Libyan Arab Jamahiriya
+Value=627;Madagascar
+Value=628;Malawi
+Value=629;Mali
+Value=630;Mauritania
+Value=631;Mauritius
+Value=632;Morocco
+Value=633;Mozambique
+Value=634;Namibia
+Value=635;Niger
+Value=636;Nigeria
+Value=637;Rwanda
+Value=638;Sao Tome And Principe
+Value=639;Senegal
+Value=640;Seychelles
+Value=641;Sierra Leone
+Value=642;Somalia
+Value=643;South Africa
+Value=644;Sudan
+Value=645;South Sudan
+Value=646;Swaziland
+Value=647;Togo
+Value=648;Tunisia
+Value=649;Uganda
+Value=650;United Republic Of Tanzania
+Value=651;Zambia
+Value=652;Zimbabwe
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS3
+Value=670;Afghanistan
+Value=671;Bahrain
+Value=672;Bangladesh
+Value=673;Bhutan
+Value=674;Brunei Darussalam
+Value=675;Cambodia
+Value=676;China
+Value=677;Democratic People's Republic Of Korea
+Value=680;India
+Value=681;Indonesia
+Value=682;Iran, Islamic Republic Of...
+Value=683;Iraq
+Value=684;Israel
+Value=685;Japan
+Value=686;Jordan
+Value=687;Kiribati
+Value=688;Kuwait
+Value=689;Lao People's Democratic Republic
+Value=690;Lebanon
+Value=691;Malaysia
+Value=692;Maldives
+Value=693;Micronesia, Federated States Of...
+Value=694;Mongolia
+Value=695;Myanmar
+Value=696;Nauru
+Value=697;Nepal
+Value=698;Oman
+Value=699;Pakistan
+Value=700;Philippines
+Value=701;Qatar
+Value=702;Republic Of Korea
+Value=703;Republic Of Moldova
+Value=704;Saudi Arabia
+Value=705;Singapore
+Value=706;Sri Lanka
+Value=707;Suriname
+Value=708;Syrian Arab Republic
+Value=709;Thailand
+Value=710;Timor-leste
+Value=711;United Arab Emirates
+Value=712;Vietnam
+Value=713;Yemen
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS4
+Value=714;Albania
+Value=715;Andorra
+Value=716;Armenia
+Value=717;Austria
+Value=718;Azerbaijan
+Value=719;Belarus
+Value=720;Belgium
+Value=721;Bosnia And Herzegovina
+Value=722;Bulgaria
+Value=723;Croatia
+Value=724;Cyprus
+Value=725;Czech Republic
+Value=726;Denmark
+Value=727;Estonia
+Value=728;Finland
+Value=729;France
+Value=730;Georgia
+Value=731;Germany
+Value=732;Greece
+Value=733;Hungary
+Value=734;Iceland
+Value=735;Ireland
+Value=736;Italy
+Value=737;Kazakhstan
+Value=738;Kyrgyzstan
+Value=739;Latvia
+Value=740;Liechtenstein
+Value=741;Lithuania
+Value=742;Luxembourg
+Value=743;Malta
+Value=744;Marshall Islands
+Value=745;Monaco
+Value=746;Montenegro
+Value=747;Netherlands
+Value=748;Norway
+Value=749;Poland
+Value=750;Portugal
+Value=751;Romania
+Value=752;Russian Federation
+Value=753;Saint Kitts And Nevis
+Value=754;Saint Lucia
+Value=755;Saint Vincent And The Grenadines
+Value=756;San Marino
+Value=757;Serbia
+Value=758;Slovakia
+Value=759;Slovenia
+Value=760;Spain
+Value=761;Sweden
+Value=762;Switzerland
+Value=763;Tajikistan
+Value=764;The Former Yugoslav Republic Of Macedonia
+Value=765;Turkey
+Value=766;Turkmenistan
+Value=767;Ukraine
+Value=768;United Kingdom Of Great Britain And Northern Ireland
+Value=769;Uzbekistan
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS5
+Value=770;Argentina
+Value=771;Belize
+Value=772;Bolivia
+Value=773;Brazil
+Value=774;Canada
+Value=775;Chile
+Value=776;Colombia
+Value=777;Costa Rica
+Value=778;Cuba
+Value=779;Dominica
+Value=780;Dominican Republic
+Value=781;Ecuador
+Value=782;El Salvador
+Value=783;Guatemala
+Value=784;Honduras
+Value=785;Mexico
+Value=786;Nicaragua
+Value=787;Panama
+Value=788;Paraguay
+Value=789;Peru
+Value=790;United States Of America
+Value=791;Uruguay
+Value=792;Venezuela (Bolivarian Republic Of)
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS6
+Value=793;Antigua And Barbuda
+Value=794;Bahamas
+Value=795;Barbados
+Value=796;Grenada
+Value=797;Guyana
+Value=798;Haiti
+Value=799;Jamaica
+Value=800;Solomon Islands
+Value=801;Trinidad And Tobago
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS7
+Value=802;Australia
+Value=803;Fiji
+Value=804;New Zealand
+Value=805;Palau
+Value=806;Papua New Guinea
+Value=807;Samoa
+Value=808;Tonga
+Value=809;Tuvalu
+Value=810;Vanuatu
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS8
+Value=811;Other Nationality
+Value=812;Stateless (Galjeel, Shona, Wapemba, Pare E.t.c)
+Value=813;Refugee/Asylum Seeker
+Value=999;Dont Know
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS9
+Value=670;Afghanistan
+Value=714;Albania
+Value=600;Algeria
+Value=715;Andorra
+Value=601;Angola
+Value=793;Antigua And Barbuda
+Value=770;Argentina
+Value=716;Armenia
+Value=802;Australia
+Value=717;Austria
+Value=718;Azerbaijan
+Value=794;Bahamas
+Value=671;Bahrain
+Value=672;Bangladesh
+Value=795;Barbados
+Value=719;Belarus
+Value=720;Belgium
+Value=771;Belize
+Value=602;Benin
+Value=673;Bhutan
+Value=772;Bolivia
+Value=721;Bosnia And Herzegovina
+Value=603;Botswana
+Value=773;Brazil
+Value=674;Brunei Darussalam
+Value=722;Bulgaria
+Value=604;Burkina Faso
+Value=605;Burundi
+Value=675;Cambodia
+Value=606;Cameroon
+Value=774;Canada
+Value=607;Cape Verde
+Value=608;Central African Republic
+Value=609;Chad
+Value=775;Chile
+Value=676;China
+Value=776;Colombia
+Value=610;Comoros
+Value=611;Congo, Republic Of The...
+Value=777;Costa Rica
+Value=612;CÃ”te D'ivoire
+Value=723;Croatia
+Value=778;Cuba
+Value=724;Cyprus
+Value=725;Czech Republic
+Value=677;Democratic People's Republic Of Korea
+Value=613;Democratic Republic Of The Congo
+Value=726;Denmark
+Value=614;Djibouti
+Value=779;Dominica
+Value=780;Dominican Republic
+Value=781;Ecuador
+Value=615;Egypt
+Value=782;El Salvador
+Value=616;Equatorial Guinea
+Value=617;Eritrea
+Value=727;Estonia
+Value=618;Ethiopia
+Value=803;Fiji
+Value=728;Finland
+Value=729;France
+Value=619;Gabon
+Value=620;Gambia
+Value=730;Georgia
+Value=731;Germany
+Value=621;Ghana
+Value=732;Greece
+Value=796;Grenada
+Value=783;Guatemala
+Value=622;Guinea
+Value=623;Guinea-bissau
+Value=797;Guyana
+Value=798;Haiti
+Value=784;Honduras
+Value=733;Hungary
+Value=734;Iceland
+Value=680;India
+Value=681;Indonesia
+Value=682;Iran, Islamic Republic Of...
+Value=683;Iraq
+Value=735;Ireland
+Value=684;Israel
+Value=736;Italy
+Value=799;Jamaica
+Value=685;Japan
+Value=686;Jordan
+Value=737;Kazakhstan
+Value=687;Kiribati
+Value=688;Kuwait
+Value=738;Kyrgyzstan
+Value=689;Lao People's Democratic Republic
+Value=739;Latvia
+Value=690;Lebanon
+Value=624;Lesotho
+Value=625;Liberia
+Value=626;Libyan Arab Jamahiriya
+Value=740;Liechtenstein
+Value=741;Lithuania
+Value=742;Luxembourg
+Value=627;Madagascar
+Value=628;Malawi
+Value=691;Malaysia
+Value=692;Maldives
+Value=629;Mali
+Value=743;Malta
+Value=744;Marshall Islands
+Value=630;Mauritania
+Value=631;Mauritius
+Value=785;Mexico
+Value=693;Micronesia, Federated States Of...
+Value=745;Monaco
+Value=694;Mongolia
+Value=746;Montenegro
+Value=632;Morocco
+Value=633;Mozambique
+Value=695;Myanmar
+Value=634;Namibia
+Value=696;Nauru
+Value=697;Nepal
+Value=747;Netherlands
+Value=804;New Zealand
+Value=786;Nicaragua
+Value=635;Niger
+Value=636;Nigeria
+Value=748;Norway
+Value=698;Oman
+Value=699;Pakistan
+Value=805;Palau
+Value=787;Panama
+Value=806;Papua New Guinea
+Value=788;Paraguay
+Value=789;Peru
+Value=700;Philippines
+Value=749;Poland
+Value=750;Portugal
+Value=701;Qatar
+Value=702;Republic Of Korea
+Value=703;Republic Of Moldova
+Value=751;Romania
+Value=752;Russian Federation
+Value=637;Rwanda
+Value=753;Saint Kitts And Nevis
+Value=754;Saint Lucia
+Value=755;Saint Vincent And The Grenadines
+Value=807;Samoa
+Value=756;San Marino
+Value=638;Sao Tome And Principe
+Value=704;Saudi Arabia
+Value=639;Senegal
+Value=757;Serbia
+Value=640;Seychelles
+Value=641;Sierra Leone
+Value=705;Singapore
+Value=758;Slovakia
+Value=759;Slovenia
+Value=800;Solomon Islands
+Value=642;Somalia
+Value=643;South Africa
+Value=645;South Sudan
+Value=760;Spain
+Value=706;Sri Lanka
+Value=644;Sudan
+Value=707;Suriname
+Value=646;Swaziland
+Value=761;Sweden
+Value=762;Switzerland
+Value=708;Syrian Arab Republic
+Value=763;Tajikistan
+Value=709;Thailand
+Value=764;The Former Yugoslav Republic Of Macedonia
+Value=710;Timor-leste
+Value=647;Togo
+Value=808;Tonga
+Value=801;Trinidad And Tobago
+Value=648;Tunisia
+Value=765;Turkey
+Value=766;Turkmenistan
+Value=809;Tuvalu
+Value=649;Uganda
+Value=767;Ukraine
+Value=711;United Arab Emirates
+Value=768;United Kingdom Of Great Britain And Northern Ireland
+Value=650;United Republic Of Tanzania
+Value=790;United States Of America
+Value=791;Uruguay
+Value=769;Uzbekistan
+Value=810;Vanuatu
+Value=792;Venezuela (Bolivarian Republic Of)
+Value=712;Vietnam
+Value=713;Yemen
+Value=651;Zambia
+Value=652;Zimbabwe
+Value=811;Other Nationality
+Value=812;Stateless (Galjeel, Shona, Wapemba, Pare E.t.c)
+Value=813;Refugee/Asylum Seeker
+Value=999;Dont Know
+
+[ValueSet]
+Label=Ogiek and Dorobo
+Name=P16_VS11
+Value=404;Dorobo
+Value=413;Ogiek
+
+[ValueSet]
+Label=Migration
+Name=P16_VS13
+Value=10:599;Citizen
+Value=600:811;Foreigner/Non-Citizen
+Value=812:999;Unknown Citizenship Status
+
+[ValueSet]
+Label=P16. Ethnicity/Nationality
+Name=P16_VS12
+Value=541;Abakhenye
+Value=501;Ajuran
+Value=301;Amu
+Value=401;Arror
+Value=524;Aweer/Watta
+Value=539;Baganda
+Value=302;Bajuni
+Value=101;Bakhayo
+Value=102;Banyala
+Value=103;Banyore
+Value=525;Barawa
+Value=10;Basuba
+Value=104;Batsotso
+Value=105;Batura
+Value=402;Bong'omek
+Value=201;Boni
+Value=502;Borana
+Value=106;Bukusu
+Value=503;Burji
+Value=403;Cherangany
+Value=303;Chitundi
+Value=202;Chonyi
+Value=534;Corner Tribes
+Value=542;Corner Tribes (Shegal, Warabey, Gabaweih, Sharmuge, Shabelle, Leisah, Hawadhi, Asraaf)
+Value=546;Lembus
+Value=203;Dahalo
+Value=504;Dasenach
+Value=505;Degodia
+Value=204;Digo
+Value=404;Dorobo
+Value=205;Duruma
+Value=405;El Molo
+Value=11;Embu
+Value=406;Endo
+Value=420;Endorois
+Value=506;Gabra
+Value=530;Galjeel
+Value=507;Galla
+Value=532;Garre
+Value=206;Giriama
+Value=508;Gosha
+Value=509;Gurreh
+Value=510;Hawiyah
+Value=107;Idakho
+Value=407;Ilchamus
+Value=523;Isaak
+Value=108;Isukha
+Value=207;Jibana
+Value=304;Jomvu
+Value=109;Kabras
+Value=400;Kalenjin
+Value=12;Kamba
+Value=208;Kambe
+Value=209;Kauma
+Value=408;Keiyo
+Value=522;Kenyan
+Value=521;Kenyan Americans
+Value=518;Kenyan Arabs
+Value=519;Kenyan Asians
+Value=520;Kenyan Europeans
+Value=500;Kenyan Somali
+Value=527;Kifundi
+Value=13;Kikuyu
+Value=409;Kipsigis
+Value=110;Kisa
+Value=14;Kisii
+Value=511;Konso
+Value=545;Kony
+Value=15;Kuria
+Value=546;Lembus
+Value=535;Leysan
+Value=100;Luhya
+Value=16;Luo
+Value=320;Makonde
+Value=17;Malakote
+Value=111;Marachi
+Value=112;Maragoli
+Value=410;Marakwet
+Value=113;Marama
+Value=18;Maasai
+Value=19;Mbeere
+Value=512;Merile
+Value=20;Meru
+Value=200;Mijikenda
+Value=538;Mkendwa
+Value=528;Munyoyaya/Muyeyaya
+Value=537;Murile
+Value=533;Murule
+Value=305;Muyeyaya
+Value=306;Mvita
+Value=411;Nandi
+Value=307;Ngare
+Value=536;Ngiteuso
+Value=412;Njemps
+Value=21;Nubi(an\)
+Value=513;Ogaden
+Value=413;Ogiek
+Value=514;Orma
+Value=308;Pate
+Value=210;Pokomo
+Value=22;Pokot
+Value=211;Rabai
+Value=515;Rendile
+Value=212;Ribe
+Value=414;Saboat
+Value=516;Sakuye
+Value=23;Samburu
+Value=114;Samia
+Value=415;Samor
+Value=531;Sanye
+Value=416;Senger
+Value=417;Sengwer
+Value=540;Sidam
+Value=309;Siu
+Value=300;Swahili
+Value=115;Tachoni
+Value=24;Taita
+Value=25;Taveta
+Va
