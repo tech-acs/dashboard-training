@@ -8,7 +8,6 @@ This repository is a good starting point for learning on how to implement and us
 
 ### Requirements
 - Git
-- PHP (>= 8.2) & Composer
 - Docker
 - Visual Studio Code
 - Visual Studio Code Extensions
@@ -17,13 +16,35 @@ This repository is a good starting point for learning on how to implement and us
 - Chrome browser
 
 ## Setup
-- Clone the repository
-- Run `composer setup`
-- Run `./vendor/bin/sail up`
-- Run `./vendor/bin/sail artisan migrate`
-- Run `./vendor/bin/sail artisan adminify`
-- Open `http://localhost:8000` in your browser
-- Login with the username and password you set in the previous step
+1. Clone this repository and `cd` into it
+
+    `git clone https://github.com/tech-acs/dashboard-training`
+
+2. Install dependencies (composer packages)
+
+```
+docker run --rm \
+  -u "$(id -u):$(id -g)" \
+  -v "$(pwd):/var/www/html" \
+  -w /var/www/html \
+  laravelsail/php83-composer:latest \
+  composer setup
+```
+> Note: If you want to change any of the ports used by the application, or want to modify default values set in the .env file, now is the time to do it,
+
+3. Start the application (Laravel Sail)
+
+    `./vendor/bin/sail up`
+
+4. Migrate the main application database
+
+   `./vendor/bin/sail artisan migrate`
+ 
+5. Create an administrator account (management account) 
+
+    `./vendor/bin/sail artisan adminify`
+
+6. Open `http://localhost` in your browser and login with the administrator's username and password you created in the previous step
 
 ## Starting and Stopping Sail
 - Run `./vendor/bin/sail up`
