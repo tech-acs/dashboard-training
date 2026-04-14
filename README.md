@@ -30,6 +30,7 @@ docker run --rm \
   laravelsail/php83-composer:latest \
   composer setup
 ```
+
 > Note: If you want to change any of the ports used by the application, or want to modify default values set in the .env file, now is the time to do it,
 
 3. Start the application (Laravel Sail)
@@ -51,5 +52,9 @@ docker run --rm \
 - Run `./vendor/bin/sail down`
 
 ## Executing Commands
+- To run any artisan command, run `./vendor/bin/sail artisan <command>`
 
 ## Interacting with the Databases
+- Via Adminer
+
+- Via VS Code Database Client extension
