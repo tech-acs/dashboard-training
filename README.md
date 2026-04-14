@@ -20,7 +20,7 @@ This repository is a good starting point for learning on how to implement and us
 
     `git clone https://github.com/tech-acs/dashboard-training`
 
-2. Install dependencies (composer packages)
+2. Install dependencies (composer and npm packages)
 
 ```
 docker run --rm \
@@ -31,7 +31,7 @@ docker run --rm \
   composer setup
 ```
 
-> Note: If you want to change any of the ports used by the application, or want to modify default values set in the .env file, now is the time to do it,
+> Note: If you want to change any of the network ports used by the containers, or want to modify default values set in the .env file, now is the time to do it,
 
 3. Start the application (Laravel Sail)
 
@@ -58,3 +58,5 @@ docker run --rm \
 - Via Adminer
 
 - Via VS Code Database Client extension
+
+## Accessing Mail

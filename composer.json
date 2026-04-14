@@ -45,7 +45,9 @@
         "setup": [
             "composer install --ignore-platform-reqs",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate"
+            "@php artisan key:generate",
+            "npm install",
+            "npm run build"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
