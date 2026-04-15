@@ -37,15 +37,19 @@ docker run --rm \
 
     `./vendor/bin/sail up`
 
-4. Migrate the main application database
+4. Install npm packages and build assets
+
+    `./vendor/bin/sail npm install && ./vendor/bin/sail npm run build`
+
+5. Migrate the main application database
 
    `./vendor/bin/sail artisan migrate`
  
-5. Create an administrator account (management account) 
+6. Create an administrator account (management account) 
 
     `./vendor/bin/sail artisan adminify`
 
-6. Open `http://localhost` in your browser and login with the administrator's username and password you created in the previous step
+7. Open `http://localhost` in your browser and login with the administrator's username and password you created in the previous step
 
 ## Starting and Stopping Sail
 - Run `./vendor/bin/sail up`
@@ -56,7 +60,11 @@ docker run --rm \
 
 ## Interacting with the Databases
 - Via Adminer
+  http://localhost:89 
 
 - Via VS Code Database Client extension
 
-## Accessing Mail
+- Via any other database client
+
+## Previewing Emails
+  http://localhost:8025 
