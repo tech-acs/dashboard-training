@@ -28,7 +28,7 @@ This training is designed to take a participant from a fresh installation to dep
     * Database: PostgreSQL.
     * Data sources: MySQL (CSPro), SqLite, MS SQL, and PostgreSQL
     * Web server: Nginx (with PHP-FPM) or Apache.
-    * Queue processing
+    * Queue processing, task scheduling, etc.
 3. **Core Concepts**
     * Area Hierarchy
     * Data sources
