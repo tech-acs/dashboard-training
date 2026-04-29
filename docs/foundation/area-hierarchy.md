@@ -53,7 +53,7 @@ Unlike political boundaries, EAs are purely functional and are created based on 
 
 To view or add area hierarchies, go to the 'Area Hierarchy' menu item under the management dropdown menu.
 
-You should see an 'Add' button as long as you are in [developer mode](), otherwise, you will only see a list of area hierarchies you have already added or an empty table.
+You should see an 'Add' button as long as you are in [developer mode](/advanced-topics/developer-mode), otherwise, you will only see a list of area hierarchies you have already added or an empty table.
 
 ![Area Hierarchy](../images/area-hierarchy.png)
 

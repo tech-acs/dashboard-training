@@ -91,5 +91,13 @@ export default defineConfig({
     search: {
       provider: 'local'
     }
-  }
+  },
+  ignoreDeadLinks: [
+    // ignore exact url "/playground"
+    '/playground',
+    // ignore all localhost links
+    /^https?:\/\/localhost/,
+    // ignore all links include "/repl/""
+    /\/repl\//
+  ]
 })
