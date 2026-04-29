@@ -44,6 +44,7 @@ docker run --rm `
 > [!IMPORTANT]
 > If you want to change any of the network ports used by the containers or want to modify default values set in the .env file, now is the time to do it.
 
+> [!NOTE]
 > From here on, make sure you use the appropriate format of the commands for your enviroment. What's given is for Linux.
 
 3. Start the application (Laravel Sail)
