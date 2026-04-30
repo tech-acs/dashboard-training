@@ -93,6 +93,9 @@ To run any artisan or npm command, prefix it with Sail's executable:
 - **Linux / macOS / WSL:** `./vendor/bin/sail artisan <command>`
 - **Windows:** `bash vendor/bin/sail artisan <command>`
 
+>[!IMPORTANT]
+> Going forward, remember that this is the format you will have to use whenever you see `php artisan SomeCommand` in the course material.
+
 ### Interacting with the Databases
 
 The application includes a database accessible during development. You can manage it using:

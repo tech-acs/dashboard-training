@@ -82,7 +82,7 @@ export default defineConfig({
             { text: 'Settings', link: '/management/settings'},
         ]
       },
-        { text: 'Exercises', link: ''},
+        { text: 'Exercises', link: 'exercises'},
     ],
 
     socialLinks: [
