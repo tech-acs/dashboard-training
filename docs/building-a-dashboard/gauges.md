@@ -33,7 +33,7 @@ You have a high degree of freedom on how you choose to code your gauge as long a
 
     This is the display suffix. While $outOf handles the math, $unit handles the visual text rendered in the center of the gauge.
 
-## Exercise
+## In the Sandbox
 
 ### Progress
 Use these values to create a scorecard that displays the average household size of a given area.

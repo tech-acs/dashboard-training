@@ -62,7 +62,7 @@ If you previewed it, you would see something a bar chart built with some fabrica
 While the getData() method can be implemented in any way you want as long as you return a Laravel collection from it, you would be better served if you used the included `BreakoutQueryBuilder` class to do it. This powerful class provides various helpful methods.
 :::
 
-## Exercise Indicators
+## In the Sandbox
 YIn our training sandbox, we wil be creating two indicators to demonstrate how they work. These will be based on the included Kenya Census database. Please follow the instructions below to create and experience them.
 
 ### Population distribution by broad age group
@@ -170,6 +170,10 @@ You can use the code below: (remember to include necessary imports)
             return $i;
         });
 ```
+
+Remember to import the `Number` helper class on top of the file like so:
+`use Illuminate\Support\Number;`
+
 For the design, add a single trace of type 'Bar' and set the x-axis to 'area_name' and the y-axis to 'average'.
 You can then add it to the already existing 'Households' page and publish it.
 

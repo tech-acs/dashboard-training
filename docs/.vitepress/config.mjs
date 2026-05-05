@@ -34,10 +34,10 @@ export default defineConfig({
         collapsed: true,
         items: [
             { text: 'Architectural Overview', link: '/foundation/architectural-overview'},
-            { text: 'Data Sources', link: '/foundation/data-sources'},
-            { text: 'Area Hierarchy', link: '/foundation/area-hierarchy'},
-            { text: 'Areas', link: '/foundation/areas'},
-            { text: 'Reference Values', link: '/foundation/reference-values'},
+            { text: 'Data Sources ✍️', link: '/foundation/data-sources'},
+            { text: 'Area Hierarchy ✍️', link: '/foundation/area-hierarchy'},
+            { text: 'Areas ✍️', link: '/foundation/areas'},
+            { text: 'Reference Values ✍️', link: '/foundation/reference-values'},
             { text: 'Dashboard Artefacts', link: '/foundation/dashboard-artefacts'},
             { text: 'Artefact Organization', link: '/foundation/artefact-organization'},
         ]
@@ -48,13 +48,13 @@ export default defineConfig({
             { text: 'Understanding CSPro Data', link: '/building-a-dashboard/understanding-cspro-data'},
             { text: 'Folder Structure', link: '/building-a-dashboard/folder-structure'},
             { text: 'The Query Builder', link: '/building-a-dashboard/the-query-builder'},
-            { text: 'Query Fragments', link: '/building-a-dashboard/query-fragments'},
-            { text: 'Scorecards', link: '/building-a-dashboard/scorecards'},
-            { text: 'Indicators', link: '/building-a-dashboard/indicators'},
+            { text: 'Query Fragments ✍️', link: '/building-a-dashboard/query-fragments'},
+            { text: 'Scorecards ✍️', link: '/building-a-dashboard/scorecards'},
+            { text: 'Indicators ✍️', link: '/building-a-dashboard/indicators'},
             { text: 'Area Filter', link: '/building-a-dashboard/area-filter'},
-            { text: 'Map Indicators', link: '/building-a-dashboard/map-indicators'},
-            { text: 'Gauges', link: '/building-a-dashboard/gauges'},
-            { text: 'Reports', link: '/building-a-dashboard/reports'},
+            { text: 'Map Indicators ✍️', link: '/building-a-dashboard/map-indicators'},
+            { text: 'Gauges ✍️', link: '/building-a-dashboard/gauges'},
+            { text: 'Reports ✍️', link: '/building-a-dashboard/reports'},
             { text: 'Area Insights', link: '/building-a-dashboard/area-insights'},
             { text: 'Hierarchical Compatibility', link: '/building-a-dashboard/hierarchical-compatibility'},
         ]
@@ -82,7 +82,7 @@ export default defineConfig({
             { text: 'Settings', link: '/management/settings'},
         ]
       },
-        { text: 'Exercises', link: 'exercises'},
+        { text: 'Exercises ✍️', link: 'exercises'},
     ],
 
     socialLinks: [

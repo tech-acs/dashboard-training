@@ -49,7 +49,7 @@ Unlike political boundaries, EAs are purely functional and are created based on 
 | **Size Criteria** | Historical/Political boundaries | Population density and "Enumerability" |
 | **Permanence** | Relatively permanent | Often redrawn every 10 years for new censuses |
 
-## Area Hierarchy in the sandbox dashboard
+## In the Sandbox
 
 To view or add area hierarchies, go to the 'Area Hierarchy' menu item under the management dropdown menu.
 

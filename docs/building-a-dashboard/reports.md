@@ -21,7 +21,7 @@ Obviously, you will have to write some code in your generated report file so tha
 
 You need to implement the getData() method and make sure it returns a Collection. The keys of the collection will become the column headers of the report spreadsheet and the values will become the rows.
 
-## Exercise Report
+## In the Sandbox
 In our training sandbox, we wil be creating a report to demonstrate how they work.
 
 ### Partial cases by EA

@@ -68,6 +68,9 @@ You need a text editor that understands PHP and Laravel syntax.
     * *Official Laravel VS Code Extension*
     * *Tailwind CSS IntelliSense*
 
+## WSL (Windows Subsystem for Linux)
+
+
 ## Quick Reference Links
 
 * **Dashboard Starter Kit Documentation:** [Official Docs](https://tech-acs.github.io/chimera-docs/)

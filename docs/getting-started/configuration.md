@@ -4,7 +4,7 @@ outline: deep
 
 # Configuration
 
-Although the dashboard is designed to be easily customizable, you do not need to change any of the default settings to get started. However, you can change the default settings by editing the .env file.
+Although the dashboard is designed to be easily customizable, you do not need to change any of the default settings to get started. You can change the default settings by editing the .env file. Some settings are also accessible via the settings menu in the management section.
 
 ## Environment variables
 There are a few environment variables that you can set/change to control various aspects of the dashboard.

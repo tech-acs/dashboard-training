@@ -43,7 +43,7 @@ The interface supports the simultaneous import of multiple benchmarks. By clicki
 
 ![Reference Values Import](../images/reference-value-import.png)
 
-## Importing reference values in the sandbox
+## In the Sandbox
 
 In the training sandbox repository, under the "training" directory, you will find a file named `reference_values.csv`. It contains reference values for two indicators: "population" and "number_of_hh" (number of households)
 

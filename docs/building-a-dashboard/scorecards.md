@@ -43,7 +43,7 @@ return collect([$displayValue, $delta]);
 
   by default, this is set to the string value 'NA' but you are expected to set it to the value you want displayed on the scorecard. You will probably have to run some database queries to calculate that value.
 
-## Exercise Scorecards
+## In the Sandbox
 In our training sandbox, we wil be creating two scorecards to demonstrate how they work. These will be based on the included Kenya Census database. Please follow the instructions below to create and experience them.
 
 ### Average household size
@@ -92,6 +92,10 @@ You can use the code below:
         ->first();
     return collect([Number::format(safeDivide($result->total_population, $result->total_households), 1), null]);
 ```
+To have good visual presentation, we need to format the value to a number with a maximum of one decimal places and to do that, we need to import and use the `Number` helper class.
+
+You can import it on top of the file like so:
+`use Illuminate\Support\Number;`
 
 Once you have completed editing the code, you can go to the Scorecard management interface, edit the scorecard and publish it.
 

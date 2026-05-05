@@ -43,7 +43,7 @@ This class acts as a "Plugin" for the `BreakoutQueryBuilder`. When the builder i
 
 In short, this class is the **bridge** that tells the Query Builder exactly "where" in the country the data should be pulled from based on the user's current view.
 
-## In the sandbox
+## In the Sandbox
 
 When creating your data source, a `QueryFragments` class will have been automatically created for you. It is located in the `app/Services/` directory and will be named `KenyaCensusQueryFragments.php`.
 

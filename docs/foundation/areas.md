@@ -49,7 +49,7 @@ generate a new "path" column which will be used to uniquely identify the areas a
 > [!IMPORTANT]
 > When trying to import a file, if you get an error message stating that the file must not be of size greater than 12MB, then you can override this default file size limit in the livewire.php config file. Just follow the instructions in the Laravel Livewire documentation [here](https://livewire.laravel.com/docs/uploads#global-validation)
 
-## Importing areas in the sandbox
+## In the Sandbox
 
 In the training sandbox repository, under the "training" directory, you will find various resources that we are going to be using in this training. You can find shapefiles and csv files for the areas in the "Areas" directory.
 

@@ -83,7 +83,7 @@ rag
 
 The intended use of these palettes is for you to decide on the appropriate bins and even if you have target values to compare to, you should do that in your getData method and return the 'ranked' values via the value column so that your areas can be colored accordingly.
 
-## Exercise
+## In the Sandbox
 
 ### Total Population
 Use these values to create a scorecard that displays the average household size of a given area.

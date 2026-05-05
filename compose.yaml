@@ -86,7 +86,7 @@ services:
     adminer:
         image: adminer
         ports:
-            - '${ADMINER_PORT:-89}:8080'
+            - '${FORWARD_ADMINER_PORT:-89}:8080'
         networks:
             - sail
 networks:

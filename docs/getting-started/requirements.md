@@ -26,4 +26,4 @@ However, you still need to make sure you have fulfilled the following minimal so
 - Visual Studio Code Extensions (optional)
     - [Database Client](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
     - [Official Laravel VSCode Extension](https://marketplace.visualstudio.com/items?itemName=laravel.vscode-laravel)
-- Chrome browser
+- Chrome (or any other browser)
