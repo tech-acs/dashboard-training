@@ -9,6 +9,8 @@ It is an isolated, Docker-based environment (using Laravel Sail) designed for ra
 
 It enables trainees to skip the setup and start building their first components in seconds.
 
+Before you begin, if you are running Windows, make sure you have Docker Desktop installed and running. Please refer to the [WSL on Windows](/getting-started/wsl) section of the course for detailed instructions.
+
 ### Setup
 1. Clone the sandbox repository and `cd` into it
 
@@ -52,7 +54,7 @@ bash vendor/bin/sail up
 4. Install npm packages and build assets
 ::: code-group
 ```bash [Linux / macOS / WSL]
-./vendor/bin/sail npm install && ./vendor/bin/sail npm run build
+./vendor/bin/sail npm install && ./vendor/bin/sail npm run build:dev
 ```
 ```PowerShell [Windows]
 bash vendor/bin/sail npm install && bash vendor/bin/sail npm run build
@@ -79,7 +81,7 @@ bash vendor/bin/sail artisan adminify
 ```
 :::
 
-7. Open `http://localhost` in your browser and login with the administrator's username and password you created in the previous step.
+7. Open `http://127.0.0.1/start` in your browser and you should see the sandbox start page. **[If you have changed `APP_PORT` from the default 80 to another value, in your `.env` file, then visit `http://127.0.0.1:APP_PORT/start` where APP_PORT is your new port value]**
 
 ### Starting and Stopping Laravel Sail
 
@@ -99,14 +101,14 @@ To run any artisan or npm command, prefix it with Sail's executable:
 ### Interacting with the Databases
 
 The application includes a database accessible during development. You can manage it using:
-- **Adminer:** Navigate to [http://localhost:89](http://localhost:89) for a web-based database management GUI. Use the database credentials from your `.env` file to log in.
+- **Adminer:** A web-based database management graphical user interface. Use the database credentials from your `.env` file to log in. You can access this via the menu from the start page of the sandbox or you can visit [http://localhost:89](http://localhost:89)
 - **VS Code Database Client:** Install the recommended extension and connect to `127.0.0.1` using the port and credentials from your `.env` file.
 - **External Clients:** Use graphical tools like DBeaver, HeidiSQL, or TablePlus to connect using your `.env` credentials.
 
 ### Previewing Emails
 
 The application uses Mailpit to intercept and display outgoing system emails (like password resets) locally, preventing them from being sent to real users.
-- **Access Mailbox:** Go to [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails.
+- **Access Mailbox:** Go to [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails. You can also easily access this via the menu from the start page of the sandbox.
 
 ### Going Deeper on Laravel Sail
 This training repository is built on top of Laravel Sail, a Docker-based local development environment for Laravel. For more information about Laravel Sail, please visit the [Laravel Sail documentation](https://laravel.com/docs/sail).

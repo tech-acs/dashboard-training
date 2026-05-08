@@ -27,6 +27,7 @@ export default defineConfig({
         items: [
             { text: 'Requirements', link: '/getting-started/requirements'},
             { text: 'Training Sandbox', link: '/getting-started/training-sandbox'},
+            { text: 'WSL on Windows', link: '/getting-started/wsl'},
             { text: 'Configuration', link: '/getting-started/configuration'},
         ]
       }, {
