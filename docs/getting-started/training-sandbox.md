@@ -110,6 +110,21 @@ The application includes a database accessible during development. You can manag
 The application uses Mailpit to intercept and display outgoing system emails (like password resets) locally, preventing them from being sent to real users.
 - **Access Mailbox:** Go to [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails. You can also easily access this via the menu from the start page of the sandbox.
 
+### Rebuilding the Sandbox
+Sometimes you may want to completely rebuild your Sail images to ensure all of the image's packages and software are up to date and all of your saved data (volumes) are erased. You may accomplish this using the following command:
+::: code-group
+```bash [Linux / macOS / WSL]
+./vendor/bin/sail down -v
+./vendor/bin/sail build --no-cache
+./vendor/bin/sail up
+```
+```PowerShell [Windows]
+bash vendor/bin/sail down -v
+```
+:::
+> [!NOTE]
+> The `-v` flag is used to ensure that all volumes are removed and the `--no-cache` flag is used to ensure that the latest version of the images is pulled from the Docker Hub registry when it is rebuilt.
+
 ### Going Deeper on Laravel Sail
 This training repository is built on top of Laravel Sail, a Docker-based local development environment for Laravel. For more information about Laravel Sail, please visit the [Laravel Sail documentation](https://laravel.com/docs/sail).
 
