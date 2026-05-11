@@ -33,7 +33,7 @@ Please make sure the SMTP server details you input are correct and tested to avo
 ### Dashboard features
 The following are other environment variables you can set to affect various aspects of the dashboard. Some of these are easily set from the "Settings" management menu on the web UI and the rest need to be set directly in the .env file
 
-<b>From settings page</b>
+**From settings page**
 - APP_OWNER_NAME=ECA
 
   set this to the organization that owns the dashboard. Used in the footer displayed across all pages (default ECA)
@@ -70,7 +70,7 @@ The following are other environment variables you can set to affect various aspe
 
   turn this on if you intend to send emails through the system (default false) and configure all the SMTP details
 
-<b>From .env file</b>
+**From .env file**
 - CACHE_TTL_SECONDS=1800
 
   set this to the number of seconds that you want database query results to be cached (default 60 * 30; thirty minutes)

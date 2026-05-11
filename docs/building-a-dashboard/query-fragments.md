@@ -58,46 +58,41 @@ use Uneca\Chimera\Services\AreaTree;
 
 class KenyaCensusQueryFragments
 {
+    protected array $levels = [
+        'County'      => "LPAD(county, 2, '0')",
+        'Subcounty'   => "LPAD(subcounty, 2, '0')",
+        'Division'    => "LPAD(division, 2, '0')",
+        'Location'    => "LPAD(location, 2, '0')",
+        'Sublocation' => "LPAD(sublocation, 2, '0')",
+        'EA'          => "LPAD(ea, 3, '0')",
+    ];
+
     public function getSqlFragments(string $filterPath) : array
     {
-        public function getSqlFragments(string $filterPath) : array
-    {
         $filter = AreaTree::pathAsFilter($filterPath);
+        $hierarchy = array_keys($this->levels);
+
+        // Assume filter is empty (Select the highest level, no conditions)
+        $selectColumns = [current($this->levels) . " AS area_code"];
         $fromTables = [];
+        $whereConditions = [];
 
-        if (!blank($filter['Sublocation'] ?? null)) {
-            $selectColumns = ["LPAD(ea, 3, '0') AS area_code"];
-            $whereConditions = [
-                "LPAD(county, 2, '0') = '{$filter['County']}'",
-                "LPAD(subcounty, 2, '0') = '{$filter['Subcounty']}'",
-                "LPAD(division, 2, '0') = '{$filter['Division']}'",
-                "LPAD(location, 2, '0') = '{$filter['Location']}'",
-                "LPAD(sublocation, 2, '0') = '{$filter['Sublocation']}'"
-            ];
+        for ($i = 0; $i < count($hierarchy); $i++) {
+            $currentLevel = $hierarchy[$i];
+            $nextLevel = $hierarchy[$i + 1] ?? null;
 
-        }  elseif (!blank($filter['Location'] ?? null)) {
-            $selectColumns = ["LPAD(sublocation, 2, '0') AS area_code"];
-            $whereConditions = ["LPAD(county, 2, '0') = '{$filter['County']}'", "LPAD(subcounty, 2, '0') = '{$filter['Subcounty']}'", "LPAD(division, 2, '0') = '{$filter['Division']}'", "LPAD(location, 2, '0') = '{$filter['Location']}'"];
+            // If the filter for this level is blank, stop accumulating
+            if (blank($filter[$currentLevel] ?? null)) {
+                break;
+            }
 
-        }  elseif (!blank($filter['Division'] ?? null)) {
-            $selectColumns = ["LPAD(location,2,'0') AS area_code"];
-            $whereConditions = ["LPAD(county, 2, '0') = '{$filter['County']}'", "LPAD(subcounty, 2, '0') = '{$filter['Subcounty']}'", "LPAD(division, 2, '0') = '{$filter['Division']}'"];
-
-        }  elseif (!blank($filter['Subcounty'] ?? null)) {
-            $selectColumns = ["LPAD(division, 2, '0') AS area_code"];
-            $whereConditions = ["LPAD(county, 2, '0') = '{$filter['County']}'", "LPAD(subcounty, 2, '0') = '{$filter['Subcounty']}'"];
-
-        }  elseif (!blank($filter['County'] ?? null)) {
-            $selectColumns = ["LPAD(subcounty, 2, '0') AS area_code"];
-            $whereConditions = ["LPAD(county, 2, '0') = '{$filter['County']}'"];
-
-        }else {
-            $selectColumns = ["LPAD(county, 2, '0') AS area_code"];
-            $whereConditions = [];
+            if ($nextLevel) {
+                $selectColumns = ["{$this->levels[$nextLevel]} AS area_code"];
+            }
+            $whereConditions[] = "{$this->levels[$currentLevel]} = '{$filter[$currentLevel]}'";
         }
 
         return [$selectColumns, $whereConditions, $fromTables];
-    }
     }
 }
 ```

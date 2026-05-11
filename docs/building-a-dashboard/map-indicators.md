@@ -86,7 +86,7 @@ The intended use of these palettes is for you to decide on the appropriate bins 
 ## In the Sandbox
 
 ### Total Population
-Use these values to create a scorecard that displays the average household size of a given area.
+Use these values to create a map-indicator that displays the total population of a given area.
 - Data source: Kenya Census
 - Name: KenyaCensus/TotalPopulation
 - Title: Total Population
@@ -149,7 +149,7 @@ class TotalPopulation extends MapIndicatorBaseClass
             ->get()
             ->map(function ($r) {
                 // Convert the value (population) to percentage of population against reference value
-                $r->value = round(($r->value / $r->ref_value) ) * 100, 2);
+                $r->value = round(($r->value / $r->ref_value) * 100, 2);
                 return $r;
             });
     }

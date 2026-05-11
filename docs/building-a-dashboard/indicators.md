@@ -63,7 +63,7 @@ While the getData() method can be implemented in any way you want as long as you
 :::
 
 ## In the Sandbox
-YIn our training sandbox, we wil be creating two indicators to demonstrate how they work. These will be based on the included Kenya Census database. Please follow the instructions below to create and experience them.
+In our training sandbox, we wil be creating two indicators to demonstrate how they work. These will be based on the included Kenya Census database. Please follow the instructions below to create and experience them.
 
 ### Population distribution by broad age group
 Use these values to create an indicator that displays the population distribution by broad age groups of a given area.

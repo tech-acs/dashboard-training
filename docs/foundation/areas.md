@@ -15,7 +15,7 @@ You have the option of importing the areas from two file formats:
 
   Shapefile (.shp, .shx, and .dbf) is the preferred file format for importing areas into your dashboard because it contains both the spatial data and the area metadata (names and codes).
 
-  When importing the various levels via shapefiles, the dashboard will take care of associating them with each other (creates the parent-child relationship) by matching them **spatially**. Therefore, it is important to make sure that all your shapefiles are consistent and that they are **spatially** contained by one another. Order of importation is also important as parent (containing) areas need to be improted before child (contained) areas.
+  When importing the various levels via shapefiles, the dashboard will take care of associating them with each other (creates the parent-child relationship) by matching them **spatially**. Therefore, it is important to make sure that all your shapefiles are consistent and that they are **spatially** contained by one another. Order of importation is also important as parent (containing) areas need to be imported before child (contained) areas.
 
   The algorithm has a threshold of about 70% minimum containment that it uses to pair parent-child areas. If you choose to "simplify" you shapefiles, make sure that you do not over do it. You can overlay them to check that lower levels are still contained (at least 70%) by their immediate higher level area.
 
@@ -26,7 +26,7 @@ You have the option of importing the areas from two file formats:
 
 ### Spreadsheets (.csv)
 
-  You can also import your areas via a csv file but here you will not have the maps and therefore can not have map based indicators in you dashboard as csv format will only contain the area names and codes.
+  You can also import your areas via a csv file but here you will not have the maps and therefore can not have map based indicators in your dashboard as csv format will only contain the area names and codes.
 
   When importing, you can use the interface to map which columns of your spreadsheet hold which area level (name and code) and are also able to apply zero padding to your codes to match how they appear in your source data (questionnaire).
 
@@ -57,7 +57,7 @@ As there are thousands of areas in the csv file, it will require sometime to com
 
 Now, carefully follow the instructions given above and import the areas from the csv file (./training/Areas/areas.csv).
 
-Once you have managed this successfully, you can use the "DELETE ALL" button and then import the shapefiles (./training/Areas/areas.csv). This is so you can exercise both methods of importing areas.
+Once you have managed this successfully, you can use the "DELETE ALL" button and then import the shapefiles (./training/Areas/Shapefiles). This is so you can exercise both methods of importing areas.
 
 > [!INFO]
 In case you have already imported your areas (EA Frame) via a csv file, you can then also import your shapefile to augment them with spatial data. Make sure the codes in the shapefiles match the ones you have already imported in the csv file, otherwise you will cause duplicate areas to exist in your database.

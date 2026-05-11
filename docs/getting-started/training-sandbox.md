@@ -57,7 +57,7 @@ bash vendor/bin/sail up
 ./vendor/bin/sail npm install && ./vendor/bin/sail npm run build:dev
 ```
 ```PowerShell [Windows]
-bash vendor/bin/sail npm install && bash vendor/bin/sail npm run build
+bash vendor/bin/sail npm install && bash vendor/bin/sail npm run build:dev
 ```
 :::
 

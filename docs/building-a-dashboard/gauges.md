@@ -36,9 +36,9 @@ You have a high degree of freedom on how you choose to code your gauge as long a
 ## In the Sandbox
 
 ### Progress
-Use these values to create a scorecard that displays the average household size of a given area.
+Use these values to create a gauge that displays the average household size of a given area.
 - Data source: Kenya Census
-- Scorecard name: KenyaCensus/AverageHouseholdSize
+- Gauge name: KenyaCensus/AverageHouseholdSize
 - Title: Average household size
 
 After you have created the scorecard, navigate, in your IDE, to the `app/Livewire/Scorecard/KenyaCensus` directory and open the `AverageHouseholdSize.php` file.

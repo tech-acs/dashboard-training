@@ -53,27 +53,30 @@
     * Understanding Area Insights
 
 ### **Week 5: Advanced Topics**
-*Objective: Getting really comfortable with the dashboard and implementing  advanced functionality.*
+*Objective: Getting really comfortable with the dashboard and implementing advanced functionality.*
 
-* **Session 1: Localizing and understanding dev mode, and area restrictions**
-    * Making map indicators
-    * Making gauges
-* **Session 2: More artifacts**
-    * Making reports.
-    * Understanding Area Insights
+* **Session 1: Localizing, understanding dev mode, and area restrictions**
+    * Localizations
+    * Understanding dev mode
+    * Understanding area restrictions
+* **Session 2: Caching, query analytics, and upgrading versions**
+    * Caching
+    * Query analytics 
+    * Usage stats
+    * Upgrading versions
 
 ### **Week 6: Dashboard Management**
-*Objective: Effective management of dashboard for best outcomes.*
-* **Session 1: Localizing and understanding dev mode, and area restrictions**
-    * Making map indicators
-    * Making gauges
+*Objective: Effective management of dashboard for the best outcomes.*
+* **Session 1: Users, roles, and settings**
+    * Users, roles, and permissions
+    * Settings
+    * Announcements
 * **Session 2: Exercises and wrap-up**
-    * Making reports.
-    * Understanding Area Insights
+    * Attempting exercises
+    * Wrap-up
 
 ---
 
 ### **Learning Resources & Tools**
 * **Documentation:** [Chimera Documentation](https://tech-acs.github.io/chimera-docs/) (The core engine behind this training).
-* **Editor:** VS Code with Laravel Extension Pack and Database Client.
 * **Repository:** [tech-acs/dashboard-training](https://github.com/tech-acs/dashboard-training)

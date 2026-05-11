@@ -92,7 +92,7 @@ You can use the code below:
         ->first();
     return collect([Number::format(safeDivide($result->total_population, $result->total_households), 1), null]);
 ```
-To have good visual presentation, we need to format the value to a number with a maximum of one decimal places and to do that, we need to import and use the `Number` helper class.
+To have good visual presentation, we need to format the value to a number with a maximum of one decimal place and to do that, we need to import and use the `Number` helper class.
 
 You can import it on top of the file like so:
 `use Illuminate\Support\Number;`

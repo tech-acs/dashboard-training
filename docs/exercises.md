@@ -8,7 +8,7 @@ Now that you have arrived at the end of the course, you should be able to implem
 
 The following are selected artifacts that can be implemented based on the Kenya Census data. You can explore the dictionary included in the `training` directory to figure out which tables and columns you need to use to source the data for your artifact.
 
-All of these artifacts are already implemented in the [demo dashboard](https://datalab.uneca.org/kenya-demo) using the same dataset and you are welcome to view them there to see what the end results of these exerciese should look like.
+All of these artifacts are already implemented in the [demo dashboard](https://datalab.uneca.org/kenya-demo) using the same dataset and you are welcome to view them there to see what the end results of these exercises should look like.
 
 ## Scorecards
 

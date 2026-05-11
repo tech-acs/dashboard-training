@@ -45,8 +45,8 @@ Modern dashboards aren't built from scratch; they are assembled using "packages.
 
 **Resources:**
 
-* [Introduction to Composer](https://www.google.com/search?q=https://getcomposer.org/doc/00-intro.md)
-* [NPM Docs: Getting Started](https://www.google.com/search?q=https://docs.npmjs.com/about-npm)
+* [Introduction to Composer](https://getcomposer.org/doc/00-intro.md)
+* [NPM Docs: Getting Started](https://docs.npmjs.com/about-npm)
 
 ## Databases & Management Tools
 
@@ -62,14 +62,14 @@ The dashboard stores its configuration and data in relational databases. While L
 
 You need a text editor that understands PHP and Laravel syntax.
 
-* **Recommended:** [Visual Studio Code (VS Code)](https://www.google.com/search?q=https://code.visualstudio.com/)
+* **Recommended:** [Visual Studio Code (VS Code)](https://code.visualstudio.com/)
 * **Recommended Extensions:**
     * *PHP Intelephense*
     * *Official Laravel VS Code Extension*
     * *Tailwind CSS IntelliSense*
 
 ## WSL (Windows Subsystem for Linux)
-
+If you are on Windows, it is best if you used WSL. Please go to the [WSL on Windows](/getting-started/wsl) page for details.
 
 ## Quick Reference Links
 

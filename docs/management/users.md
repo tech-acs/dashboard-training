@@ -21,7 +21,7 @@ The user will receive an email with a unique registration link.
 
 ![Invite User Modal](../images/user-invite.png)
 
-If you have to invite a large number of users, you can use the **Bulk Invite** button to upload a list of users to invite (xlsx or csv file containing the email addresses and corrosponding roles).
+If you have to invite a large number of users, you can use the **Bulk Invite** button to upload a list of users to invite (xlsx or csv file containing the email addresses and corresponding roles).
 
 
 ## Managing Users
