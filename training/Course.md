@@ -1,6 +1,6 @@
 **Course Goal:** To empower developers, statisticians, and data scientists to build, customize, and deploy real-time monitoring dashboards for large-scale field data collection (Censuses and Surveys).
 
-**Duration:** The course is expected to last 5-weeks, broken into 10 sessions (2 per week, 1 hour each).
+**Duration:** The course is expected to last 6-weeks, broken into 12 sessions (1 hour each twice a week).
 
 ### **Week 1: Fundamentals & Getting Started**
 *Objectives: Provide some helpful foundation in git, PHP, web servers, CSPro, and databases. Get up and running with the training sandbox using docker and or WSL.*
@@ -78,5 +78,5 @@
 ---
 
 ### **Learning Resources & Tools**
-* **Documentation:** [Chimera Documentation](https://tech-acs.github.io/chimera-docs/) (The core engine behind this training).
-* **Repository:** [tech-acs/dashboard-training](https://github.com/tech-acs/dashboard-training)
+* **Documentation:** [Dashboard Starter Kit Documentation](https://tech-acs.github.io/chimera-docs/) (The core engine behind this training).
+* **Training Sandbox:** [Dashboard Training](https://github.com/tech-acs/dashboard-training)
