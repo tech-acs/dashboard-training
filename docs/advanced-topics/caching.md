@@ -1,24 +1,34 @@
 ---
 outline: deep
 ---
+
 # Caching
 
-The Dashboard Starter Kit comes with a complete caching strategy built-in.
+The Dashboard Starter Kit comes with a complete caching strategy built in.
 
-Caching of results is always happening behind the scenes. Every published indicator, scorecard, case stat and map indicator will be cached for a set amount of time that is determined by the CACHE_TTL_SECONDS setting in your .env file. The default value of the caching time is **thirty minutes**.
+## Automatic Caching
 
-You will most likely want to use your own caching strategy that is appropriate to your data size and other needs. You will therefore need to schedule tasks to update these caches regularly. This is achieved by using the ```chimera:cache``` group of commands. You can run them manually as such but you should schedule them using Laravel's scheduled tasks. Data cached using any of the cache commands does not expire. It is cached *"forever"* as cache replacement strategy is relinquished to the developer and should be achieved through a well thought out scheduling of the cache commands.
+Caching happens automatically behind the scenes. Every published indicator, scorecard, case stat, and map indicator is cached for a set amount of time determined by the `CACHE_TTL_SECONDS` setting in your `.env` file. The default cache duration is **thirty minutes**.
 
-For details, please refer to the [Task Scheduling](https://laravel.com/docs/13.x/scheduling#main-content) section of the Laravel documentation.
+## Custom Caching Strategy
+
+For production environments, you will likely want to implement your own caching strategy appropriate to your data size and requirements. This is achieved by using the `chimera:cache` group of commands and scheduling them using Laravel's task scheduler.
+
+Data cached using any of the cache commands does not expire — it is cached "forever." Cache replacement is left to the developer and should be managed through a well-thought-out schedule of cache update commands.
+
+For details, refer to the [Task Scheduling](https://laravel.com/docs/13.x/scheduling#main-content) section of the Laravel documentation.
 
 ```php
 $schedule->command('chimera:cache --data-source=enumeration')->everySixHours();
 ```
 
-Basically, you add the above type of code to the schedule() method of your ```App\Console\Kernel``` class file for each of your cache commands.
+Add this type of code to the `schedule()` method of your `App\Console\Kernel` class (or via `bootstrap/app.php` in newer Laravel versions) for each of your cache commands.
 
-## Cache commands
-```
+## Cache Commands
+
+The following commands are available for caching different artefact types:
+
+```bash
 php artisan chimera:cache-indicators
 php artisan chimera:cache-scorecards
 php artisan chimera:cache-mapindicators
@@ -27,64 +37,73 @@ php artisan chimera:cache-casestats
 
 ### chimera:cache-indicators
 
-The command has three options which you can use to control how caching happens
+This command has three options to control how caching occurs:
 
-- *max-level* : this option, when passed, will control the level depth of caching that will occur for indicators. By default, only national and first area levels will be cached. Accepts a number between 1 and the total number of area hierarchies you have
+- **`--max-level`:** Controls the depth of caching for indicators. By default, only the national and first area levels are cached. Accepts a number between 1 and the total number of area hierarchies you have.
+- **`--data-source`:** Updates the cache of indicators belonging to a specific data source. By default, indicators across all data sources are updated.
+- **`--tag`:** Specifically targets indicators that have been assigned the given tag, excluding all other untagged indicators.
 
-- *data-source* : this option can be used to update the cache of indicators that belong to that specific data source. By default, indicators across all data sources will be updated
+**Examples:**
 
-- *tag* : this option, when passed, will specifically target indicators that have been assigned the given tag, excluding all other untagged indicators
-
-Example: the first command would update all indicators (published and untagged), the second will update all indicators (published and untagged) within the enumeration questionnaire and the third one will update indicators that have the 'priority' tag
-
-```
+```bash
+# Update all published, untagged indicators
 php artisan chimera:cache-indicators
+
+# Update indicators for a specific data source
 php artisan chimera:cache-indicators --data-source=enumeration
+
+# Update indicators with the 'priority' tag
 php artisan chimera:cache-indicators --tag=priority
 ```
 
 :::info
-You can manage the tag list by editing the tags key under the cache chimera config
+You can manage the tag list by editing the `tags` key in the Chimera cache config.
 
-Example (in file config\chimera.php):
+**Example** (in `config/chimera.php`):
+
 ```php
 'cache' => [
     'ttl' => env('CACHE_TTL_SECONDS', 60 * 30),
     'tags' => ['priority', 'secondary'],
 ],
 ```
-then, when editing indicators you will see a dropdown named 'Cache Tags' which you can use to assign one of the tags you have set in the chimera config to each of your indicators. By default, indicators will have no assigned tag and you do not need to assign tags for indicators you
-do not want to target specifically.
+
+After configuring tags, you will see a **Cache Tags** dropdown when editing indicators. By default, indicators have no assigned tag. You only need to assign tags to indicators you want to target specifically with the `--tag` option.
 :::
 
 ### chimera:cache-scorecards
-The command has two options which you can include to control how caching happens
 
-- *data-source* : this option can be used to update the cache of scorecards that belong to that specific questionnaire. By default, scorecards across all questionnaires will be updated
+This command has one option:
 
+- **`--data-source`:** Updates the cache of scorecards belonging to a specific data source. By default, scorecards across all data sources are updated.
 
-### chimera:casestats
-The command has one option which you can include to control how caching happens
+### chimera:cache-mapindicators
 
-- *data-source* : this option can be used to update the cache of CaseStats that belong to that specific questionnaire. By default, casestats across all questionnaires will be updated
+This command has one option:
 
+- **`--data-source`:** Updates the cache of map indicators belonging to a specific data source. By default, map indicators across all data sources are updated.
 
-## Cache clearing
-If, for some reason, you need to clear cached data, you can use the ```chimera:cache-clear``` command. It has two options
+### chimera:cache-casestats
 
-- *data-source* : this option can be used to clear the cache of all items stored under the given questionnaire
+This command has one option:
 
-- *type* : this option can be used to clear specific types of cached data. Possible values for this option are: *indicators, scorecards, casestats or mapindicators*
+- **`--data-source`:** Updates the cache of CaseStats belonging to a specific data source. By default, CaseStats across all data sources are updated.
+
+## Cache Clearing
+
+If you need to clear cached data, use the `chimera:cache-clear` command. It has two options:
+
+- **`--data-source`:** Clears the cache of all items stored under the given data source.
+- **`--type`:** Clears specific types of cached data. Possible values: `indicators`, `scorecards`, `casestats`, or `mapindicators`.
 
 :::danger
-
-Executing the cache-clear command without any options will clear the cache of everything! It will remove all entries from the cache. Consider this carefully before executing the command.
+Executing `chimera:cache-clear` without any options will clear **everything** from the cache. Consider this carefully before running the command.
 :::
 
-## Cached data time stamp
+## Cache Timestamp Display
 
-When caching is enabled, a small, faded rubber stamp icon will appear somewhere over each indicator, scorecard and case stats table.
+When caching is enabled, a small, faded rubber stamp icon appears on each indicator, scorecard, and case stats table.
 
-When hovered over, it will display the time the data being displayed was cached at.
+When hovered over, it displays the time at which the cached data was generated.
 
 ![Cache time stamp display](../images/cache-timestamp-icon.png)

@@ -4,85 +4,92 @@ outline: deep
 
 # Exercises
 
-Now that you have arrived at the end of the course, you should be able to implement various dashboard artifacts on your own. 
+Now that you have completed the course, you should be able to implement various dashboard artefacts on your own.
 
-The following are selected artifacts that can be implemented based on the Kenya Census data. You can explore the dictionary included in the `training` directory to figure out which tables and columns you need to use to source the data for your artifact.
+The following are selected artefacts that can be implemented using the Kenya Census data. You can explore the data dictionary included in the `training` directory to figure out which tables and columns you need to source data for each artefact.
 
-All of these artifacts are already implemented in the [demo dashboard](https://datalab.uneca.org/kenya-demo) using the same dataset and you are welcome to view them there to see what the end results of these exercises should look like.
+All of these artefacts are already implemented in the [demo dashboard](https://datalab.uneca.org/kenya-demo) using the same dataset. You are welcome to view them there to see what the end results of these exercises should look like.
 
 ## Scorecards
 
-### Total population
-> Difficulty: Easy :grinning:
+### Total Population
 
-This scorecard shall display the total population of a given area. It should be a whole number that is properly formatted according to the current locale.
+**Difficulty:** Easy :grinning:
+
+This scorecard should display the total population of a given area. It should be a whole number, properly formatted according to the current locale.
 
 ::: details Hint
-To source data for this scorecard, please have a look at the `housing_rec` record/table and within it the `total_household_members` column.
+To source data for this scorecard, look at the `housing_rec` record/table and the `total_household_members` column.
 :::
 
-### Average interview time
-> Difficulty: Intermediate :neutral_face:
+### Average Interview Time
 
-This scorecard shall display the average interview duration for a given area in minutes. It should be a number rounded to one decimal place.
+**Difficulty:** Intermediate :neutral_face:
+
+This scorecard should display the average interview duration for a given area in minutes. It should be a number rounded to one decimal place.
 
 ::: details Hint
-Have a look at the `hh_end_interview_time` and `hh_start_interview_time` items in the `housing_rec` record.
+Look at the `hh_end_interview_time` and `hh_start_interview_time` items in the `housing_rec` record.
 :::
 
-### Birth rate
-> Difficulty: Hard :hot_face:
+### Birth Rate
 
-This scorecard shall display the total population of a given area. It should be a whole number that is properly formatted according to the current locale.
+**Difficulty:** Hard :hot_face:
+
+This scorecard should display the crude birth rate (number of live births per 1,000 people) for a given area.
 
 ::: details Hint
-Consider how you can get number of babies (0 year olds) from the `pop_rec` record and then make sure you know how demographic birth rate is calculated. The `housing_rec` record will have to be involved too.
+Consider how you can get the number of babies (0 year olds) from the `pop_rec` record. Then calculate the demographic birth rate. The `housing_rec` record will also be involved.
 :::
 
 ## Indicators
 
-### Percentage of population enumerated against target
-> Difficulty: Easy :grinning:
+### Percentage of Population Enumerated Against Target
 
-This indicator will display the percentage of the population that has so far been enumerated when compared to what is expected to be.
+**Difficulty:** Easy :grinning:
 
-::: details Hint
-
-:::
-
-### Male to female ratio
-> Difficulty: Intermediate :neutral_face:
-
-This indicator will display the male to female ratio (number of males per 100 females) in barchart form where the x-axis has the areas.
+This indicator should display the percentage of the population that has been enumerated so far, compared to the expected target.
 
 ::: details Hint
-The `housing_rec` record has two items called `total_number_of_males` and `total_number_of_females`. Use these two and apply the proper way of calculating demographic male to female ratio.
+Use the `BreakoutQueryBuilder` with `lastlyAreaLeftJoinData(referenceValueToInclude: 'population')` to include reference values, then calculate the percentage of actual population against the reference value.
 :::
 
-### Population pyramid
-> Difficulty: Hard :hot_face:
+### Male to Female Ratio
 
-This indicator displays a population pyramid which shows the distribution of five year age groups of the population. This will be fairly complex to implement and will require some "hacks".
+**Difficulty:** Intermediate :neutral_face:
+
+This indicator should display the male to female ratio (number of males per 100 females) in bar chart form, where the x-axis shows the areas.
 
 ::: details Hint
-The data will be sourced from the `housing_rec` and `pop_rec` records. Item p12 (age) and item p11 (sex) will be crucial. You will have to form the age groups and will have to negate the male count so that it goes on the left side of the y-axis.
+The `housing_rec` record has two items called `total_number_of_males` and `total_number_of_females`. Use these two and calculate the demographic male-to-female ratio properly.
 :::
 
+### Population Pyramid
+
+**Difficulty:** Hard :hot_face:
+
+This indicator displays a population pyramid showing the distribution of five-year age groups of the population. This is fairly complex to implement and will require some creative approaches.
+
+::: details Hint
+Data will be sourced from the `housing_rec` and `pop_rec` records. Item `p12` (age) and item `p11` (sex) are crucial. You will need to form age groups and negate the male count so that it appears on the left side of the y-axis.
+:::
 
 ## Map Indicators
 
 ### Total Households
-This indicator shall display the total number of households in a given area and display it on a map. As the included reference values include number of households per area, you should set a reasonable RAG (Red Amber Green) threshold for the indicator based on the reference values.
+
+This map indicator should display the total number of households in a given area on a map. Since the included reference values contain the number of households per area, you should set a reasonable RAG (Red-Amber-Green) threshold for the indicator based on those reference values.
 
 ::: details Hint
-To source data for this map indicator, please have a look at the `housing_rec` record/table and think how you can count the number of households.
+To source data for this map indicator, look at the `housing_rec` record/table and think about how you can count the number of households. Use `lastlyAreaLeftJoinData(referenceValueToInclude: 'number_of_hh')` to include reference values for comparison.
 :::
 
 ## Reports
 
 ### Enumerator Performance
-This report shall display the performance of all enumerators, in terms of the number of interviews completed, per EA. The excel file should include columns for the complete area hierarchy, the enumerator's ID, their expected target, their actual performance (%)
+
+This report should display the performance of all enumerators, in terms of the number of interviews completed per EA. The Excel file should include columns for the complete area hierarchy, the enumerator's ID, their expected target, and their actual performance percentage.
 
 ::: details Hint
-Basically, all the data you need for this report can be found in the `level-1` record/table.
+All the data you need for this report can be found in the `level-1` record/table.
 :::

@@ -4,60 +4,60 @@ outline: deep
 
 # Areas
 
-To visualize data correctly, the dashboard needs to know your administrative boundaries. The *Areas* interface provides a comprehensive directory for managing every geographic unit across all levels of the defined hierarchy. This is where names, codes, and map availability are displayed.
+To visualize data correctly, the dashboard needs to know your administrative boundaries. The **Areas** interface provides a comprehensive directory for managing every geographic unit across all levels of the defined hierarchy. This is where names, codes, and map shapes are managed.
 
 ## Importing Areas
-The Import interface allows administrators to upload hierarchical area data containing area maps, names, and codes. Users can toggle between two specialized upload methods depending on the data format.
 
-You have the option of importing the areas from two file formats:
+The Import interface allows administrators to upload hierarchical area data containing area maps, names, and codes. You can toggle between two specialized upload methods depending on your data format.
 
-### Shapefiles (preferred)
+### Shapefiles (Preferred)
 
-  Shapefile (.shp, .shx, and .dbf) is the preferred file format for importing areas into your dashboard because it contains both the spatial data and the area metadata (names and codes).
+Shapefiles (`.shp`, `.shx`, and `.dbf`) are the preferred format for importing areas because they contain both the spatial data (map boundaries) and the area metadata (names and codes).
 
-  When importing the various levels via shapefiles, the dashboard will take care of associating them with each other (creates the parent-child relationship) by matching them **spatially**. Therefore, it is important to make sure that all your shapefiles are consistent and that they are **spatially** contained by one another. Order of importation is also important as parent (containing) areas need to be imported before child (contained) areas.
+When importing areas via shapefiles, the dashboard automatically creates parent-child relationships by matching areas **spatially**. Therefore, it is important to ensure that:
 
-  The algorithm has a threshold of about 70% minimum containment that it uses to pair parent-child areas. If you choose to "simplify" you shapefiles, make sure that you do not over do it. You can overlay them to check that lower levels are still contained (at least 70%) by their immediate higher level area.
+- All your shapefiles are consistent in their coordinate system.
+- Child areas are spatially contained within their parent areas.
+- You import in order: parent (containing) areas before child (contained) areas.
 
-  ![Importing areas from shapefile](../images/importing-area-hierarchy-from-shapefile.png)
+The algorithm uses a threshold of approximately **70% minimum containment** to pair parent-child areas. If you choose to "simplify" your shapefiles, make sure you do not oversimplify them. You can overlay them to verify that lower-level areas are still contained (at least 70%) by their immediate parent level.
+
+![Importing areas from shapefile](../images/importing-area-hierarchy-from-shapefile.png)
 
 > [!WARNING]
-> Please make sure that the shapefile you are attempting to import has the EPSG:4326 - WGS 84 Coordinate Reference System (CRS).
+> Make sure that the shapefile you are importing uses the **EPSG:4326 - WGS 84** Coordinate Reference System (CRS).
 
 ### Spreadsheets (.csv)
 
-  You can also import your areas via a csv file but here you will not have the maps and therefore can not have map based indicators in your dashboard as csv format will only contain the area names and codes.
+You can also import areas via a CSV file. However, CSV files only contain area names and codes — they do not include spatial data, so you will not be able to use map-based indicators unless you later import shapefiles.
 
-  When importing, you can use the interface to map which columns of your spreadsheet hold which area level (name and code) and are also able to apply zero padding to your codes to match how they appear in your source data (questionnaire).
+During CSV import, you can use the interface to map which columns of your spreadsheet correspond to each area level (name and code). You can also apply zero padding to your codes to match how they appear in your source data (questionnaire).
 
-  ![Importing areas from csv](../images/importing-area-hierarchy-from-csv.png)
+![Importing areas from csv](../images/importing-area-hierarchy-from-csv.png)
 
-  The imported data should look something like the following
+The imported data should look something like the following:
 
-  ![Imported area hierarchy](../images/imported-area-hierarchy.png)
+![Imported area hierarchy](../images/imported-area-hierarchy.png)
 
-> The example spreadsheet data for South Africa, seen above, was sourced from [The Humanitarian Data Exchange](https://data.humdata.org/)
+> The example spreadsheet data shown above was sourced from [The Humanitarian Data Exchange](https://data.humdata.org/).
 
-When the process has completed, you will receive a notification. If the importation was successful, you will find the path column formula in the notification message, which you can use on the same spreadsheet file to
-generate a new "path" column which will be used to uniquely identify the areas and which is also required when you import reference values.
-
-> [!IMPORTANT]
-> You must make sure that your area codes in the csv or shapefiles match your codes from the database. If they need zero padding, the csv importer can help you with that, but you will have to apply the zero-padding to the shapefiles yourself. If they also need concatenation, make sure you take care of that before attempting to import them.
-
-
+After the import process completes, you will receive a notification. If the import was successful, the notification will include a **path column formula**. You can use this formula in your spreadsheet to generate a new "path" column, which uniquely identifies each area and is required when importing reference values.
 
 > [!IMPORTANT]
-> When trying to import a file, if you get an error message stating that the file must not be of size greater than 12MB, then you can override this default file size limit in the livewire.php config file. Just follow the instructions in the Laravel Livewire documentation [here](https://livewire.laravel.com/docs/uploads#global-validation)
+> You must ensure that your area codes in the CSV or shapefiles match the codes from your database. If they need zero padding, the CSV importer can handle that for you, but you will need to apply zero-padding to shapefiles yourself before importing. If codes also need concatenation, handle that before attempting to import.
+
+> [!IMPORTANT]
+> If you receive an error stating that the file must not exceed 12MB, you can override this default limit in the `livewire.php` config file. Follow the instructions in the [Laravel Livewire documentation](https://livewire.laravel.com/docs/uploads#global-validation).
 
 ## In the Sandbox
 
-In the training sandbox repository, under the "training" directory, you will find various resources that we are going to be using in this training. You can find shapefiles and csv files for the areas in the "Areas" directory.
+In the training sandbox repository, under the `training` directory, you will find various resources including shapefiles and CSV files for the areas in the `Areas` directory.
 
-As there are thousands of areas in the csv file, it will require sometime to complete. Once complete, you will receive a notification with the results.
+### Exercise
 
-Now, carefully follow the instructions given above and import the areas from the csv file (./training/Areas/areas.csv).
+1. **Import from CSV:** Import the areas from the CSV file located at `./training/Areas/areas.csv`. Since there are thousands of areas, this will take some time to complete. Once finished, you will receive a notification with the results.
 
-Once you have managed this successfully, you can use the "DELETE ALL" button and then import the shapefiles (./training/Areas/Shapefiles). This is so you can exercise both methods of importing areas.
+2. **Import from Shapefiles:** After successfully importing from CSV, use the **DELETE ALL** button to clear the imported areas, then import the shapefiles from `./training/Areas/Shapefiles`. This allows you to practice both import methods.
 
 > [!INFO]
-In case you have already imported your areas (EA Frame) via a csv file, you can then also import your shapefile to augment them with spatial data. Make sure the codes in the shapefiles match the ones you have already imported in the csv file, otherwise you will cause duplicate areas to exist in your database.
+> If you have already imported your areas (EA Frame) via a CSV file, you can also import your shapefiles afterward to augment them with spatial data. Make sure the codes in the shapefiles match the ones you already imported from the CSV, otherwise you will create duplicate areas in your database.

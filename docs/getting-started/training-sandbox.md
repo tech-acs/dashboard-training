@@ -5,20 +5,28 @@ outline: deep
 # Training Sandbox
 
 We have prepared a **standardized development sandbox specifically for the Dashboard Development Training**.
-It is an isolated, Docker-based environment (using Laravel Sail) designed for rapid prototyping and dashboard development. Includes pre-wired database connections (data included) and a local server environment to ensure a consistent experience across all workstations.
+It is an isolated, Docker-based environment (using Laravel Sail) designed for rapid prototyping and dashboard development. It includes pre-configured database connections with sample data and a local server environment to ensure a consistent experience across all workstations.
 
-It enables trainees to skip the setup and start building their first components in seconds.
+It enables trainees to skip the complex setup process and start building their first components quickly.
 
+::: info
 Before you begin, if you are running Windows, make sure you have Docker Desktop installed and running. Please refer to the [WSL on Windows](/getting-started/wsl) section of the course for detailed instructions.
+:::
 
-### Setup
-1. Clone the sandbox repository and `cd` into it
+## Setup
 
-```
+### 1. Clone the sandbox repository
+
+Clone the repository and navigate into it:
+
+```bash
 git clone https://github.com/tech-acs/dashboard-training
+cd dashboard-training
 ```
 
-2. Install dependencies (composer and npm packages)
+### 2. Install dependencies
+
+Install the PHP and JavaScript dependencies using Composer:
 
 ::: code-group
 ```bash [Linux / macOS / WSL]
@@ -29,7 +37,8 @@ docker run --rm \
   laravelsail/php83-composer:latest \
   composer setup
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 docker run --rm `
   -v "${PWD}:/var/www/html" `
   -w /var/www/html `
@@ -39,92 +48,115 @@ docker run --rm `
 :::
 
 > [!IMPORTANT]
-> If you want to change any of the network ports used by the containers or want to modify default values set in the .env file, now is the time to do it.
+> If you want to change any of the network ports used by the containers or modify default values in the `.env` file, now is the time to do it before starting the application.
 
-3. Start the application (Laravel Sail)
+### 3. Start the application (Laravel Sail)
+
 ::: code-group
 ```bash [Linux / macOS / WSL]
 ./vendor/bin/sail up
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 bash vendor/bin/sail up
 ```
 :::
 
-4. Install npm packages and build assets
+### 4. Install npm packages and build assets
+
 ::: code-group
 ```bash [Linux / macOS / WSL]
 ./vendor/bin/sail npm install && ./vendor/bin/sail npm run build:dev
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 bash vendor/bin/sail npm install && bash vendor/bin/sail npm run build:dev
 ```
 :::
 
-5. Migrate the main application database
+### 5. Migrate the database
+
 ::: code-group
 ```bash [Linux / macOS / WSL]
 ./vendor/bin/sail artisan migrate
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 bash vendor/bin/sail artisan migrate
 ```
 :::
 
-6. Create an administrator account (management account)
+### 6. Create an administrator account
+
 ::: code-group
 ```bash [Linux / macOS / WSL]
 ./vendor/bin/sail artisan adminify
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 bash vendor/bin/sail artisan adminify
 ```
 :::
 
-7. Open `http://127.0.0.1/start` in your browser and you should see the sandbox start page. **[If you have changed `APP_PORT` from the default 80 to another value, in your `.env` file, then visit `http://127.0.0.1:APP_PORT/start` where APP_PORT is your new port value]**
+### 7. Access the application
 
-### Starting and Stopping Laravel Sail
+Open `http://127.0.0.1:80/start` in your browser and you should see the sandbox start page.
+
+> [!INFO]
+> If you have changed `APP_PORT` from the default `80` to another value in your `.env` file, visit `http://127.0.0.1:<YOUR_PORT>/start` instead.
+
+## Starting and Stopping Laravel Sail
 
 Sail provides a Docker-based local development environment.
+
 - **Start Sail:** Run `./vendor/bin/sail up -d` (or `bash vendor/bin/sail up -d` on Windows) to start containers in the background.
 - **Stop Sail:** Run `./vendor/bin/sail down` (or `bash vendor/bin/sail down` on Windows) to stop and remove the containers.
 
-### Executing Commands
+## Executing Commands
 
 To run any artisan or npm command, prefix it with Sail's executable:
+
 - **Linux / macOS / WSL:** `./vendor/bin/sail artisan <command>`
 - **Windows:** `bash vendor/bin/sail artisan <command>`
 
->[!IMPORTANT]
-> Going forward, remember that this is the format you will have to use whenever you see `php artisan SomeCommand` in the course material.
+> [!IMPORTANT]
+> Throughout the rest of this course, whenever you see a command like `php artisan SomeCommand`, replace it with `./vendor/bin/sail artisan SomeCommand` (or the Windows equivalent).
 
-### Interacting with the Databases
+## Interacting with the Databases
 
-The application includes a database accessible during development. You can manage it using:
-- **Adminer:** A web-based database management graphical user interface. Use the database credentials from your `.env` file to log in. You can access this via the menu from the start page of the sandbox or you can visit [http://localhost:89](http://localhost:89)
+The application includes databases accessible during development. You can manage them using:
+
+- **Adminer:** A web-based database management GUI. Use the database credentials from your `.env` file to log in. Access it via the menu on the sandbox start page or visit [http://localhost:89](http://localhost:89).
 - **VS Code Database Client:** Install the recommended extension and connect to `127.0.0.1` using the port and credentials from your `.env` file.
 - **External Clients:** Use graphical tools like DBeaver, HeidiSQL, or TablePlus to connect using your `.env` credentials.
 
-### Previewing Emails
+## Previewing Emails
 
-The application uses Mailpit to intercept and display outgoing system emails (like password resets) locally, preventing them from being sent to real users.
-- **Access Mailbox:** Go to [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails. You can also easily access this via the menu from the start page of the sandbox.
+The application uses Mailpit to intercept and display outgoing system emails (like password resets and invitations) locally, preventing them from being sent to real users.
 
-### Rebuilding the Sandbox
-Sometimes you may want to completely rebuild your Sail images to ensure all of the image's packages and software are up to date and all of your saved data (volumes) are erased. You may accomplish this using the following command:
+- **Access Mailbox:** Visit [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails. You can also access this via the menu on the sandbox start page.
+
+## Rebuilding the Sandbox
+
+Sometimes you may want to completely rebuild your Sail images to ensure all packages and software are up to date and all saved data (volumes) are erased. You can accomplish this using the following commands:
+
 ::: code-group
 ```bash [Linux / macOS / WSL]
 ./vendor/bin/sail down -v
 ./vendor/bin/sail build --no-cache
 ./vendor/bin/sail up
 ```
-```PowerShell [Windows]
+
+```powershell [Windows]
 bash vendor/bin/sail down -v
+bash vendor/bin/sail build --no-cache
+bash vendor/bin/sail up
 ```
 :::
+
 > [!NOTE]
-> The `-v` flag is used to ensure that all volumes are removed and the `--no-cache` flag is used to ensure that the latest version of the images is pulled from the Docker Hub registry when it is rebuilt.
+> The `-v` flag ensures that all volumes are removed, and the `--no-cache` flag ensures that the latest version of the images is pulled from the Docker Hub registry during the rebuild.
 
-### Going Deeper on Laravel Sail
-This training repository is built on top of Laravel Sail, a Docker-based local development environment for Laravel. For more information about Laravel Sail, please visit the [Laravel Sail documentation](https://laravel.com/docs/sail).
+## Going Deeper on Laravel Sail
 
+This training repository is built on top of Laravel Sail, a Docker-based local development environment for Laravel. For more information about Laravel Sail, please visit the [official Laravel Sail documentation](https://laravel.com/docs/sail).

@@ -5,17 +5,19 @@ layout: home
 hero:
   name: "UNECA's Field Monitoring Dashboard"
   text: "Development Course"
-  tagline: For surveys and censuses
+  tagline: Learn to build real-time dashboards for census and survey field monitoring
   actions:
     - theme: brand
       text: Get Started
       link: /getting-started/requirements
+    - theme: alt
+      text: Visit the Docs
+      link: https://tech-acs.github.io/chimera-docs/
 features:
   - title: Dockerized
-    details: Fully dockerized training sandbox, ensuring a consistent, production-grade sandbox that runs perfectly on any operating system without complex manual setup.
-  - title: Database Client
-    details: Manage your databases effortlessly with Adminer, a lightweight, full-featured management tool integrated directly into your sandbox for easy data browsing SQL execution.
-  - title: Email Server
-    details: Test email features safely with Mailpit, a built-in mail server and web interface that captures all outgoing messages in a private sandbox for instant previewing.
+    details: A fully containerized training sandbox built with Laravel Sail, ensuring a consistent, production-grade environment that runs on any operating system without complex manual setup.
+  - title: Database Management
+    details: Browse tables and run SQL queries effortlessly with Adminer, a lightweight web-based database tool integrated directly into your sandbox.
+  - title: Email Testing
+    details: Safely test email features (password resets, invitations, notifications) with Mailpit, a built-in mail server that captures all outgoing messages for instant preview.
 ---
-

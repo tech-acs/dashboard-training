@@ -4,22 +4,24 @@ outline: deep
 
 # Settings
 
-The Settings module acts as the central location for housing various system settings, allowing administrators to define the global behavior, appearance, and technical configurations of the dashboard. Instead of a single long form, settings are organized into groups (tabs) to separate related settings.
+The **Settings** module is the central location for system-wide configurations, allowing administrators to define the global behavior, appearance, and technical settings of the dashboard. Rather than a single long form, settings are organized into grouped tabs to separate related configurations.
 
-The Settings interface is designed for high-level control. Changes made here typically apply across all pages, indicators, and user sessions.
+Changes made here typically apply across all pages, indicators, and user sessions.
 
-- **App ownership**: Controls the core branding of the platform, specifically the organization name and website URL that are displayed in the application footer.
+## Settings Groups
 
-- **Per page limits**: Manages pagination and data display settings, allowing you to define how many records or items are shown per page across different dashboard modules.
+- **App Ownership** — Controls the core branding of the platform, specifically the organization name and website URL displayed in the application footer.
 
-- **Map settings**: Configures the primary geospatial behavior, including the default latitude/longitude center point, initial zoom levels, and whether the Map menu is visible in the main navbar.
+- **Per Page Limits** — Manages pagination settings, allowing you to define how many records or items are shown per page across different dashboard modules.
 
-- **Report settings**: Houses the specific configuration which decides whether the Report menu is visible in the main navbar.
+- **Map Settings** — Configures the primary geospatial behavior, including the default latitude/longitude center point, initial zoom levels, and whether the Map menu is visible in the main navigation bar.
 
-- **Area insights settings**: Houses the specific configuration which decides whether the Area Insights menu is visible in the main navbar.
+- **Report Settings** — Controls whether the Report menu is visible in the main navigation bar.
 
-- **Mail settings**: Configures the SMTP server details, including the host, port, authentication credentials, and encryption methods required for system-generated emails.
+- **Area Insights Settings** — Controls whether the Area Insights menu is visible in the main navigation bar.
 
-- **Color palette selector**: Allows for the sitewide selection of Categorical, Sequential, or Diverging color schemes to be applied to all charts, scorecards, and data cards.
+- **Mail Settings** — Configures the SMTP server details, including host, port, authentication credentials, and encryption methods required for system-generated emails.
+
+- **Color Palette Selector** — Allows sitewide selection of Categorical, Sequential, or Diverging color schemes applied to all charts, scorecards, and data cards.
 
 ![Settings](../images/settings.png)

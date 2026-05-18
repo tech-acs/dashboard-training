@@ -1,26 +1,36 @@
 ---
 outline: deep
 ---
+
 # Customizing Branding
 
-The dashboard can be customized to have the logos and other assets of the organization that owns it.
+The dashboard can be customized with your organization's logos and branding assets.
 
-## Changing the logo
-There are two different resources that control the logo graphics used in the dashboard.
+## Changing the Logo
 
-One for the login page `resources/views/components/authentication-card-logo.blade.php` and another for everywhere else `resources/views/components/application-mark.blade.php`
+Two different template files control the logo graphics used in the dashboard:
 
-By changing the contents of these two files, you can change the logo graphics. Both these resources are of SVG code and we advice that you replace them with either the SVG code of your logo or an SVG file format of your logo.
+- **Login page:** `resources/views/components/authentication-card-logo.blade.php`
+- **Everywhere else:** `resources/views/components/application-mark.blade.php`
 
-To change the hero image on the landing page (welcome page), replace it `public/images/hero.jpg` with a file of the same name.
+By modifying these files, you can replace the default logo with your organization's branding. We recommend using SVG code or an SVG file format for your logo for the best quality and scalability.
 
-You are also able to control the color of charts, scorecards and other graphics in the dashboard by creating your own color palettes.
+## Changing the Hero Image
 
-## Color palettes
-You can apply one of the available color palettes that come included with the dashboard. The colors in the selected palette will apply to dashboard elements such as charts, scorecards and cards. The right color will be chosen for text sitting on top of these colors according to Web Content Accessibility Guidelines (WCAG-3/APCA), which will ensure the correct amount of contrast for readability.
+To change the hero image on the landing (welcome) page, replace the file at `public/images/hero.jpg` with your own image, using the same filename.
 
-### A brief primer on data visualization colors
-Color improves a visualization's aesthetic quality, as well as its ability to effectively communicate about its data. The colors used for data visualization can generally be classified into three palettes. Read more [here](https://spectrum.adobe.com/page/color-for-data-visualization/).
+## Color Palettes
+
+You can apply one of the available color palettes that come included with the dashboard. The colors in the selected palette will apply to dashboard elements such as charts, scorecards, and data cards. The appropriate text color is automatically chosen based on Web Content Accessibility Guidelines (WCAG 3 / APCA), ensuring the correct contrast ratio for readability.
+
+### A Brief Primer on Data Visualization Colors
+
+Color improves both a visualization's aesthetic quality and its ability to effectively communicate data. Colors used for data visualization generally fall into three categories:
+
+- **Categorical:** Distinct colors for different categories with no inherent order (e.g., regions, product types).
+- **Sequential:** A gradient from light to dark representing low to high values (e.g., population density).
+- **Diverging:** Two contrasting colors meeting at a neutral midpoint, useful for showing deviation from a center value (e.g., temperature anomalies).
+
+Read more about color for data visualization in the [Adobe Spectrum guide](https://spectrum.adobe.com/page/color-for-data-visualization/).
 
 ![Color palettes](../images/color-palettes.png)
-

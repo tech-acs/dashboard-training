@@ -4,27 +4,45 @@ outline: deep
 
 # Reference Value Synthesizers
 
-Reference value synthesizers are classes that are meant to generate reference values from an existing data source. E.g. Generating total number of households per area from a listing exercise to serve as reference values for the respective indicators in the enumeration exercise.
+Reference value synthesizers are classes designed to generate reference values from an existing data source. For example, you can generate the total number of households per area from a **listing exercise** to serve as reference values for the corresponding indicators in an **enumeration exercise**.
 
-To create a reference value synthesizer, you can use the `php artisan chimera:make-reference-value-synthesizer` command and following the various prompts.
+This is particularly useful when you have two overlapping exercises — where one exercise's actual data can serve as the target/benchmark for another.
 
-Once the class file is created (located in `app/ReferenceValueSynthesizers`), you will need to implement the `getData` method.
+## Creating a Synthesizer
 
-The returned collection must have at least 'area_path' and 'value' keys. Using `BreakoutQueryBuilder` with the `lastlyAreaRightJoinData()` call will include area_path column.
+To create a reference value synthesizer, run the following command and follow the prompts:
 
-## Using reference value synthesizers
-Once you have implemented your various reference value synthesizers, you can use them to generate and write reference values to the database. 
+```bash
+php artisan chimera:make-reference-value-synthesizer
+```
 
-You can do this by running the `php artisan chimera:transfer-reference-values ClassName` command, where ClassName is the name of the reference value synthesizer class.
+Once the class file is created (located in `app/ReferenceValueSynthesizers/`), you will need to implement the `getData()` method.
 
-This will generate reference values for the respective indicators in the enumeration exercise. If the reference values are generated for EAs, then the synthesizer will make sure to generate them for the higher level areas (as per their additivity or singularity parameter that was set during the generation of the class)
+The returned collection must have at least `area_path` and `value` keys. Using the `BreakoutQueryBuilder` with the `lastlyAreaRightJoinData()` method call will automatically include the `area_path` column.
 
-E.g. `php artisan chimera:transfer-reference-values NoOfHouseholdsReferenceValue`
+## Using Reference Value Synthesizers
 
-## Generating reference values on a regular interval
-Ideally, you would want to generate reference values for a proceeding exercise only once the previous exercise is completed. However, in reality, the two exercises might overlap and the reference values might need to get updated on a regular basis. To do this, you can schedule the generation of reference values using the scheduler. 
+Once you have implemented your synthesizers, you can use them to generate and write reference values to the database by running:
 
-You may use the `withSchedule` method in your application's `bootstrap/app.php` file to define your scheduled tasks. This method accepts a closure that receives an instance of the scheduler:
+```bash
+php artisan chimera:transfer-reference-values ClassName
+```
+
+Where `ClassName` is the name of your reference value synthesizer class.
+
+For example:
+
+```bash
+php artisan chimera:transfer-reference-values NoOfHouseholdsReferenceValue
+```
+
+This will generate reference values for the respective indicators in the enumeration exercise. If reference values are generated for EAs, the synthesizer will automatically propagate them to higher-level areas based on the additivity parameter set during class generation.
+
+## Scheduling Regular Updates
+
+Ideally, you would generate reference values for a proceeding exercise only once the previous exercise is completed. However, in practice, two exercises might overlap and reference values may need regular updates. To handle this, schedule the generation using Laravel's scheduler.
+
+You may use the `withSchedule()` method in your application's `bootstrap/app.php` file:
 
 ```php
 ->withSchedule(function (Schedule $schedule) {
@@ -34,8 +52,11 @@ You may use the `withSchedule` method in your application's `bootstrap/app.php` 
 })
 ```
 
-Remember to import the Schedule class at the top of the file, like so:
-`use Illuminate\Console\Scheduling\Schedule;`
+Remember to import the `Schedule` class at the top of the file:
 
->[!CAUTION]
->When generating reference values, if a reference value already exists for a given **area and indicator** pair, then its value will be overwritten (updated).
+```php
+use Illuminate\Console\Scheduling\Schedule;
+```
+
+> [!CAUTION]
+> When generating reference values, if a reference value already exists for a given **area and indicator** pair, its value will be **overwritten** (updated).

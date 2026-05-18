@@ -3,98 +3,114 @@ outline: deep
 ---
 
 # Map Indicators
-Map indicators can be created in the same manner as chart indicators. Once you create, implement and publish them, they will be available on the various map pages that you can create and assign them to. The data will be displayed on top of a spatial map. The user will be able to select the base map during use.
+
+Map indicators display indicator data on top of a spatial (geographic) map. Once you create, implement, and publish them, they will be available on the map pages you create and assign them to. Users can select their preferred base map during use.
 
 ## Creating Map Indicators
-There are two ways to create map indicators. A cli command and a web form.
 
-The first way is by running the php artisan chimera:make-map-indicator command and following the various prompts. This works best when you are running a linux machine.
+There are two ways to create map indicators: a CLI command and a web form.
 
-The second way is by going to the Manage dashboard menu and selecting Map indicators, then pressing the CREATE NEW button and filling out the form as required. The included stub is used to create the MapIndicator class file in the app/MapIndicators folder.
+### Method 1: CLI Command
 
-Just like indicators, map-indicators can be organized into different pages. You can assign a map-indicator to appear on one or more pages. This can be acomplished via the edit form.
+Run the `php artisan chimera:make-map-indicator` command and follow the prompts. This works best on Linux/macOS/WSL environments.
+
+### Method 2: Web Form
+
+Navigate to the **Management** menu, select **Map Indicators**, then press the **CREATE NEW** button and fill out the form as required. The included stub is used to create the `MapIndicator` class file in the `app/MapIndicators` directory.
+
+Like regular indicators, map indicators can be organized into different pages. You can assign a map indicator to appear on one or more pages via the edit form.
 
 ## Implementing Map Indicators
-You will have to write some code in your generated map-indicator file so that it queries and returns the data that needs to be present on the map.
 
-You need to implement the getData() method and make sure it returns a Collection. You need to have at least these two keys on your collection.
-- `area_code`
-- `value`
+You need to implement the `getData()` method so that it returns a `Collection`. At minimum, your collection must include these two keys:
 
-Furthermore, if you include the following two, additional functionality will be unlocked accordingly.
-- `display_value`
-- `info`
+- **`area_code`** — Used to match the corresponding area on the map.
+- **`value`** — Displayed when you hover over each area on the map.
 
-The text contained in the `display_value` column will replace the one from `value` on the map tooltip. And if `info` is present, its contents will be rendered in an information box, on the bottom right of the map when the owning area is clicked.
+Additionally, including the following two keys unlocks extra functionality:
 
-The `area_code` column/key is used to match the corresponding area on the map. The `value` column is what is displayed for each area when you hover over it and finally, the `info` column should hold the text displayed (in an info box to the side) when its respective area is clicked on the map.
+- **`display_value`** — Replaces the `value` text shown in the map tooltip.
+- **`info`** — Rendered in an information box on the bottom-right of the map when the area is clicked.
 
-If for whatever reason, you need to use other names for these three columns, you certainly can. Override the default values assigned to the public properties on your `MapIndicator` class. The properties and their default values are:
+If you need to use different column names for these keys, you can override the default values by setting the following public properties on your `MapIndicator` class:
+
 ```php
 public string $valueField = 'value';
 public string $displayValueField = 'display_value';
 public string $areaCodeField = 'area_code';
 public string $infoTextField = 'info';
 ```
-You should also set the following two values on your class as per your discretion.
+
+### Color Bins and Palettes
+
+You should also configure the following properties:
+
 ```php
 public array $bins = [0, 30, 70, 100];
 const SELECTED_COLOR_CHART = 'rag';
 ```
-In the example code above, your areas on the map will be colored according to the bins you have provided. Areas having value below 30 will be colored red, values between 30 and 70 will be colored amber and finally values above 70 will be colored green.
 
-You have 8 color palettes to choose from. The first 7 palettes each have 10 colors arranged from the lightest variation to the darkest corresponding to the lowest to highest values defined in your bin of values.
+In the example above, areas on the map will be colored according to the bins you have provided:
 
-If you have less number of bins than colors in your selected palette, then it will use as many as needed starting with the lightest color. You can not have more bins than colors though.
+- Values below 30 → Red
+- Values between 30 and 70 → Amber
+- Values above 70 → Green
 
-You can also modify the built-in color palettes if you need to by overriding the given constants.
+You have 8 color palettes to choose from. The first 7 palettes each have 10 colors arranged from lightest (lowest values) to darkest (highest values). If you have fewer bins than colors in your selected palette, the system uses as many as needed starting from the lightest. You cannot have more bins than available colors.
 
-alizarin
+### Available Color Palettes
+
+**alizarin**
 
 ![alizarin](../images/color-palettes/alizarin.png)
 
-wisteria
+**wisteria**
 
 ![wisteria](../images/color-palettes/wisteria.png)
 
-peter-river
+**peter-river**
 
 ![peter-river](../images/color-palettes/peter-river.png)
 
-nephritis
+**nephritis**
 
 ![nephritis](../images/color-palettes/nephritis.png)
 
-sunflower
+**sunflower**
 
 ![sunflower](../images/color-palettes/sunflower.png)
 
-pumpkin
+**pumpkin**
 
 ![pumpkin](../images/color-palettes/pumpkin.png)
 
-silver
+**silver**
 
 ![silver](../images/color-palettes/silver.png)
 
-rag
+**rag**
 
 ![rag](../images/color-palettes/rag.png)
 
-The intended use of these palettes is for you to decide on the appropriate bins and even if you have target values to compare to, you should do that in your getData method and return the 'ranked' values via the value column so that your areas can be colored accordingly.
+You can also modify the built-in color palettes by overriding the given constants in your class.
+
+> **Tip:** The intended use of these palettes is for you to decide on appropriate bins. Even if you have target values to compare against, you should do that in your `getData()` method and return the "ranked" values via the `value` column so that your areas are colored accordingly.
 
 ## In the Sandbox
 
 ### Total Population
-Use these values to create a map-indicator that displays the total population of a given area.
-- Data source: Kenya Census
-- Name: KenyaCensus/TotalPopulation
-- Title: Total Population
-- Description: Total population of households in a given area.
 
-After you have created the map indicator, navigate, in your IDE, to the `app/MapIndicators/KenyaCensus` directory and open the `TotalPopulation.php` file.
+Use these values to create a map indicator that displays the total population of a given area as a percentage of the reference population:
+
+- **Data source:** Kenya Census
+- **Name:** `KenyaCensus/TotalPopulation`
+- **Title:** Total Population
+- **Description:** Total population of households in a given area, shown as a percentage of the reference population.
+
+After creating the map indicator, navigate in your IDE to the `app/MapIndicators/KenyaCensus` directory and open the `TotalPopulation.php` file.
 
 You should see the following code:
+
 ```php
 <?php
 
@@ -119,8 +135,8 @@ class TotalPopulation extends MapIndicatorBaseClass
 }
 ```
 
+Replace the file contents with the following implementation:
 
-You can use the code below:
 ```php
 <?php
 
@@ -148,12 +164,12 @@ class TotalPopulation extends MapIndicatorBaseClass
             ->lastlyAreaLeftJoinData(referenceValueToInclude: 'population')
             ->get()
             ->map(function ($r) {
-                // Convert the value (population) to percentage of population against reference value
+                // Convert the population value to a percentage of the reference value
                 $r->value = round(($r->value / $r->ref_value) * 100, 2);
                 return $r;
             });
     }
 }
-
 ```
 
+After implementing the map indicator, publish it and assign it to a map page. You can then navigate to that page to see the choropleth map in action.
