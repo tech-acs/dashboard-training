@@ -38,12 +38,7 @@ sudo apt install git -y
    
 ### Use Docker Desktop with WSL Integration
 
-Do not run:
-```
-sudo apt install docker
-```
-
-Instead:
+Do not try to install docker in Ubuntu by using the apt installer, instead integrate docker with WSL, like so:
 
 1. Open Docker Desktop
 2. Go to Settings → Resources → WSL Integration

@@ -21,5 +21,5 @@ These will be the directories where your generated dashboard files (such as indi
 
 - **config** is the directory that holds all the configuration files that control the various aspects of the dashboard. You rarely if ever need to directly modify these files. Rather, you should use the **.env** file located in the root directly to set various types of settings that are required by the dashboard.
 
-- **resources/views**directory holds all blade templates of the dashboard application. Again, you rarely need to modify any of these files but it is good to familiarize yourself with its organization.
+- **resources/views** directory holds all blade templates of the dashboard application. Again, you rarely need to modify any of these files but it is good to familiarize yourself with its organization.
 

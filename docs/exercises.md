@@ -71,12 +71,18 @@ The data will be sourced from the `housing_rec` and `pop_rec` records. Item p12 
 
 ## Map Indicators
 
-### MI 1
+### Total Households
+This indicator shall display the total number of households in a given area and display it on a map. As the included reference values include number of households per area, you should set a reasonable RAG (Red Amber Green) threshold for the indicator based on the reference values.
 
-## Gauges
-
-### G 1
+::: details Hint
+To source data for this map indicator, please have a look at the `housing_rec` record/table and think how you can count the number of households.
+:::
 
 ## Reports
 
-### R 1
+### Enumerator Performance
+This report shall display the performance of all enumerators, in terms of the number of interviews completed, per EA. The excel file should include columns for the complete area hierarchy, the enumerator's ID, their expected target, their actual performance (%)
+
+::: details Hint
+Basically, all the data you need for this report can be found in the `level-1` record/table.
+:::
