@@ -86,7 +86,7 @@ cd ~/projects/dashboard-training
 Start Sail:
 
 ```bash
-./vendor/bin/sail up
+./vendor/bin/sail up -d
 ```
 
 ### Fix Web/MySQL/PostgreSQL Port Conflicts

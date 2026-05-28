@@ -10,10 +10,12 @@ It is an isolated, Docker-based environment (using Laravel Sail) designed for ra
 It enables trainees to skip the complex setup process and start building their first components quickly.
 
 ::: info
-Before you begin, if you are running Windows, make sure you have Docker Desktop installed and running. Please refer to the [WSL on Windows](/getting-started/wsl) section of the course for detailed instructions.
+Before you begin, if you are running Windows, make sure you have Docker Desktop installed and running. Please refer to the [WSL on Windows](/getting-started/wsl) section for detailed instructions.
 :::
 
 ## Setup
+
+Once you have setup WSL and ensured everything is working properly (Ubuntu is default, etc.), start wsl by typing `wsl` in the terminal. This will drop you inside your WSL environment (Ubuntu). There, navigate to your home directory by typing `cd ~` and follow the steps below:
 
 ### 1. Clone the sandbox repository
 
@@ -48,7 +50,7 @@ docker run --rm `
 :::
 
 > [!IMPORTANT]
-> If you want to change any of the network ports used by the containers or modify default values in the `.env` file, now is the time to do it before starting the application.
+> If you want to change any of the network ports used by the containers (in case of conflicts), now is the time to do it before starting the application. Just open the `.env` file, make your changes, and save it.
 
 ### 3. Start the application (Laravel Sail)
 
@@ -100,7 +102,7 @@ bash vendor/bin/sail artisan adminify
 
 ### 7. Access the application
 
-Open `http://127.0.0.1:80/start` in your browser and you should see the sandbox start page.
+Open `http://127.0.0.1:80/start` or `http://localhost:80/start` in your browser and you should see the sandbox start page.
 
 > [!INFO]
 > If you have changed `APP_PORT` from the default `80` to another value in your `.env` file, visit `http://127.0.0.1:<YOUR_PORT>/start` instead.
