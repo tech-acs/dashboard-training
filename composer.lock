@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21f9325186c79a7adf64a7d0f1a55773",
+    "content-hash": "525ac604d70829ffe142323cdeecad63",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7887,16 +7887,16 @@
         },
         {
             "name": "uneca/dashboard-starter-kit",
-            "version": "5.3.0",
+            "version": "5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/chimera-starter-kit.git",
-                "reference": "0952c56960d00d535c317ce595845dad25024561"
+                "reference": "eb186a78d0d0f104d942884149b08c284b11d16e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/0952c56960d00d535c317ce595845dad25024561",
-                "reference": "0952c56960d00d535c317ce595845dad25024561",
+                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/eb186a78d0d0f104d942884149b08c284b11d16e",
+                "reference": "eb186a78d0d0f104d942884149b08c284b11d16e",
                 "shasum": ""
             },
             "require": {
@@ -7954,22 +7954,22 @@
             ],
             "support": {
                 "issues": "https://github.com/tech-acs/chimera-starter-kit/issues",
-                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/v5.1.0"
+                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/5.3.1"
             },
-            "time": "2026-05-27T10:27:03+00:00"
+            "time": "2026-05-28T11:30:19+00:00"
         },
         {
             "name": "uneca/plotly-chart-editor",
-            "version": "v1.1.0",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/plotly-chart-editor.git",
-                "reference": "fd60e8ed2f5e7bf9ab879d8578fb76ca3a4da588"
+                "reference": "9eb8e35cd9df9c8a8687a3d78c4d02857707db65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/plotly-chart-editor/zipball/fd60e8ed2f5e7bf9ab879d8578fb76ca3a4da588",
-                "reference": "fd60e8ed2f5e7bf9ab879d8578fb76ca3a4da588",
+                "url": "https://api.github.com/repos/tech-acs/plotly-chart-editor/zipball/9eb8e35cd9df9c8a8687a3d78c4d02857707db65",
+                "reference": "9eb8e35cd9df9c8a8687a3d78c4d02857707db65",
                 "shasum": ""
             },
             "require": {
@@ -8024,9 +8024,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tech-acs/plotly-chart-editor/issues",
-                "source": "https://github.com/tech-acs/plotly-chart-editor/tree/v1.1.0"
+                "source": "https://github.com/tech-acs/plotly-chart-editor/tree/v1.1.2"
             },
-            "time": "2026-05-27T13:40:18+00:00"
+            "time": "2026-05-28T13:47:08+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

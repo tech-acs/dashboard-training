@@ -18,7 +18,7 @@
         "spatie/laravel-permission": "^7.4",
         "spatie/laravel-translatable": "^6.1",
         "spatie/simple-excel": "^3.5",
-        "uneca/dashboard-starter-kit": "^5.1",
+        "uneca/dashboard-starter-kit": "^5.3.0",
         "uneca/plotly-chart-editor": "^1.0"
     },
     "require-dev": {
