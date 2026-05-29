@@ -18,7 +18,18 @@ Run the `php artisan chimera:make-report` command and follow the prompts. This w
 
 ### Method 2: Web Form
 
-Navigate to the **Management** menu, select **Reports**, then press the **CREATE NEW** button and fill out the form as directed.
+Navigate to the **Manage dashboard** menu, select **Reports**, then press the **CREATE NEW** button and fill out the form as directed.
+
+:::caution
+The **Report name** must be in **CamelCase** (e.g., `KenyaCensus/PartialCasesByEa`). It becomes both the PHP class name and the file name, and will create subdirectories if you use forward slashes.
+:::
+
+The creation form includes:
+
+- **Data source** — The data source this report will query (required).
+- **Report name** — The CamelCase class name (required).
+- **Title** — A reader-friendly title shown in the UI (required, multilingual).
+- **Description** — A short description (optional at creation, but required when editing).
 
 ## Implementing Reports
 
@@ -32,8 +43,8 @@ In our training sandbox, we will be creating a report to demonstrate how reports
 
 Use these values to create a report that displays the number of partial (incomplete) cases per enumeration area:
 
-- **Data Source:** Kenya Census
-- **Name:** `KenyaCensus/PartialCasesByEa`
+- **Data source:** Kenya Census
+- **Report name:** `KenyaCensus/PartialCasesByEa`
 - **Title:** Partial cases by EA
 - **Description:** Total number of partial (incomplete) cases per enumeration area.
 
@@ -84,11 +95,17 @@ This query returns all EAs that have at least one partial (incomplete) case, alo
 
 ### Publishing and Scheduling
 
-After implementing the report, navigate to the report management page and click the **Edit** button. From there you can:
+After implementing the report, navigate to the report management page (`/manage/report`) and click the **Edit** button. The edit form includes:
 
-- **Publish** the report to make it visible on assigned pages.
-- **Enable** the report to allow scheduled generation.
-- **Schedule** the report to run at a specific time and frequency.
-- Use the **Run now** button to generate the report immediately without waiting for the scheduled time.
+- **Name** — Displayed but disabled (cannot be changed after creation).
+- **Title** and **Description** — Multilingual fields.
+- **Page** — Assign the report to one or more pages so it appears in the page's report list.
+- **Rank** — Controls display order when multiple reports are listed.
+- **Published** — Toggle switch. When set to **Yes**, the report becomes visible on its assigned pages.
+- **Enabled** — Toggle switch. When set to **Yes**, the report can be generated on a schedule.
+- **Run at** — The hour when the report should first run (server time).
+- **Run every** — How frequently the report regenerates: every 3, 6, 12, or 24 hours.
+
+From the report management index page, you can also click the **Run now** link to generate the report immediately without waiting for the scheduled time.
 
 ![Sample Report](../images/sample-report.png)

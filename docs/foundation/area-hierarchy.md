@@ -55,7 +55,7 @@ Unlike political boundaries, EAs are purely functional and are created based on 
 
 ## In the Sandbox
 
-To view or add area hierarchies, navigate to the **Area Hierarchy** menu item under the **Management** dropdown.
+To view or add area hierarchies, click the **Manage dashboard** button in the top bar and select **Area Hierarchy** under *Core Configuration*.
 
 You should see an **Add** button as long as you are in [Developer Mode](/advanced-topics/developer-mode). Otherwise, you will only see a list of area hierarchies you have already added, or an empty table.
 
@@ -64,26 +64,29 @@ You should see an **Add** button as long as you are in [Developer Mode](/advance
 > [!IMPORTANT]
 > You need to have Developer Mode enabled to create your area hierarchy. If Developer Mode is not enabled, you will not see the **Add** button.
 
-Please note that the **order** of the area entries is important — it signifies the hierarchy from top to bottom.
+The **order** of the area entries is important — it signifies the hierarchy from top to bottom. The order follows the sequence in which you create them: the first entry you create is the topmost level, the last entry is the bottommost.
 
 ### Creating Our Area Hierarchy
 
-In this training, we will be using sample data from the Kenya 2019 Census. We will use the following area hierarchy that was used by KNBS during the census:
+In this training, we will be using sample data from the Kenya 2019 Census. The form creates **one level at a time** — you will repeat the process for each level. The order follows the sequence in which you create them: the first entry you create is the topmost level, the last entry is the bottommost.
 
-1. **Country**
-2. **Subcounty**
-3. **Division**
-4. **Location**
-5. **Sublocation**
-6. **EA**
+Enter these values for each level (leave everything else as default):
 
-### Zero Pad Length
+| Level | Zero pad code to length | Shape simplification tolerance |
+| :--- | :---: | :---: |
+| **County** | 2 | 0 |
+| **Subcounty** | 2 | 0 |
+| **Division** | 2 | 0 |
+| **Location** | 2 | 0 |
+| **Sublocation** | 2 | 0 |
+| **EA** | 3 | 0 |
 
-Later, we will import the areas for each of the hierarchies listed above. Those areas will usually have an identifying name and code. The codes for areas at any given level will be of equal length.
-
-When adding a hierarchy, you will notice that you can specify the size to which the system should zero-pad the codes. For example, if you specify that Subcounties should be zero-padded to 2 digits, then a code of `5` will be stored as `05`, while a code of `12` will remain `12` as it is already two digits long. This is very important because codes are used to match data with their appropriate hierarchies (levels).
-
-The setting you provide here is dictated by how the data is stored by your CAPI app. When actual data starts coming through during the census, each interview will carry these codes and the dashboard will use them to match the data with the appropriate area level.
+1. Click **Manage dashboard** → **Area Hierarchy**.
+2. Click the **Add** button.
+3. Fill in the **Name** field with the level name from the table above.
+4. Set **Zero pad code to length** and **Shape simplification tolerance** to the values shown.
+5. Click **Submit**.
+6. Repeat steps 2–5 for each remaining level in order.
 
 ### Shape Simplification Tolerance
 

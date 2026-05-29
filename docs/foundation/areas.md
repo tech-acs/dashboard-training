@@ -8,11 +8,11 @@ To visualize data correctly, the dashboard needs to know your administrative bou
 
 ## Importing Areas
 
-The Import interface allows administrators to upload hierarchical area data containing area maps, names, and codes. You can toggle between two specialized upload methods depending on your data format.
+The Import interface allows administrators to upload hierarchical area data containing area maps, names, and codes. To access it, navigate to **Manage dashboard** 🡒 **Areas** (`/manage/developer/area`), then click the **Import** button. You can toggle between two specialized upload methods depending on your data format.
 
 ### Shapefiles (Preferred)
 
-Shapefiles (`.shp`, `.shx`, and `.dbf`) are the preferred format for importing areas because they contain both the spatial data (map boundaries) and the area metadata (names and codes).
+Shapefiles (`.shp`, `.shx`, and `.dbf`) are the preferred format for importing areas because they contain both the spatial data (map boundaries) and the area metadata (names and codes). All three files with the same basename must be selected together for the upload to succeed.
 
 When importing areas via shapefiles, the dashboard automatically creates parent-child relationships by matching areas **spatially**. Therefore, it is important to ensure that:
 
@@ -31,7 +31,7 @@ The algorithm uses a threshold of approximately **70% minimum containment** to p
 
 You can also import areas via a CSV file. However, CSV files only contain area names and codes — they do not include spatial data, so you will not be able to use map-based indicators unless you later import shapefiles.
 
-During CSV import, you can use the interface to map which columns of your spreadsheet correspond to each area level (name and code). You can also apply zero padding to your codes to match how they appear in your source data (questionnaire).
+During CSV import, the interface reads the header row automatically. You must map one **Name** column and one **Code** column for each hierarchy level your CSV contains (e.g., for a six-level hierarchy you will map 12 columns: six Name + six Code pairs). You can also apply zero padding to your codes to match how they appear in your source data (questionnaire).
 
 ![Importing areas from csv](../images/importing-area-hierarchy-from-csv.png)
 
@@ -55,9 +55,12 @@ In the training sandbox repository, under the `training` directory, you will fin
 
 ### Exercise
 
+> [!IMPORTANT]
+> **Prerequisite:** Before importing, ensure all hierarchy levels (County, Subcounty, Division, Location, Sublocation, EA) have been created under **Manage dashboard** 🡒 **Settings** 🡒 **Area Levels**. Create them in parent-to-child order. Refer to [Area Hierarchy](/foundation/area-hierarchy) for the correct zero-pad lengths per level.
+
 1. **Import from CSV:** Import the areas from the CSV file located at `./training/Areas/areas.csv`. Since there are thousands of areas, this will take some time to complete. Once finished, you will receive a notification with the results.
 
-2. **Import from Shapefiles:** After successfully importing from CSV, use the **DELETE ALL** button to clear the imported areas, then import the shapefiles from `./training/Areas/Shapefiles`. This allows you to practice both import methods.
+2. **Import from Shapefiles:** After successfully importing from CSV, import the shapefiles from `./training/Areas/Shapefiles`. The training sandbox includes shapefiles for **Counties** and **Subcounties** only. Import each one separately — select the matching level from the dropdown and upload all three component files (.shp, .shx, .dbf) together. Import in parent-to-child order: Counties first, then Subcounties. This enriches the areas with spatial data so map-related functionalities are enabled.
 
 > [!INFO]
 > If you have already imported your areas (EA Frame) via a CSV file, you can also import your shapefiles afterward to augment them with spatial data. Make sure the codes in the shapefiles match the ones you already imported from the CSV, otherwise you will create duplicate areas in your database.

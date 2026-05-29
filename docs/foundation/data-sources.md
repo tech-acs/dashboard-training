@@ -10,14 +10,14 @@ Out of the box, we support **MySQL**, **MariaDB**, **Microsoft SQL Server**, **P
 
 ## Creating a Data Source
 
-If you are logged in with a Manager/Super Admin account, navigate to the **Management** menu and select **Data Sources**. You should also have [Developer Mode](/advanced-topics/developer-mode) enabled, otherwise you will not be able to create new data sources.
+If you are logged in with a Manager/Super Admin account, click the **Manage dashboard** button in the top bar and select **Data Sources** under *Core Configuration*. You should also have [Developer Mode](/advanced-topics/developer-mode) enabled, otherwise you will not be able to create new data sources.
 
 ![Management Menu](../images/management-menu.png)
 
 To create a data source, you need to provide two sets of information:
 
-1. **Source Details** — Information about the census/survey exercise.
-2. **Connection Details** — The database connection parameters.
+1. **Source** — Information about the census/survey exercise.
+2. **Connection** — The database connection parameters.
 
 ![Creating a data source](../images/creating-data-source.png)
 
@@ -31,7 +31,7 @@ The training sandbox comes with a pre-loaded MySQL database containing approxima
 
 ### Add the Kenya Census Data Source
 
-1. Navigate to **Management** → **Data Sources**.
+1. Click **Manage dashboard** (Wrench icon, top right side) → **Data Sources**.
 2. Click the **Create New** button.
 3. Fill in the **Source** section:
    - **Name:** `kenya-census`
@@ -41,14 +41,15 @@ The training sandbox comes with a pre-loaded MySQL database containing approxima
    - **Case stats component:** Leave as default
    - **Show on home page:** Yes
    - **Rank:** Leave empty
-4. Fill in the **Connection** section with these values (these are the defaults set in your `.env` file — you can open it to verify):
-   - **Host:** `mysql`
-   - **Port:** `3306`
-   - **Database:** `kenya_census`
-   - **Username:** `sail`
-   - **Password:** `password`
-   - **Active:** Yes
-   - **Also create QueryFragment class:** Yes
+ 4. Fill in the **Connection** section with these values (these are the defaults set in your `.env` file — you can open it to verify):
+    - **Database driver:** Leave as the default `MySQL 5.7+/MariaDB 10.3+`
+    - **Host:** `mysql`
+    - **Port:** `3306`
+    - **Database:** `kenya_census`
+    - **Username:** `sail`
+    - **Password:** `password`
+    - **Active:** Yes
+    - **Also create QueryFragment class:** Yes
 5. Submit the form to create the data source.
 6. Use the **Test** button to verify that the database connection is working correctly.
 

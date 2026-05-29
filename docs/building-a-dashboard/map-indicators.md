@@ -16,39 +16,53 @@ Run the `php artisan chimera:make-map-indicator` command and follow the prompts.
 
 ### Method 2: Web Form
 
-Navigate to the **Management** menu, select **Map Indicators**, then press the **CREATE NEW** button and fill out the form as required. The included stub is used to create the `MapIndicator` class file in the `app/MapIndicators` directory.
+Navigate to the **Manage dashboard** menu, select **Map indicators**, then press the **CREATE NEW** button and fill out the form as required. The included stub is used to create the `MapIndicator` class file in the `app/MapIndicators` directory.
+
+:::caution
+The **Map indicator name** must be in **CamelCase** (e.g., `KenyaCensus/TotalPopulation`). It becomes both the PHP class name and the file name, and will create subdirectories if you use forward slashes.
+:::
 
 Like regular indicators, map indicators can be organized into different pages. You can assign a map indicator to appear on one or more pages via the edit form.
+
+:::note
+Unlike regular indicators, map indicators **do not** offer an "Include sample code" option. The generated stub always starts empty.
+:::
 
 ## Implementing Map Indicators
 
 You need to implement the `getData()` method so that it returns a `Collection`. At minimum, your collection must include these two keys:
 
-- **`area_code`** — Used to match the corresponding area on the map.
-- **`value`** — Displayed when you hover over each area on the map.
+- **`area_code`** — Matched against the geographic shape codes to color the correct region on the map.
+- **`value`** — Used for coloring and displayed when you hover over each area.
 
 Additionally, including the following two keys unlocks extra functionality:
 
-- **`display_value`** — Replaces the `value` text shown in the map tooltip.
+- **`display_value`** — Replaces the raw `value` text shown in the map tooltip (useful for formatted strings like "42.3%").
 - **`info`** — Rendered in an information box on the bottom-right of the map when the area is clicked.
 
-If you need to use different column names for these keys, you can override the default values by setting the following public properties on your `MapIndicator` class:
+If your query uses different column names, override the mapping properties on your class:
 
 ```php
 public string $valueField = 'value';
 public string $displayValueField = 'display_value';
-public string $areaCodeField = 'area_code';
+public string $areaCodeField = 'area_code';      // Used for shape matching, not data transformation
 public string $infoTextField = 'info';
 ```
 
 ### Color Bins and Palettes
 
-You should also configure the following properties:
+:::danger
+`$bins` is **mandatory**. If you do not define `$bins` in your class, the constructor will abort with an error. Always provide at least two values (e.g., `[0, 50, 100]`).
+:::
+
+You should configure the following properties:
 
 ```php
 public array $bins = [0, 30, 70, 100];
-const SELECTED_COLOR_CHART = 'rag';
+public const SELECTED_COLOR_CHART = 'rag';
 ```
+
+The default color palette is **`nephritis`** (a green gradient). Override `SELECTED_COLOR_CHART` to choose a different palette (E.g. `rag`).
 
 In the example above, areas on the map will be colored according to the bins you have provided:
 
@@ -96,6 +110,15 @@ You can also modify the built-in color palettes by overriding the given constant
 
 > **Tip:** The intended use of these palettes is for you to decide on appropriate bins. Even if you have target values to compare against, you should do that in your `getData()` method and return the "ranked" values via the `value` column so that your areas are colored accordingly.
 
+## Editing and Publishing Map Indicators
+
+After creating a map indicator, you can edit it via **Manage dashboard** 🡒 **Map indicators** (`/manage/map_indicator`). The edit form includes:
+
+- **Title**, **Description**, and **Contextual Help Text** — Multilingual fields for metadata.
+- **Page** — Assign the map indicator to one or more map pages.
+- **Rank** — Controls the display order when multiple indicators appear on the same page.
+- **Status** — Toggle between **Draft** and **Published** using the switch.
+
 ## In the Sandbox
 
 ### Total Population
@@ -116,6 +139,7 @@ You should see the following code:
 
 namespace App\MapIndicators\KenyaCensus;
 
+use Illuminate\Support\Collection;
 use Uneca\Chimera\MapIndicator\MapIndicatorBaseClass;
 use Uneca\Chimera\Services\BreakoutQueryBuilder;
 
@@ -123,6 +147,7 @@ class TotalPopulation extends MapIndicatorBaseClass
 {
     // public string $valueField = 'value';
     // public string $displayValueField = 'display_value';
+    // public string $areaCodeField = 'area_code';
     // public string $infoTextField = 'info';
 
     // public array $bins = [0, 35, 65, 100];
@@ -152,7 +177,7 @@ class TotalPopulation extends MapIndicatorBaseClass
     // public string $displayValueField = 'display_value';
     // public string $infoTextField = 'info';
 
-    public array $bins = [0, 35, 65, 100];
+    public array $bins = [0, 0.35, 0.65, 1];
     public const SELECTED_COLOR_CHART = 'rag';
 
     public function getData(string $filterPath): Collection

@@ -52,7 +52,9 @@ In short, this class is the **bridge** that tells the Query Builder exactly "whe
 
 When you created your data source, a `QueryFragments` class was automatically generated for you. It is located in the `app/Services/QueryFragments/` directory and is named `KenyaCensusQueryFragments.php`.
 
-Based on the schema of the Kenya Census database, here is what your `QueryFragments` class should look like:
+The generated class ships with the `$levels` array **commented out** as a template — you must uncomment it and customize the column names and padding lengths to match your database schema. You can also regenerate the class at any time with `php artisan chimera:make-queryfragment`.
+
+Based on the schema of the Kenya Census database, here is what your `QueryFragments` class should look like after customization:
 
 ```php
 <?php
@@ -104,6 +106,6 @@ class KenyaCensusQueryFragments
 
 ### Understanding the Code
 
-- **`$levels` array** — Maps each administrative level name to its corresponding SQL expression. The `LPAD` function ensures codes are zero-padded to the correct length (2 digits for County through Sublocation, 3 digits for EA).
-- **`getSqlFragments()` method** — Takes the current filter path and returns three arrays: `$selectColumns` (which column to select as the area code), `$whereConditions` (which conditions to filter by), and `$fromTables` (additional tables to join, if any).
+- **`$levels` array** — Maps each administrative level name to its corresponding SQL expression. The array keys (e.g., `'County'`, `'Subcounty'`) **must match the area hierarchy level names** you created earlier; otherwise the filter detection in the loop will not match. The `LPAD` function ensures codes are zero-padded to the correct length (2 digits for County through Sublocation, 3 digits for EA).
+- **`getSqlFragments()` method** — Takes the current filter path and returns three arrays: `$selectColumns` (which column to select as the area code), `$whereConditions` (which conditions to filter by), and `$fromTables` (additional tables to join; always empty in this implementation).
 - The loop iterates through the hierarchy levels, accumulating `WHERE` conditions for each level that has a filter value, and selecting the next level down as the `area_code`.

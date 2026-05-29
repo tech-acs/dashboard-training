@@ -32,23 +32,41 @@ The filter uses your configured **area hierarchy** (e.g., Country > Subcounty > 
 
 Once you select an area, the Area Insights page displays:
 
+- **Case Stats** — A summary of data collection status for the selected area (e.g., total cases, complete, partial, duplicate) shown in the top section.
 - **Grading Gauges** — Visual progress indicators that compare actual values against reference or target values, with color-coded thresholds for quick status assessment.
-- **Scorecards** — High-level numeric summaries (e.g., total population, total households) displayed as prominent cards at the top of the page.
+- **Scorecards** — High-level numeric summaries (e.g., total population, total households) displayed as prominent cards.
 - **Indicators (Charts)** — All published chart indicators that are configured for area-level display, rendered as interactive Plotly charts.
 
 ## Configuring Artefacts for Area Insights
 
-Not all artefacts appear on Area Insights by default. When you create or edit an indicator, gauge, or scorecard, you can specify whether it should display on:
+Which artefacts appear on Area Insights depends on their **Scope** setting (for indicators and scorecards) or their inherent design (for gauges):
 
-- **Regular pages only** — The artefact appears only on the pages you assign it to.
-- **Area Insights only** — The artefact appears only on the Area Insights page.
-- **Both** — The artefact appears on assigned pages and on Area Insights.
+### Indicators
+Indicators have a **Scope** field with three options:
+- **Pages only** — Appears only on assigned pages.
+- **Area insights only** — Appears only on the Area Insights page.
+- **Everywhere** — Appears on both assigned pages and Area Insights.
 
-This is controlled through the artefact's edit form in the Management menu.
+### Scorecards
+Scorecards also have a **Scope** field, but the labels differ slightly:
+- **Dashboard only** — Appears only on assigned pages.
+- **Area insights only** — Appears only on the Area Insights page.
+- **Everywhere** — Appears on both.
+
+### Gauges
+Gauges **do not have a Scope setting**. By design, all published gauges always render on the Area Insights page only. They do not appear on regular indicator pages.
+
+:::tip
+If your dashboard has multiple active data sources, clicking **Area Insights** in the navigation will first show an index page with a card for each data source. Select a card to enter the detailed Area Insights view for that source.
+:::
+
+:::info 
+The Area Insights page uses its own filter, separate from the main dashboard Area Filter. Changing your selection on Area Insights does not affect the filter used on regular indicator pages, and vice versa.
+:::
 
 ## Hierarchical Compatibility
 
-Some indicators may not make sense at every level of the hierarchy. For example, a national-level market share chart would be meaningless at the EA level. Use the **Unsupported Area Levels** setting on each indicator to hide it at levels where it would be irrelevant or cluttered. See [Hierarchical Compatibility](/building-a-dashboard/hierarchical-compatibility) for details.
+Some indicators may not make sense at every level of the hierarchy. For example, a national-level market share chart would be meaningless at the EA level. Use the **Unsupported Area Levels** setting on each indicator to hide it at levels where it would be irrelevant or cluttered. See [Unsupported Area Levels](/building-a-dashboard/hierarchical-compatibility) for details.
 
 ## Using Area Insights in Practice
 

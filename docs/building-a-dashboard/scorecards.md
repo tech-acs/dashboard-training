@@ -16,7 +16,7 @@ Run the `php artisan chimera:make-scorecard` command and follow the prompts. Thi
 
 ### Method 2: Web Form
 
-Navigate to the **Management** menu, select **Scorecards**, then press the **CREATE NEW** button and fill out the form as required.
+Navigate to the **Manage dashboard** menu, select **Scorecards** (`/manage/scorecard`), then press the **CREATE NEW** button and fill out the form as required.
 
 Scorecards usually display two things: a **title** and a **value**. They can also include a delta display (showing percentage change from a reference value) and a link button to jump to a related indicator.
 

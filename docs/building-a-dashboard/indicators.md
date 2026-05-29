@@ -20,12 +20,16 @@ Run the `php artisan chimera:make-indicator` command and follow the prompts. Thi
 
 ### Method 2: Web Form
 
-Navigate to the **Management** menu, select **Indicators**, then press the **CREATE NEW** button and fill out the form as required.
+Navigate to the **Manage dashboard** 🡒 **Indicators** (`/manage/indicator`), then press the **CREATE NEW** button and fill out the form as required.
 
-Both methods allow you to control various aspects of the generated file. You can choose to include working sample code in the generated file so that you can immediately see realistic-looking indicators in your dashboard.
+The web form offers two optional toggles:
+- **Create from template** — If chart templates exist, you can base the new indicator on a pre-configured template instead of starting from scratch.
+- **Include sample code** — Generates a fully implemented `getData()` method with fabricated data so you can immediately preview a realistic-looking indicator.
+
+Both methods allow you to control various aspects of the generated file.
 
 :::caution
-Pay special attention to the name you provide for your indicator. It becomes both the class name and file name, and will create directories if you specify nested paths (e.g., `KenyaCensus/PopulationDistribution`). When creating, read the prompts and hints carefully.
+Pay special attention to the name you provide for your indicator. It becomes both the class name and file name, and will create directories if you specify nested paths (e.g., `KenyaCensus/PopulationDistribution`). The name must be in **CamelCase** as it becomes the PHP class name. When creating, read the prompts and hints carefully.
 :::
 
 ## Implementing Indicators
@@ -39,15 +43,24 @@ If you opted out of including sample code during generation, you will get the fo
 ```php
 <?php
 
-namespace App\Http\Livewire\Households;
+namespace App\Livewire\KenyaCensus;
 
-use App\Http\Livewire\Chart;
+use Illuminate\Support\Collection;
+use Uneca\Chimera\Livewire\Chart;
+use Uneca\Chimera\Services\BreakoutQueryBuilder;
 
-class BirthRate extends Chart
+class PopulationDistributionByBroadAgeGroup extends Chart
 {
+    // public bool $useDynamicAreaXAxisTitles = true;
+    // public array $aggregateAppendedTraces = []; /* ['trace name' => 'avg'] ... sum, count, min, max, mode, median */
+
     public function getData(string $filterPath): Collection
     {
-        // TODO: Implement getData() method.
+        try {
+            // TODO: Implement getData() method.
+        } catch (\Exception $exception) {
+            return collect();
+        }
     }
 }
 ```
@@ -139,27 +152,35 @@ Navigate to the indicator management page and click the **Test** button to verif
 
 #### Designing the Chart
 
-Next, click the **Design** button to open the indicator designer. You should see something like this:
+:::tip
+The **Design** button is only visible when **developer mode** is enabled.
+:::
+
+Next, click the **Design** button to open the chart editor. The editor presents a split-pane interface: a schema-driven sidebar on the left and the Plotly canvas on the right.
 
 ![Indicator Designer](../images/chart-designer.png)
 
-This is a fully featured charting tool that allows you to create and configure your chart. To understand the structure of the data being returned by your query, click the **Data** button to view it rendered as a table.
+To understand the structure of the data returned by your query, click the **Data** button in the footer to see it rendered as a table.
 
 Configure your chart as follows:
 
-1. **Add three traces**, one for each age group.
-2. Set the **Type** to `bar` for each trace.
-3. Set the **X-axis** to `area_name`.
-4. Set the **Y-axis** to the respective percentage columns (`less_than_15_percentage`, `between_15_and_65_percentage`, `above_and_65_percentage`).
-5. Rename the traces to more readable labels (`< 15`, `15 to 64`, and `65+`) by clicking on the colored trace legend shown on the chart.
-6. Go to the **Styles** section in the left tree menu, find the **Traces** sub-menu, and set **Bar Mode** to `Strict Sum Stacked` and **Normalization** to `Percent`.
-7. Press the **Save** button, then exit the designer by pressing **Cancel**.
+1. **Add three traces** using the **+** button in the Traces section, one for each age group.
+2. For each trace, set the **Type** dropdown to `bar`.
+3. In the **Data** group, set the **X** column to `area_name` and the **Y** column to the respective percentage column:
+   - Trace 1 (`< 15`): `less_than_15_percentage`
+   - Trace 2 (`15 to 64`): `between_15_and_65_percentage`
+   - Trace 3 (`65+`): `above_and_65_percentage`
+4. Rename each trace to its readable label using the **Name** field.
+5. Scroll down to find the **Bar Layout** section, and set:
+   - **Mode** (`barmode`) to `stack`
+   - **Normalization** (`barnorm`) to `percent`
+6. Press the **Save** button in the footer, then navigate back to the indicators list.
 
 #### Publishing the Indicator
 
-Back at the indicators management menu, you can verify your work by testing the indicator or by using the **Edit** button to publish it. In the editing interface, you will notice additional fields such as **Contextual Help Text**, **Unsupported area levels**, and more.
+Back at the indicators management menu, you can verify your work by testing the indicator or by using the **Edit** button to open the editing interface. In the editing interface, you will notice additional fields such as **Contextual Help Text**, **Unsupported area levels**, **Scope**, and more.
 
-The most important field for now is the **Page** option. You need to create and publish a page so that your indicator has a place to live. Create a new page called **Households** and add your indicator to it.
+The most important field for now is the **Page** option. You need to create and publish a page so that your indicator has a place to live. Create a new page called **Households** and add your indicator to it. To publish the indicator, toggle the **Status** switch from Draft to Published and click **Submit**.
 
 Once you navigate to the page, you should see something like this:
 
@@ -205,14 +226,14 @@ For the chart design, add a single trace of type **Bar** and set the x-axis to `
 
 ## Editing and Publishing Indicators
 
-Editing and publishing indicators can be done via the **Management** menu. From there, you can:
+Editing and publishing indicators can be done via the **Manage dashboard** 🡒 **Indicators** (`/manage/indicator`). From there, you can:
 
 - Edit indicator titles, descriptions, and contextual help text.
 - Provide multilingual translations for applicable fields.
 - Add the indicator to one or more pages you have created.
-- Toggle between **draft** and **published** status. By default, newly created indicators are in draft mode and are not visible on pages until published.
+- Toggle between **Draft** and **Published** status using the status switch. By default, newly created indicators are in draft mode and are not visible on pages until published.
 - Feature indicators on the home page under their respective data source summary section. Featured indicators are marked with a trophy icon in the management list.
-- Limit the scope of indicators so they display only on pages or only on Area Insights.
+- Set **Scope** to control where the indicator appears: **Pages only**, **Area Insights only**, or **Both**.
 - Set **Unsupported area levels** to hide the indicator at geographic levels where it would be irrelevant or cluttered.
 - Assign **cache tags** to target specific indicators when using cache commands (see the [Caching](/advanced-topics/caching) section).
 

@@ -10,7 +10,7 @@ Reference values are typically sourced from previously published national data, 
 
 To import reference values, you need the data in a CSV file at the **lowest area hierarchy level** (usually EA). The file needs at least two columns:
 
-1. A **path** column (can be generated using the formula provided at the top of the import form) that uniquely identifies each geographic area.
+1. A **path** column that uniquely identifies each geographic area. The import form displays an Excel-style formula you can use to generate this column by joining area codes with a dot separator (e.g., `County_code.Subcounty_code.EA_code`).
 2. One or more columns for the reference values you are importing. It is common to have multiple columns in the same spreadsheet, each named after the indicator they represent.
 
 ## Importing Reference Values
@@ -19,10 +19,12 @@ The Reference Value Import interface provides a mechanism for bulk-loading exter
 
 ### Data Preparation Requirements
 
-Before uploading, prepare your spreadsheet with these columns:
+Before uploading, prepare your spreadsheet with the following.
 
-- **Area Codes:** Columns for all area codes in your hierarchy.
-- **Calculated Path Column:** A mandatory `path` column that uniquely identifies each geographic unit. The import form provides an Excel-style formula to help you generate these values by joining codes with a dot separator (e.g., `County_code.Subcounty_code.EA_code`).
+Your spreadsheet must include a **`path`** column — each value is a dot-separated string of area codes that uniquely identifies a geographic unit (e.g., `01.01.01.01.01.001`). The import form displays a `TEXTJOIN` formula that shows exactly how to build this column from your individual area code columns, with the correct zero-padding for each level.
+
+> [!TIP]
+> If your spreadsheet already has separate columns for each area code (County_code, Subcounty_code, etc.), you can use the formula shown in the import form to generate the `path` column. If you are working with a pre-computed file (like the training sandbox file), the `path` column is already included and you can proceed directly to the import.
 
 ### Column Mapping and Configuration
 
@@ -50,11 +52,21 @@ In the training sandbox repository, under the `training` directory, you will fin
 
 ### Exercise
 
-1. Navigate to the **Management** menu and select **Reference Values**.
+1. Navigate to **Manage dashboard** 🡒 **Core Configuration** 🡒 **Reference Values** (`/manage/developer/reference-value`).
 2. Click the **Import** button.
-3. Upload the file located at `./training/reference_values.csv`.
-4. Map the columns as prompted by the interface.
-5. Submit the import form.
+3. Upload the file located at `./training/reference_values.csv`. The columns (`path`, `population`, `number_of_hh`) will appear in the dropdown menus.
+4. Map the first indicator row:
+   - **Reference value for indicator:** Select `population`.
+   - **Corresponding area path:** Select `path`.
+   - **Area type:** Keep `EA`.
+   - **Is additive:** Keep checked (population is a total).
+5. Click **Add another indicator reference** to add a second row.
+6. Map the second indicator row:
+   - **Reference value for indicator:** Select `number_of_hh`.
+   - **Corresponding area path:** Select `path`.
+   - **Area type:** Keep `EA`.
+   - **Is additive:** Keep checked (number of households is a total).
+7. Click **Import** to submit. The form will display *"The file is being imported. You will receive a notification when the process is complete."*
 
 Since there are thousands of EAs in the file, the import will take some time to complete. Once finished, you will receive a notification with the results.
 
