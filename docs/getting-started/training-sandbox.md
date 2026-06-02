@@ -68,7 +68,7 @@ bash vendor/bin/sail up
 
 ::: code-group
 ```bash [Linux / macOS / WSL]
-./vendor/bin/sail npm install && ./vendor/bin/sail npm run build:dev
+./vendor/bin/sail npm install && ./vendor/bin/sail npm run build
 ```
 
 ```powershell [Windows]

@@ -77,7 +77,7 @@ docker run hello-world
 
 ### Start Laravel Sail
 
-Navigate to the project folder:
+After starting WSL (being inside your Ubuntu container), navigate to the project folder:
 
 ```bash
 cd ~/projects/dashboard-training
