@@ -78,5 +78,5 @@
 ---
 
 ### **Learning Resources & Tools**
-* **Documentation:** [Dashboard Starter Kit Documentation](https://tech-acs.github.io/chimera-docs/) (The core engine behind this training).
+* **Documentation:** [Dashboard Starter Kit Docs](https://tech-acs.github.io/chimera-docs/) (The core engine behind this training).
 * **Training Sandbox:** [Dashboard Training](https://github.com/tech-acs/dashboard-training)

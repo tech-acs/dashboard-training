@@ -9,7 +9,7 @@ The Dashboard Starter Kit is a well-maintained Laravel package that is regularly
 ## Updating the Package
 
 ```bash
-composer update uneca/chimera-starter-kit
+composer update uneca/dashboard-starter-kit
 ```
 
 After updating the package, you may need to run the built-in update command to update the application's published resources.

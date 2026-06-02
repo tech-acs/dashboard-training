@@ -76,6 +76,6 @@ If you are on Windows, we strongly recommend using WSL for the best Docker exper
 
 ## Quick Reference Links
 
-- **Dashboard Starter Kit Documentation:** [Chimera Docs](https://tech-acs.github.io/chimera-docs/)
+- **Dashboard Starter Kit Documentation:** [Dashboard Starter Kit Docs](https://tech-acs.github.io/chimera-docs/)
 - **VS Code for PHP:** [Setting up VS Code for PHP](https://code.visualstudio.com/docs/languages/php)
 - **SQL Basics:** [W3Schools SQL Tutorial](https://www.w3schools.com/sql/)

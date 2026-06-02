@@ -91,8 +91,7 @@ Replace the `// TODO` section with the following code:
 $result = (new BreakoutQueryBuilder($this->scorecard->data_source, $filterPath))
     ->select(['SUM(total_household_members) AS total_population', 'COUNT(*) AS total_households'])
     ->from(['housing_rec'])
-    ->get()
-    ->first();
+    ->getSingleRow();
 return collect([Number::format(safeDivide($result->total_population, $result->total_households), 1), null]);
 ```
 
@@ -122,7 +121,6 @@ Here is one possible implementation:
 $result = (new BreakoutQueryBuilder($this->scorecard->data_source, $filterPath))
     ->select(['COUNT(*) AS total'])
     ->from(['housing_rec'])
-    ->get()
-    ->first();
+    ->getSingleRow();
 return collect([Number::format($result->total), null]);
 ```

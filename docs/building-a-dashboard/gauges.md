@@ -144,3 +144,79 @@ This implementation:
 4. Overrides `$colorThresholds` so values ≤ 50 appear red, ≤ 70 appear amber, and ≤ 101 appear green.
 
 After completing the implementation, go to the Gauge management interface, edit the gauge, toggle the **Status** switch to Published, and click **Submit**. You can then view it on the Area Insights page.
+
+### Housing Adequacy
+
+Now create a gauge that displays the percentage of households meeting the housing adequacy standard. Unlike the previous example, this gauge computes its value entirely from its own data — a self-referential ratio, not a comparison against an external reference.
+
+- **Data source:** Kenya Census
+- **Gauge name:** `KenyaCensus/HousingAdequacy`
+- **Title:** Housing Adequacy
+- **Subtitle:** % of households meeting the standard
+
+After creating the gauge, open the generated `app/Livewire/Gauge/KenyaCensus/HousingAdequacy.php` file. You should see the following scaffold:
+
+```php
+<?php
+
+namespace App\Livewire\Gauge\KenyaCensus;
+
+use Illuminate\Support\Collection;
+use Uneca\Chimera\Livewire\GaugeComponent;
+use Uneca\Chimera\Services\BreakoutQueryBuilder;
+
+class HousingAdequacy extends GaugeComponent
+{
+    // public string $unit = '%';
+    // public array $colorThresholds = [30 => 'text-red-500', 40 => 'text-amber-500', 50 => 'text-green-500'];
+    // public int $outOf = 100;
+
+    public function getData(string $filterPath): Collection
+    {
+        try {
+            // TODO: Implement getData() method.
+        } catch (\Exception $exception) {
+            return collect();
+        }
+    }
+}
+```
+
+Replace the TODO section and override the properties:
+
+```php
+<?php
+
+namespace App\Livewire\Gauge\KenyaCensus;
+
+use Illuminate\Support\Number;
+use Illuminate\Support\Collection;
+use Uneca\Chimera\Livewire\GaugeComponent;
+use Uneca\Chimera\Services\BreakoutQueryBuilder;
+
+class HousingAdequacy extends GaugeComponent
+{
+    public array $colorThresholds = [10 => 'text-red-500', 30 => 'text-amber-500', 101 => 'text-green-500'];
+
+    public function getData(string $filterPath): Collection
+    {
+        $result = (new BreakoutQueryBuilder($this->gauge->data_source, $filterPath))
+            ->select([
+                'COUNT(*) AS total_households',
+                'SUM(CASE WHEN adequacy_index = 1 THEN 1 ELSE 0 END) AS adequacy_met',
+            ])
+            ->from(['housing_rec'])
+            ->getSingleRow();
+        return collect([(object)['value' => Number::format(safeDivide($result->adequacy_met, $result->total_households) * 100, 1)]]);
+    }
+}
+```
+
+This implementation introduces several new concepts:
+
+1. **Self-referential ratio** — The value is computed as `adequacy_met / total_households × 100`, both from the same data. No external reference value or `lastlyAreaLeftJoinData()` is needed.
+2. **`getSingleRow()`** — A convenience method that clears the automatically-inserted area columns, strips `GROUP BY`, `HAVING`, `ORDER BY`, and area-join post-processing, returning only the first row. This is the right choice when you need a single aggregate value rather than per-area drill-down.
+3. **`SUM(CASE WHEN ...)` pattern** — The standard SQL pattern for counting rows that satisfy a condition. Every `CASE WHEN` includes an `ELSE 0` to avoid NULL propagation in the sum.
+4. **Low-prevalence thresholds** — The `$colorThresholds` are tuned to `[10, 30, 101]` because the adequacy prevalence in the data is low. Red starts at ≤ 10 rather than ≤ 50 (as in the Progress example) so the gauge renders meaningful color feedback for this metric.
+
+After completing the implementation, publish the gauge and view it on the Area Insights page, just as you did with the Progress gauge.

@@ -18,13 +18,13 @@ Run the `php artisan chimera:make-map-indicator` command and follow the prompts.
 
 Navigate to the **Manage dashboard** menu, select **Map indicators**, then press the **CREATE NEW** button and fill out the form as required. The included stub is used to create the `MapIndicator` class file in the `app/MapIndicators` directory.
 
-:::caution
+:::warning
 The **Map indicator name** must be in **CamelCase** (e.g., `KenyaCensus/TotalPopulation`). It becomes both the PHP class name and the file name, and will create subdirectories if you use forward slashes.
 :::
 
 Like regular indicators, map indicators can be organized into different pages. You can assign a map indicator to appear on one or more pages via the edit form.
 
-:::note
+:::info
 Unlike regular indicators, map indicators **do not** offer an "Include sample code" option. The generated stub always starts empty.
 :::
 
