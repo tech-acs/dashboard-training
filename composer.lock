@@ -7909,16 +7909,16 @@
         },
         {
             "name": "uneca/dashboard-starter-kit",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/chimera-starter-kit.git",
-                "reference": "7d08a6d22dd9f1cf9473d671ae8354f83302214f"
+                "reference": "32986cc5f1ed6e58d068718db85fb6291aece0b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/7d08a6d22dd9f1cf9473d671ae8354f83302214f",
-                "reference": "7d08a6d22dd9f1cf9473d671ae8354f83302214f",
+                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/32986cc5f1ed6e58d068718db85fb6291aece0b3",
+                "reference": "32986cc5f1ed6e58d068718db85fb6291aece0b3",
                 "shasum": ""
             },
             "require": {
@@ -7976,9 +7976,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tech-acs/chimera-starter-kit/issues",
-                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/5.4.1"
+                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/5.4.2"
             },
-            "time": "2026-06-08T05:11:02+00:00"
+            "time": "2026-06-08T05:43:03+00:00"
         },
         {
             "name": "uneca/plotly-chart-editor",

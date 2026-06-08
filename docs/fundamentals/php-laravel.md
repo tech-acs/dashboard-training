@@ -30,7 +30,7 @@ Laravel comes with a built-in CLI tool called **Artisan**. You will use it frequ
 **Common Commands:**
 
 - `php artisan migrate` — Applies database schema changes.
-- `php artisan chimera:summary` — Displays a health overview of your Chimera dashboard.
+- `php artisan chimera:make-indicator` — Create a new indicator component. Creates file from stub and adds entry in indicators table.
 - `php artisan optimize:clear` — Clears all caches when things get "stuck."
 
 > [!IMPORTANT]
@@ -40,11 +40,10 @@ Laravel comes with a built-in CLI tool called **Artisan**. You will use it frequ
 
 To master the Dashboard Starter Kit, familiarize yourself with these specific features:
 
-- **Migrations:** Version control for your database schema.
-- **Routes:** Define the URLs for your dashboard pages (`routes/web.php`).
-- **Middleware:** Handle security checks (e.g., ensuring only Admin users can edit indicators).
-- **Livewire:** Laravel's full-stack framework for building dynamic interfaces without writing JavaScript.
-- **Queues:** Handle long-running tasks (like report generation) in the background.
+- **Eloquent ORM (Models and Relationships):** In a census dashboard, data is highly relational. For example, an Enumeration Area (EA) belongs to a District, which belongs to a Province. It is helpful to understand how Laravel handles these relationships.
+- **The .env File and Laravel Configuration:** As the person developing or managing a dashboard, you’ll need to understand how Laravel reads these environment variables to affect various aspects of the dashboard.
+- **Artisan Console (CLI Commands):** The starter kit introduces custom Artisan commands specific to managing your dashboard. You will regularly use the terminal to run commands that create indicators, clear application cache, etc. You don’t need to program these commands, but you must understand how to trigger them and read their terminal output.
+- **Livewire Components (Basics):** The dashboard’s real-time elements (like filtering data by a specific province and seeing the charts automatically update without reloading the page) are handled by Livewire. Understanding the basic lifecycle of a Livewire component—specifically how properties (variables passed to the page) and render methods work—will allow you to troubleshoot why a specific chart or scorecard isn’t updating when a user changes a filter dropdown.
 
 ## Learning Resources
 

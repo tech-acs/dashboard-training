@@ -24,6 +24,9 @@ When working with the dashboard and CSPro, you will encounter these specific fil
 
 We use the **CSPro Data Dictionary (`.dcf`)** to understand what the data means.
 
+A data dictionary describes the overall organization of a data file; in other words, it gives a description of how data are stored in a file.
+Think of it as the translator between a paper/digital questionnaire and the raw text file where the data actually lives.
+
 > **Why this matters:** Without the dictionary, a value of `1` in your database is just a number. With the dictionary, we know that `1` means "Male" and `2` means "Female," allowing the dashboard to generate human-readable charts and reports.
 
 When building indicators and queries, you will frequently reference the data dictionary to find the correct table names, column names, and value labels for your data.
@@ -33,7 +36,7 @@ When building indicators and queries, you will frequently reference the data dic
 For a dashboard to display "live" data, it needs to receive data from the CSPro server (CSWeb). The typical data flow looks like this:
 
 1. **Tablets (CSEntry):** Interviewers collect data offline using the CSEntry mobile application.
-2. **CSWeb Server:** Data is synced from the tablets to a central MySQL server via the internet using CSWeb.
+2. **CSWeb Server:** Data is synced from the tablets to a central MySQL server via the internet using CSWeb (receiver).
 3. **CSWeb Breakout Process:** This is a utility designed for CSPro 7.5 and later, which transforms data from the CSPro hierarchical format into a relational database such as MySQL or SQL Server. Each level of the hierarchy becomes a separate table.
 4. **Field Monitoring Dashboard:** Our dashboard connects to the breakout database, reads the relational data, and processes it into indicators, scorecards, gauges, and other dashboard artefacts.
 
