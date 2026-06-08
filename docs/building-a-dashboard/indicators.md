@@ -104,7 +104,7 @@ use Uneca\Chimera\Services\BreakoutQueryBuilder;
 
 class PopulationDistributionByBroadAgeGroup extends Chart
 {
-    // public bool $useDynamicAreaXAxisTitles = true;
+    public bool $useDynamicAreaXAxisTitles = true;
     // public array $aggregateAppendedTraces = []; /* ['trace name' => 'avg'] ... sum, count, min, max, mode, median */
 
     public function getData(string $filterPath): Collection

@@ -848,16 +848,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.11.0",
+            "version": "7.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "c987f8ce84b8434fa430795eca0f3430663da72b"
+                "reference": "5af96f374e0ab4ebd747b8310888c99d3adb0a8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/c987f8ce84b8434fa430795eca0f3430663da72b",
-                "reference": "c987f8ce84b8434fa430795eca0f3430663da72b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/5af96f374e0ab4ebd747b8310888c99d3adb0a8c",
+                "reference": "5af96f374e0ab4ebd747b8310888c99d3adb0a8c",
                 "shasum": ""
             },
             "require": {
@@ -876,7 +876,7 @@
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "ext-curl": "*",
                 "guzzle/client-integration-tests": "3.0.2",
-                "guzzlehttp/test-server": "^0.4",
+                "guzzlehttp/test-server": "^0.5",
                 "php-http/message-factory": "^1.1",
                 "phpunit/phpunit": "^8.5.52 || ^9.6.34",
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
@@ -956,7 +956,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.11.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.11.1"
             },
             "funding": [
                 {
@@ -972,7 +972,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-02T12:40:51+00:00"
+            "time": "2026-06-07T22:54:06+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -7909,16 +7909,16 @@
         },
         {
             "name": "uneca/dashboard-starter-kit",
-            "version": "5.4.0",
+            "version": "5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/chimera-starter-kit.git",
-                "reference": "3b624ac26e288ded1e5ca20829b60a33509cfbfe"
+                "reference": "7d08a6d22dd9f1cf9473d671ae8354f83302214f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/3b624ac26e288ded1e5ca20829b60a33509cfbfe",
-                "reference": "3b624ac26e288ded1e5ca20829b60a33509cfbfe",
+                "url": "https://api.github.com/repos/tech-acs/chimera-starter-kit/zipball/7d08a6d22dd9f1cf9473d671ae8354f83302214f",
+                "reference": "7d08a6d22dd9f1cf9473d671ae8354f83302214f",
                 "shasum": ""
             },
             "require": {
@@ -7976,28 +7976,28 @@
             ],
             "support": {
                 "issues": "https://github.com/tech-acs/chimera-starter-kit/issues",
-                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/5.4.0"
+                "source": "https://github.com/tech-acs/chimera-starter-kit/tree/5.4.1"
             },
-            "time": "2026-05-31T13:01:06+00:00"
+            "time": "2026-06-08T05:11:02+00:00"
         },
         {
             "name": "uneca/plotly-chart-editor",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tech-acs/plotly-chart-editor.git",
-                "reference": "9ead6c869611a5a97ace90e2c554ee6ff7fbd123"
+                "reference": "698059d1d70215311bb6c9bb14bd35f8ad4ce574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tech-acs/plotly-chart-editor/zipball/9ead6c869611a5a97ace90e2c554ee6ff7fbd123",
-                "reference": "9ead6c869611a5a97ace90e2c554ee6ff7fbd123",
+                "url": "https://api.github.com/repos/tech-acs/plotly-chart-editor/zipball/698059d1d70215311bb6c9bb14bd35f8ad4ce574",
+                "reference": "698059d1d70215311bb6c9bb14bd35f8ad4ce574",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^12.0 || ^13.0",
                 "livewire/livewire": "^3.0 || ^4.0",
-                "php": "^8.4",
+                "php": "^8.3",
                 "spatie/laravel-package-tools": "^1.16"
             },
             "require-dev": {
@@ -8046,9 +8046,9 @@
             ],
             "support": {
                 "issues": "https://github.com/tech-acs/plotly-chart-editor/issues",
-                "source": "https://github.com/tech-acs/plotly-chart-editor/tree/v1.2.1"
+                "source": "https://github.com/tech-acs/plotly-chart-editor/tree/v1.2.2"
             },
-            "time": "2026-06-01T06:44:10+00:00"
+            "time": "2026-06-08T04:34:42+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
