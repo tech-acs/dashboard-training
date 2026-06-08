@@ -16,8 +16,8 @@ hero:
 features:
   - title: Dockerized
     details: A fully containerized training sandbox built with Laravel Sail, ensuring a consistent, production-grade environment that runs on any operating system without complex manual setup.
-  - title: Database Management
+  - title: Built-in Database Management Tool
     details: Browse tables and run SQL queries effortlessly with Adminer, a lightweight web-based database tool integrated directly into your sandbox.
-  - title: Email Testing
+  - title: Built-in Email Testing
     details: Safely test email features (password resets, invitations, notifications) with Mailpit, a built-in mail server that captures all outgoing messages for instant preview.
 ---

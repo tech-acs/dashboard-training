@@ -74,7 +74,7 @@ You need a code editor that understands PHP and Laravel syntax.
 
 If you are on Windows, we strongly recommend using WSL for the best Docker experience. Please see the [WSL on Windows](/getting-started/wsl) page for detailed setup instructions.
 
-## Quick Reference Links
+## Learning Resources
 
 - **Dashboard Starter Kit Documentation:** [Dashboard Starter Kit Docs](https://tech-acs.github.io/chimera-docs/)
 - **VS Code for PHP:** [Setting up VS Code for PHP](https://code.visualstudio.com/docs/languages/php)

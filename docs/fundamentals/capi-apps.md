@@ -33,7 +33,7 @@ To make your CAPI app "dashboard-friendly," pay attention to these elements duri
 | **App Metadata** | Tracking `Start Time` and `End Time` allows the dashboard to display metrics like "Average Interview Duration." |
 | **Sync Logic** | Frequent syncing ensures the dashboard reflects the true, up-to-date progress of the field operation. |
 
-## Best Practices for Chimera-Ready Apps
+## Best Practices for Dashboard-Ready Apps
 
 - **Standardized Coding:** Use consistent value sets (e.g., `1` for Yes, `2` for No) across all sections to simplify dashboard calculations.
 - **Paradata:** Capture hidden metadata (interviewer ID, device battery level, sync timestamps) to monitor fieldwork quality via the dashboard.
@@ -45,4 +45,4 @@ To make your CAPI app "dashboard-friendly," pay attention to these elements duri
 - **CSEntry on Google Play:** [Download Link](https://play.google.com/store/apps/details?id=gov.census.cspro.csentry)
 - **CSWeb:** [CSWeb Help](https://www.csprousers.org/help/CSWeb/get_help.html)
 
-> **Note for Trainees:** During this workshop, we will be using a pre-configured dataset. Your goal is to understand how data moves from **CSEntry** → **CSWeb** → **Breakout Database** → **Chimera Dashboard** for visualization.
+> **Note for Trainees:** During this workshop, we will be using a pre-configured dataset. Your goal is to understand how data moves from **CSEntry** → **CSWeb** → **Breakout Database** → **Dashboard** for visualization.

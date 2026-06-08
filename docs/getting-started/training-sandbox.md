@@ -50,7 +50,7 @@ docker run --rm `
 :::
 
 > [!IMPORTANT]
-> If you want to change any of the network ports used by the containers (in case of conflicts), now is the time to do it before starting the application. Just open the `.env` file, make your changes, and save it.
+> If you want to change any of the network ports used by the containers (in case of conflicts), now is the time to do it before starting the application. Just open the `.env` file, make your changes (there is a distinct section near the top of the file), and save it.
 
 ### 3. Start the application (Laravel Sail)
 
@@ -137,6 +137,8 @@ The application includes databases accessible during development. You can manage
 The application uses Mailpit to intercept and display outgoing system emails (like password resets and invitations) locally, preventing them from being sent to real users.
 
 - **Access Mailbox:** Visit [http://localhost:8025](http://localhost:8025) in your browser to view all intercepted emails. You can also access this via the menu on the sandbox start page.
+> [!NOTE]
+> You will need to "enable email sending" and also configure your SMTP settings on the settings page. *Host: mailpit and port: 1025*
 
 ## Rebuilding the Sandbox
 

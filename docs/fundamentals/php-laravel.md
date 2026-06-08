@@ -17,10 +17,10 @@ While many data scientists use Python or R, web-based dashboards require a robus
 
 Laravel follows the **Model-View-Controller (MVC)** pattern. Understanding this is key to knowing where to find files in your dashboard project:
 
-| Component    | Role                              | Chimera Context                                      |
-| :----------- | :-------------------------------- | :--------------------------------------------------- |
-| **Model**    | Data & Business Logic             | Represents your survey indicators, areas, and map shapes. |
-| **View**     | Presentation Layer                | The HTML/CSS (Blade templates and Livewire components) the user sees. |
+| Component    | Role                              | Dashboard Context                                                            |
+| :----------- | :-------------------------------- |:-----------------------------------------------------------------------------|
+| **Model**    | Data & Business Logic             | Represents your survey indicators, areas, and map shapes.                    |
+| **View**     | Presentation Layer                | The HTML/CSS (Blade templates and Livewire components) the user sees.        |
 | **Controller** | Request Handling & Coordination | Connects the Model to the View; handles user requests and returns responses. |
 
 ## Artisan: Your Command-Line Assistant
@@ -36,7 +36,7 @@ Laravel comes with a built-in CLI tool called **Artisan**. You will use it frequ
 > [!IMPORTANT]
 > In the training sandbox, all artisan commands must be prefixed with `./vendor/bin/sail` (e.g., `./vendor/bin/sail artisan migrate`). See the [Training Sandbox](/getting-started/training-sandbox) section for details.
 
-## Key Laravel Concepts for Chimera
+## Key Laravel Concepts for Dashboard Starter Kit
 
 To master the Dashboard Starter Kit, familiarize yourself with these specific features:
 
